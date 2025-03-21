@@ -31,9 +31,11 @@
     "react-wrap-balancer": "^0.5.0",
     "redis-cli": "^2.1.2",
     "rehype-autolink-headings": "^6.1.1",
-    "rehype-pretty-code": "^0.9.11",
+    "rehype-pretty-code": "^0.14.1",
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
+    "shiki": "^3.2.1",
+    "shiki-es": "^0.14.0",
     "typescript": "5.0.4"
   },
   "devDependencies": {
