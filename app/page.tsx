@@ -5,6 +5,7 @@ import Particles from "./components/particles";
 import logo from ".//Logo.png";
 import Image from "next/image";
 import Home2 from "./section1";
+import "./page.css";
 
 const navigation = [
   { name: "Departments", href: "/department" },
@@ -26,6 +27,8 @@ export default function Home() {
   ];
 
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
 
   useEffect(() => {
     const handleResize = () => {
@@ -57,25 +60,32 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const countdownInterval = setInterval(calculateCountdown, 1000);
-    return () => clearInterval(countdownInterval);
-  }, []);
+    const currentSentence = sentences[currentSentenceIndex];
 
-  useEffect(() => {
-    const sentenceInterval = setInterval(() => {
-      setCurrentSentenceIndex((prevIndex) => (prevIndex + 1) % sentences.length);
-    }, 3000); // Change sentence every 3 seconds
-    return () => clearInterval(sentenceInterval);
-  }, []);
+    if (charIndex < currentSentence.length) {
+      const timeout = setTimeout(() => {
+        setDisplayedText((prev) => prev + currentSentence[charIndex]);
+        setCharIndex((prev) => prev + 1);
+      }, 100);
+      return () => clearTimeout(timeout);
+    } else {
+      setTimeout(() => {
+        setDisplayedText("");
+        setCharIndex(0);
+        setCurrentSentenceIndex((prev) => (prev + 1) % sentences.length);
+      }, 2000);
+    }
+  }, [charIndex, currentSentenceIndex]);
+  
 
   return (
     <>
-    
       <div
         style={{ maxWidth: "100%", minHeight: "100vh" }}
         className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-indigo-950 via-green-600/10 to-teal-950"
       >
-        <br /><br />
+        <br />
+        <br />
         <nav className="my-16 animate-fade-in">
           <ul className="flex items-center z-40 justify-center gap-4">
             <Image src={logo} alt="Logo" className="w-full h-50 " />
@@ -143,11 +153,10 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="current-sentence m-8 font-display lg:text-3xl mx-auto d-block animate-fade-in text-white">
-            <span className="current-sentence-label animate-fade-in-out">
-              {sentences[currentSentenceIndex]}
-            </span>
-          </div>
+          <div className="m-8 font-display lg:text-3xl text-center text-white flex justify-center items-center">
+          <span className="typing-effect">{displayedText}</span>
+          <span className="blinking-cursor">|</span>
+        </div>
 
           <div className="my-16 text-center z-40  rounded-xl">
             {navigation.map((item) => (
@@ -156,7 +165,10 @@ export default function Home() {
                 href={item.href}
                 className="text-sm  duration-500   mx-1 d-block justify-center align-center z-40 text-zinc-500 hover:text-zinc-300"
               >
-                <button className="button animate-fade-in" data-name={item.name}></button>
+                <button
+                  className="button animate-fade-in"
+                  data-name={item.name}
+                ></button>
               </Link>
             ))}
           </div>

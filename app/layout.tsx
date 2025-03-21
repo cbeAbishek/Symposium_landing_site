@@ -6,16 +6,16 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
 	title: {
-		default: "Techfest2k23",
-		template: "%s | Techfest",
+		default: "Innoverse 2k25",
+		template: "%s | innoverse",
 	},
-	description: "LICET' s Symposium",
+	description: "national level technical symposium",
 	openGraph: {
 		title: "Techfest 2k23",
 		description:
-			"LICET's Symposium",
+			"Innoverse 2k25",
 		url: "",
-		siteName: "TechFest",
+		siteName: "Innoverse",
 		images: [
 			{
 				url: "",
