@@ -60,6 +60,11 @@ export default function Home() {
   };
 
   useEffect(() => {
+    const countdownInterval = setInterval(calculateCountdown, 1000);
+    return () => clearInterval(countdownInterval);
+  }, []);
+
+  useEffect(() => {
     const currentSentence = sentences[currentSentenceIndex];
 
     if (charIndex < currentSentence.length) {
@@ -69,14 +74,14 @@ export default function Home() {
       }, 100);
       return () => clearTimeout(timeout);
     } else {
-      setTimeout(() => {
+      const timeout = setTimeout(() => {
         setDisplayedText("");
         setCharIndex(0);
         setCurrentSentenceIndex((prev) => (prev + 1) % sentences.length);
       }, 2000);
+      return () => clearTimeout(timeout);
     }
   }, [charIndex, currentSentenceIndex]);
-  
 
   return (
     <>
@@ -84,8 +89,6 @@ export default function Home() {
         style={{ maxWidth: "100%", minHeight: "100vh" }}
         className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-indigo-950 via-green-600/10 to-teal-950"
       >
-        <br />
-        <br />
         <nav className="my-16 animate-fade-in">
           <ul className="flex items-center z-40 justify-center gap-4">
             <Image src={logo} alt="Logo" className="w-full h-50 " />
@@ -104,7 +107,7 @@ export default function Home() {
         <div>
           <div className="countdown m-8 font-display lg:text-3xl mx-auto d-block animate-fade-in text-white">
             <div className="countdown-item lg:pr-5">
-              <span className="countdown-number" id="seconds">
+              <span className="countdown-number" id="days">
                 {days < 10 ? `0${days}` : days}
               </span>
               <span
@@ -116,7 +119,7 @@ export default function Home() {
               </span>
             </div>
             <div className="countdown-item lg:pr-5">
-              <span className="countdown-number" id="seconds">
+              <span className="countdown-number" id="hours">
                 {hours < 10 ? `0${hours}` : hours}
               </span>
               <span
@@ -128,7 +131,7 @@ export default function Home() {
               </span>
             </div>
             <div className="countdown-item lg:pr-5">
-              <span className="countdown-number" id="seconds">
+              <span className="countdown-number" id="minutes">
                 {minutes < 10 ? `0${minutes}` : minutes}
               </span>
               <span
@@ -148,15 +151,15 @@ export default function Home() {
                   isMobile ? "" : "hidden md:inline"
                 }`}
               >
-                {isMobile ? "S" : "seconds"}
+                {isMobile ? "S" : "Seconds"}
               </span>
             </div>
           </div>
 
           <div className="m-8 font-display lg:text-3xl text-center text-white flex justify-center items-center">
-          <span className="typing-effect">{displayedText}</span>
-          <span className="blinking-cursor">|</span>
-        </div>
+            <span className="typing-effect">{displayedText}</span>
+            <span className="blinking-cursor">|</span>
+          </div>
 
           <div className="my-16 text-center z-40  rounded-xl">
             {navigation.map((item) => (

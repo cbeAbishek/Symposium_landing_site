@@ -5,42 +5,74 @@ import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
-	title: {
-		default: "Innoverse 2k25",
-		template: "%s | innoverse",
-	},
-	description: "national level technical symposium",
-	openGraph: {
-		title: "Techfest 2k23",
-		description:
-			"Innoverse 2k25",
-		url: "",
-		siteName: "Innoverse",
-		images: [
-			{
-				url: "",
-				width: 1920,
-				height: 1080,
-			},
-		],
-		locale: "en-US",
-		type: "website",
-	},
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-	icons: {
-		shortcut: "/licet.png",
-	},
+    /**
+     * Page Title Configuration
+     * - `default`: The default title when no specific title is provided.
+     * - `template`: A template format where %s is replaced with the page-specific title.
+     */
+    title: {
+        default: "Innoverse 2k25",
+        template: "%s | Innoverse",
+    },
+    
+    /**
+     * Meta Description (improves SEO and search engine ranking)
+     */
+    description: "National level technical symposium", 
+    
+    /**
+     * Open Graph Meta Tags (for rich previews on social media platforms)
+     */
+    openGraph: {
+        title: "Innoverse 2k25",
+        description: "National level technical symposium",
+        url: "https://innoverse-2k25.com", // Update with actual website URL
+        siteName: "Innoverse",
+        images: [
+            {
+                url: "https://raw.githubusercontent.com/cbeAbishek/Technokreaticon-Expo/refs/heads/main/public/images/SEO%20meta%20tag%20techno.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Innoverse 2k25 Banner",
+            },
+        ],
+        locale: "en-US",
+        type: "website",
+    },
+    
+    /**
+     * Robots Meta Tags (controls search engine crawling and indexing)
+     */
+    robots: {
+        index: true, // Allow search engines to index the page
+        follow: true, // Allow search engines to follow links on the page
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1, // No limit on video preview
+            "max-image-preview": "large", // Allow large image preview
+            "max-snippet": -1, // No limit on snippet length
+        },
+    },
+    
+    /**
+     * Favicon & Shortcut Icon
+     */
+    icons: {
+        shortcut: "/licet.png", // Path to favicon or shortcut icon
+    },
+    
+    /**
+     * Twitter Card Meta Tags (enhances link previews on Twitter)
+     */
+    twitter: {
+        card: "summary_large_image",
+        title: "Innoverse 2k25",
+        description: "National level technical symposium",
+        images: "https://raw.githubusercontent.com/cbeAbishek/Technokreaticon-Expo/refs/heads/main/public/images/SEO%20meta%20tag%20techno.jpg",
+    },
 };
+
 const inter = Inter({
 	subsets: ["latin"],
 	variable: "--font-inter",
