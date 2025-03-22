@@ -10,16 +10,13 @@ export const revalidate = 60;
 
 const redis = Redis.fromEnv();
 
-// ✅ Define the correct type explicitly
-type Params = { slug: string };
-
-export async function generateStaticParams(): Promise<Params[]> {
+export async function generateStaticParams() {
   return allProjects
     .filter((p) => p.published)
     .map((p) => ({ slug: p.slug }));
 }
 
-export default async function PostPage({ params }: { params: Params }) {
+export default async function PostPage({ params }: { params: { slug: string } }) {
   if (!params?.slug) {
     notFound();
   }
@@ -36,7 +33,7 @@ export default async function PostPage({ params }: { params: Params }) {
     <div className="bg-zinc-50 min-h-screen">
       <Header project={project} views={views} />
       <ReportView slug={project.slug} />
-
+      
       <article className="px-4 py-12 mx-auto prose prose-zinc prose-quoteless">
         <Mdx code={project.body.code} />
       </article>
