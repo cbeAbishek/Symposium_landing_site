@@ -1,10 +1,9 @@
 import "../global.css";
 import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
-import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
 
-export const metadata: Metadata = {
+export const metadata = {
   /**
    * Page Title Configuration
    * - `default`: The default title when no specific title is provided.
@@ -69,7 +68,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Innoverse 2k25",
     description: "National level technical symposium",
-    images:"https://raw.githubusercontent.com/cbeAbishek/Symposium_landing_site/refs/heads/main/public/innoverse.jpg",
+    images:
+      "https://raw.githubusercontent.com/cbeAbishek/Symposium_landing_site/refs/heads/main/public/innoverse.jpg",
   },
 };
 
@@ -93,9 +93,7 @@ export default function RootLayout({
       <head>
         <Analytics />
       </head>
-      <body className="bg-black">
-        {children}
-      </body>
+      <body className="bg-black">{children}</body>
     </html>
   );
 }
