@@ -8,11 +8,9 @@ import { Redis } from "@upstash/redis";
 
 export const revalidate = 60;
 
-type Props = {
-	params: {
-		slug: string;
-	};
-};
+interface Props {
+  params: { slug: string };
+}
 
 const redis = Redis.fromEnv();
 

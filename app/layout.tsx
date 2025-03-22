@@ -69,8 +69,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Innoverse 2k25",
     description: "National level technical symposium",
-    images:
-      "https://raw.githubusercontent.com/cbeAbishek/Technokreaticon-Expo/refs/heads/main/public/images/SEO%20meta%20tag%20techno.jpg",
+    images:"https://raw.githubusercontent.com/cbeAbishek/Symposium_landing_site/refs/heads/main/public/innoverse.jpg",
   },
 };
 
@@ -94,11 +93,7 @@ export default function RootLayout({
       <head>
         <Analytics />
       </head>
-      <body
-        className={`bg-black ${
-          process.env.NODE_ENV === "development" ? "debug-screens" : undefined
-        }`}
-      >
+      <body className={`bg-black`}>
         {children}
       </body>
     </html>
