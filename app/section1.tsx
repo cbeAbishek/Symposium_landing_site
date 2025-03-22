@@ -25,35 +25,31 @@ export default function Home2() {
         <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/3 via-zinc-300/50 to-zinc-300/0" />
 
         <p className="p-margin text-justify font-display text-lg text-zinc-50 t animate-fade-in">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae,
-          esse distinctio saepe corporis velit accusantium, voluptatibus atque
-          excepturi at reiciendis cupiditate omnis! Similique nesciunt tempore,
-          laudantium earum nihil velit minus ipsum accusamus consectetur
-          delectus soluta rem nobis error, minima a quaerat animi illo sunt
-          nostrum rerum cumque dignissimos eum aliquid! Commodi expedita ex non
-          voluptas molestiae saepe impedit enim quos repellendus numquam labore
-          eos excepturi, beatae architecto assumenda distinctio vel id voluptate
-          recusandae? Accusamus, deleniti labore non ipsa velit dolore quibusdam
-          iste architecto porro ullam recusandae reprehenderit nam in.
-          Repellendus error inventore incidunt veritatis repellat perferendis
-          nam cum dolores? Accusantium.
+          Welcome to Innoverse , the flagship national-level symposium hosted by
+          the PPG Institute of Technology ! Celebrated annually, Innoverse is a
+          vibrant platform that brings together students, professionals, and
+          innovators from across the country to showcase their talents in both
+          technical and non-technical domains. Organized department-wise, this
+          symposium features over 35+ diverse events , ranging from cutting-edge
+          hackathons, coding challenges, robotics, and research paper
+          presentations to creative pursuits like photography, debates, quizzes,
+          and cultural performances.
         </p>
 
         <p className="p-margin mt-10 text-lg text-justify font-display text-zinc-50 animate-fade-in">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae,
-          esse distinctio saepe corporis velit accusantium, voluptatibus atque
-          excepturi at reiciendis cupiditate omnis! Similique nesciunt tempore,
-          laudantium earum nihil velit minus ipsum accusamus consectetur
-          delectus soluta rem nobis error, minima a quaerat animi illo sunt
-          nostrum rerum cumque dignissimos eum aliquid! Commodi expedita ex non
-          voluptas molestiae saepe impedit enim quos repellendus numquam labore
-          eos excepturi, beatae architecto assumenda distinctio vel id voluptate
-          recusandae? Accusamus, deleniti labore non ipsa velit dolore quibusdam
-          iste architecto porro ullam recusandae reprehenderit nam in.
-          Repellendus error inventore incidunt veritatis repellat perferendis
-          nam cum dolores? Accusantium.
+          Innoverse fosters an environment of innovation, collaboration, and
+          healthy competition. Participants get the opportunity to network with
+          industry experts, gain hands-on experience, and enhance their skills
+          while competing for exciting prizes and recognition. With its dynamic
+          blend of events, Innoverse caters to every interest and passion,
+          ensuring there’s something for everyone to explore and excel in. Join
+          us as we celebrate creativity, intellect, and teamwork at Innoverse –
+          where ideas transform into reality! Whether you're a tech enthusiast
+          or a creative mind, mark your calendars and be part of this
+          extraordinary journey. For more details on event schedules,
+          registration, and participation guidelines, stay tuned to our website.
+          Let’s innovate, inspire, and ignite the spark of excellence together!
         </p>
-
         <footer className="text-white py-6">
           <div className="container mx-auto text-center">
             <p className="text-sm">

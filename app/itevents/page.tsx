@@ -5,21 +5,24 @@ import dummy from "./dummy.jpg";
 
 export default function CSEEvent() {
   return (
-    <div className="bg-gradient-to-tl sm:pt-0 lg:pt-40 p-8 from-zinc-950 via-indigo-950 to-zinc-900/0">
+    <div className="bg-gradient-to-tl from-zinc-950 via-indigo-950 to-zinc-900/0">
       <Navigation />
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={100}
       />
-      <div className="container flex items-center justify-center min-h-screen px-1 mx-auto">
-        <div className="text-center ">
-          <h1 className="text-4xl font-bold text-white">CSE Event</h1>
-          <p className="mt-1 text-xl text-zinc-400">
-            Details about the CSE event will be displayed Down.
-          </p>
-        </div>
-
+      <div className="flex flex-col items-center justify-center h-screen text-center space-y-4">
+        <h1 className="text-4xl font-bold text-white">
+          IT Department - Events
+        </h1>
+        <p className="text-lg text-white max-w-md">
+          Discover new possibilities and explore endless opportunities. Scroll
+          down to learn more!
+        </p>
+        <br />
+        <div className="mt-6 animate-bounce text-7xl text-white">⬇️</div>
       </div>
+
       {/* event 1 */}
       <div className="flex justify-center items-center min-h-screen p-4">
         <div className="w-full max-w-3xl bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row animate-fadeIn">
@@ -34,7 +37,9 @@ export default function CSEEvent() {
 
           {/* Right Side - Content */}
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
-            <h2 className="text-2xl font-bold text-gray-800">Paper Presentation</h2>
+            <h2 className="text-2xl font-bold text-gray-800">
+              Paper Presentation
+            </h2>
             <p className="text-gray-600 mt-2">
               This is a brief description of the event, explaining its purpose
               and key details.

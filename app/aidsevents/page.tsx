@@ -11,15 +11,19 @@ export default function CSEEvent() {
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={100}
       />
-      <div className="container flex items-center justify-center min-h-screen px-1 mx-auto">
-        <div className="text-center ">
-          <h1 className="text-4xl font-bold text-white">CSE Event</h1>
-          <p className="mt-1 text-xl text-zinc-400">
-            Details about the CSE event will be displayed Down.
-          </p>
-        </div>
-
+      
+      <div className="flex flex-col items-center justify-center h-screen text-center space-y-4">
+        <h1 className="text-4xl font-bold text-white">
+          IT Department - Events
+        </h1>
+        <p className="text-lg text-white max-w-md">
+          Discover new possibilities and explore endless opportunities. Scroll
+          down to learn more!
+        </p>
+        <br />
+        <div className="mt-6 animate-bounce text-7xl text-white">⬇️</div>
       </div>
+
       {/* event 1 */}
       <div className="flex justify-center items-center min-h-screen p-4">
         <div className="w-full max-w-3xl bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row animate-fadeIn">

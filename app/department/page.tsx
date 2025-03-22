@@ -3,6 +3,7 @@ import React from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Navbar from "./nav";
 import Image from "next/image";
+import cse from "./assets/cse.png";
 import IconsPage from "./deptsec1";
 import dm from "./assets/dummy.png";
 import Particles from "../components/particles";
@@ -12,7 +13,7 @@ import { Card } from "./card";
 
 const socials = [
   {
-    href: "/cseevents", // Updated path name
+    href: "/cse-events", // Updated path name
     label: "CSE",
     desc: "CyberZen",
     event1: "Paper Presentation",
@@ -20,10 +21,10 @@ const socials = [
     event3: "WebDesging",
     event4: "E-Football",
     event5: "Fire Crackers",
-    image: dm,
+    image: cse,
   },
   {
-    href: "/itevents",
+    href: "/it-events",
     label: "IT",
     desc: "Club Name",
     event1: "Paper Presentation",
@@ -34,7 +35,7 @@ const socials = [
     image: dm,
   },
   {
-    href: "/aidsevents",
+    href: "/aids-events",
     label: "AI & DS / AI & ML",
     desc: "Club Name",
     event1: "WEBGENIX",
@@ -45,7 +46,7 @@ const socials = [
     image: dm,
   },
   {
-    href: "#",
+    href: "ece-events",
     label: "ECE",
     desc: "Club Name",
     event1: "Paper Presentation",
@@ -56,7 +57,7 @@ const socials = [
     image: dm,
   },
   {
-    href: "#",
+    href: "mech-events",
     label: "MECH",
     desc: "Club Name",
     event1: "Paper presentation",
@@ -67,7 +68,7 @@ const socials = [
     image: dm,
   },
   {
-    href: "#",
+    href: "agri-events",
     label: "Agri",
     desc: "Club Name",
     event1: "Paper presentation",
@@ -78,7 +79,7 @@ const socials = [
     image: dm,
   },
   {
-    href: "#",
+    href: "bme-events",
     label: "BME",
     desc: "Club Name",
     event1: "Paper presentation",
