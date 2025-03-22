@@ -21,7 +21,7 @@ const IconsPage: React.FC = () => {
         <p style={{ fontSize: "5vh" }}>7</p>
         <p style={{ fontSize: "4vh" }}>Departments</p>
       </div>
-      <div className="flex flex-col items-center svg-icon space-y-2 lg:mr-20 mr-0  mb-10 md:mr-20 mont mr-0">
+      <div className="flex flex-col items-center svg-icon space-y-2 lg:mr-20 mb-10 md:mr-20 mont">
         <div className="mx-auto d-block svg-icon">
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -26,11 +26,11 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Innoverse 2k25",
         description: "National level technical symposium",
-        url: "https://innoverse-2k25.com", // Update with actual website URL
+        url: "https://symposium-landing-site.vercel.app/", // Update with actual website URL
         siteName: "Innoverse",
         images: [
             {
-                url: "https://raw.githubusercontent.com/cbeAbishek/Technokreaticon-Expo/refs/heads/main/public/images/SEO%20meta%20tag%20techno.jpg",
+                url: "https://raw.githubusercontent.com/cbeAbishek/Symposium_landing_site/refs/heads/main/public/innoverse.jpg",
                 width: 1200,
                 height: 630,
                 alt: "Innoverse 2k25 Banner",

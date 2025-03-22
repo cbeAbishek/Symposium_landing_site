@@ -26,13 +26,16 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": [
-        "./src/components/*"
+        "./app/components/*"
       ],
       "@utils/*": [
         "./src/utils/*"
       ],
       "@pages/*": [
-        "./src/pages/*"
+        "./app/pages/*"
+      ],
+      "@/*": [
+        "./src/*"
       ]
     }
   },
