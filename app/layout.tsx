@@ -93,7 +93,7 @@ export default function RootLayout({
       <head>
         <Analytics />
       </head>
-      <body className={`bg-black`}>
+      <body className="bg-black">
         {children}
       </body>
     </html>
