@@ -10,26 +10,27 @@ export const revalidate = 60;
 
 const redis = Redis.fromEnv();
 
-export async function generateStaticParams() {
+// ✅ Define the correct type explicitly
+type Params = { slug: string };
+
+export async function generateStaticParams(): Promise<Params[]> {
   return allProjects
     .filter((p) => p.published)
     .map((p) => ({ slug: p.slug }));
 }
 
-// ✅ Explicitly define the type for params to avoid the Promise type issue
-interface PostPageProps {
-  params: Awaited<ReturnType<typeof generateStaticParams>>[number];
-}
+export default async function PostPage({ params }: { params: Params }) {
+  if (!params?.slug) {
+    notFound();
+  }
 
-export default async function PostPage({ params }: PostPageProps) {
-  const { slug } = params;
-  const project = allProjects.find((project) => project.slug === slug);
+  const project = allProjects.find((project) => project.slug === params.slug);
 
   if (!project) {
     notFound();
   }
 
-  const views = (await redis.get<number>(`pageviews:projects:${slug}`)) ?? 0;
+  const views = (await redis.get<number>(`pageviews:projects:${params.slug}`)) ?? 0;
 
   return (
     <div className="bg-zinc-50 min-h-screen">
