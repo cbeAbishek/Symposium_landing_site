@@ -61,14 +61,14 @@ export default function Example() {
   return (
     <div className=" bg-gradient-to-tl sm:pt-0 lg:pt-20  p-8 from-emerald-950 via-indigo-950 to-teal-900/0">
       <Navigation />
-	  <Particles
-          className="absolute inset-0 z-10 animate-fade-in"
-          quantity={200}
-        />
+      <Particles
+        className="absolute inset-0 z-10 animate-fade-in"
+        quantity={200}
+      />
       <div className="container flex items-center  justify-center min-h-screen px-4 mx-auto">
         <div className="grid w-full grid-cols-1 gap-8 z-40 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-8">
-          {socials.map((s) => (
-            <Card>
+          {socials.map((s, index) => (
+            <Card key={index}>
               <Link
                 href={s.href}
                 target="_blank"

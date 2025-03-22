@@ -10,13 +10,20 @@ export const revalidate = 60;
 
 const redis = Redis.fromEnv();
 
+// Update the return type for generateStaticParams
 export async function generateStaticParams() {
   return allProjects
     .filter((p) => p.published)
     .map((p) => ({ slug: p.slug }));
 }
 
-export default async function PostPage({ params }: { params: { slug: string } }) {
+// Fix the page component by using the correct type pattern for Next.js App Router
+export default async function PostPage({
+  params,
+}: {
+  params: { slug: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+}) {
   if (!params?.slug) {
     notFound();
   }
