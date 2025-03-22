@@ -93,7 +93,9 @@ export default function RootLayout({
       <head>
         <Analytics />
       </head>
-      <body className="bg-black">{children}</body>
+      <body className="bg-black">
+        {children}
+      </body>
     </html>
   );
 }

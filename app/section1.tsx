@@ -1,14 +1,16 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import Particles from "./components/particles";
 
 export default function Home2() {
   return (
     <>
-      <Particles
-        className="absolute inset-0 z-40 animate-fade-in"
-        quantity={100}
-      />
+      {typeof window !== "undefined" && (
+        <Particles
+          className="absolute inset-0 z-40 animate-fade-in"
+          quantity={100}
+        />
+      )}
       <div
         style={{ maxWidth: "100%", minHeight: "100vh" }}
         className="flex flex-col z-20 items-center overflow-hidden bg-gradient-to-tr from-zinc-950/20 via-teal-950 to-zinc-950/100"
@@ -51,11 +53,13 @@ export default function Home2() {
           Repellendus error inventore incidunt veritatis repellat perferendis
           nam cum dolores? Accusantium.
         </p>
-        
+
         <footer className="text-white py-6">
           <div className="container mx-auto text-center">
             <p className="text-sm">
-            <a href="https://cbeabishek.github.io/Abishek-portfoilio/">Desgined and Developed by Abishek CSE 3rd Year </a>
+              <a href="https://cbeabishek.github.io/Abishek-portfoilio/">
+                Desgined and Developed by Abishek CSE 3rd Year{" "}
+              </a>
             </p>
           </div>
         </footer>
