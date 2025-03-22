@@ -101,7 +101,7 @@ export default function Example() {
       <div className="container flex items-center justify-center min-h-screen px-4 mx-auto">
         <div className="grid w-full grid-cols-1 gap-8 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-10">
           {socials.map((s) => (
-            <Card key={s.event1}>
+            <Card key={s.label}>
               <div className="p-4 relative flex flex-col items-center gap-4 duration-700 group md:gap-8 md:py-24 lg:pb-10 md:p-16">
                 <span
                   className="absolute w-px  bg-gradient-to-b from-zinc-900 via-zinc-500/50 to-transparent"
@@ -131,7 +131,7 @@ export default function Example() {
                     {s.event5}
                   </span>
                   <div className="flex justify-center  pt-10">
-                    <Link href={s.href} target="_blank" className="button-link">
+                    <Link href={s.href}  className="button-link">
                       <button className="card-button  inline-flex items-center group">
                         More Details
                         <span className="ml-2 transition-transform group-hover:translate-x-2 motion-reduce:transform-none">

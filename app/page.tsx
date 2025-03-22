@@ -99,7 +99,7 @@ export default function Home() {
           className="absolute inset-0 -z-40 animate-fade-in"
           quantity={100}
         />
-        <h1 className=" 2xl:text-9xl z-30 text-5xl lg:text-7xl md:text-6xl xl:text-8xl  text-gradient text-transparent duration-1000 bg-zinc-50 cursor-default text-edge-outline animate-title font-display  md:text-9xl whitespace-nowrap bg-clip-text ">
+        <h1 className=" 2xl:text-9xl z-30 text-5xl lg:text-7xl xl:text-8xl  text-gradient text-transparent duration-1000 bg-zinc-50 cursor-default text-edge-outline animate-title font-display  md:text-9xl whitespace-nowrap bg-clip-text ">
           Innoverse 2k25
         </h1>
         <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
