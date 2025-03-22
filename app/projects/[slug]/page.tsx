@@ -11,29 +11,34 @@ export const revalidate = 60;
 const redis = Redis.fromEnv();
 
 export async function generateStaticParams() {
-    return allProjects
-        .filter((p) => p.published)
-        .map((p) => ({ slug: p.slug }));
+  return allProjects
+    .filter((p) => p.published)
+    .map((p) => ({ slug: p.slug }));
 }
 
-export default async function PostPage({ params }: { params: { slug: string } }) {
-    const { slug } = params;
-    const project = allProjects.find((project) => project.slug === slug);
+// ✅ Explicitly define the type for params to avoid the Promise type issue
+interface PostPageProps {
+  params: Awaited<ReturnType<typeof generateStaticParams>>[number];
+}
 
-    if (!project) {
-        notFound();
-    }
+export default async function PostPage({ params }: PostPageProps) {
+  const { slug } = params;
+  const project = allProjects.find((project) => project.slug === slug);
 
-    const views = (await redis.get<number>(`pageviews:projects:${slug}`)) ?? 0;
+  if (!project) {
+    notFound();
+  }
 
-    return (
-        <div className="bg-zinc-50 min-h-screen">
-            <Header project={project} views={views} />
-            <ReportView slug={project.slug} />
+  const views = (await redis.get<number>(`pageviews:projects:${slug}`)) ?? 0;
 
-            <article className="px-4 py-12 mx-auto prose prose-zinc prose-quoteless">
-                <Mdx code={project.body.code} />
-            </article>
-        </div>
-    );
+  return (
+    <div className="bg-zinc-50 min-h-screen">
+      <Header project={project} views={views} />
+      <ReportView slug={project.slug} />
+
+      <article className="px-4 py-12 mx-auto prose prose-zinc prose-quoteless">
+        <Mdx code={project.body.code} />
+      </article>
+    </div>
+  );
 }
