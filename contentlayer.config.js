@@ -16,6 +16,7 @@ const computedFields = {
 	},
 };
 
+
 export const Project = defineDocumentType(() => ({
 	name: "Project",
 	filePathPattern: "./projects/**/*.mdx",
@@ -100,3 +101,4 @@ export default makeSource({
 		],
 	},
 });
+

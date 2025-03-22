@@ -37,7 +37,7 @@ export const Navigation: React.FC = () => {
             >
               <ArrowLeft className="w-8 h-8" />
             </Link>
-            <div className="flex-shrink-0 mx-4 hidden sm:block">
+            <div className="flex-shrink-0 mx-0 hidden sm:block">
               <Link href="/">
                 <Image
                   src={licet}
@@ -56,7 +56,7 @@ export const Navigation: React.FC = () => {
               Departments
             </Link> */}
             <Link
-              href="/contact"
+              href="/cseevents"
               className="duration-500  font-display  text-xl text-orange-400 hover:text-orange-600"
             >
               Contact

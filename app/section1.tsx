@@ -2,12 +2,6 @@ import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
 
-const navigation = [
-  { name: "Departments", href: "/department" },
-  // { name: "Projects", href: "/projects" },
-  // { name: "Contact", href: "/contact" },
-];
-
 export default function Home2() {
   return (
     <>
@@ -57,19 +51,7 @@ export default function Home2() {
           Repellendus error inventore incidunt veritatis repellat perferendis
           nam cum dolores? Accusantium.
         </p>
-
-        {/* <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-        <div className="my-16 text-center border-2 border-zinc-50 rounded-xl animate-fade-in">
-          {navigation.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
-            >
-              <button className="button1 border-2 border-zinc-50"></button>
-            </Link>
-          ))}
-        </div> */}
+        
         <footer className="text-white py-6">
           <div className="container mx-auto text-center">
             <p className="text-sm">
