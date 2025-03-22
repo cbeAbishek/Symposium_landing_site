@@ -12,31 +12,30 @@ export default function CSEEvent() {
         quantity={100}
       />
       <div className="flex flex-col items-center justify-center h-screen text-center space-y-4">
-        <h1 className="text-4xl font-bold text-white">CSE - Events</h1>
-        <h3 className="text-4xl font-bold text-white">CyberZen</h3>
+        <h1 className="text-4xl font-bold text-white">
+          CSE - Events
+        </h1>
+        <h3 className="text-4xl font-bold text-white">
+          CyberZen
+        </h3>
         <p className="text-lg text-white max-w-md">
           Discover new possibilities and explore endless opportunities. Scroll
           down to learn more!
         </p>
         <div className="mb-4">
-          <a href="https://symposium-landing-site.vercel.app/">
-            <button
-              type="button"
-              className="flex max-w-sm w-full bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-500 hover:from-indigo-600 hover:via-pink-600 hover:to-red-600 focus:outline-none text-white text-2xl uppercase font-bold shadow-md rounded-lg mx-auto p-5"
-            >
-              <div className="flex sm:flex-cols-12 gap-6">
-                <div className="col-span-2 pt-1.5">Register Now</div>
-              </div>
-            </button>
-          </a>
-        </div>
+                <a href="https://symposium-landing-site.vercel.app/"><button type="button" className='flex max-w-sm w-full bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-500 hover:from-indigo-600 hover:via-pink-600 hover:to-red-600 focus:outline-none text-white text-2xl uppercase font-bold shadow-md rounded-lg mx-auto p-5'>
+                    <div className="flex sm:flex-cols-12 gap-6">
+                        <div className="col-span-2 pt-1.5">Register Now</div>
+                    </div>    
+                </button></a>
+            </div>
         <br />
         <div className="mt-6 animate-bounce text-7xl text-white">⬇️</div>
       </div>
 
       {/* event 1 */}
       <div className="flex justify-center items-center min-h-screen p-4">
-        <div className="w-full max-w-3xl bg-blue-800 shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row animate-fadeIn">
+        <div className="w-full max-w-3xl bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row animate-fadeIn">
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
@@ -48,30 +47,23 @@ export default function CSEEvent() {
 
           {/* Right Side - Content */}
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
-            <h2 className="text-2xl font-bold text-white">
-              Paper Presentation
-            </h2>
-            <p className="text-white mt-2">
+            <h2 className="text-2xl font-bold text-gray-800">Paper Presentation</h2>
+            <p className="text-gray-600 mt-2">
               This is a brief description of the event, explaining its purpose
               and key details.
             </p>
-            <p className="text-white text-sm mt-2">
+            <p className="text-gray-500 text-sm mt-2">
               <strong>Guidelines:</strong> Please follow the event rules for a
               great experience.
             </p>
 
             {/* Buttons */}
             <div className="flex gap-4 mt-4">
-              
-              <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
-                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
-                Guidelines
-                </span>
+              <button className="px-4 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 transition-all">
+                Guidlines
               </button>
-              <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
-                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
-                  Register now
-                </span>
+              <button className="px-4 py-2 bg-green-500 text-white rounded-md shadow-md hover:bg-green-600 transition-all">
+                Register Now
               </button>
             </div>
           </div>
