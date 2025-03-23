@@ -73,7 +73,7 @@ const socials = [
     desc: "Club Name",
     event1: "Paper presentation",
     event2: "Poster Design",
-    event3: "roject Expo",
+    event3: "Project Expo",
     event4: "Flameless cooking",
     event5: "Nature photography",
     image: dm,

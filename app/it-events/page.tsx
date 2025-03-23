@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function CSEEvent() {
   return (
-    <div className="bg-gradient-to-tl sm:pt-0 lg:pt-40 p-8 from-zinc-950 via-indigo-950 to-zinc-900/0">
+    <div className="bg-gradient-to-tl from-zinc-950 via-indigo-950 to-zinc-900/0">
       <Navigation />
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
@@ -15,8 +15,9 @@ export default function CSEEvent() {
       />
       <div className="flex flex-col items-center justify-center h-screen md:h-auto text-center space-y-4">
         <Image src={club} alt="Logo" width={200} height={200} />
-        <h1 className="text-4xl font-bold text-white">Agri - Events</h1>
-        <h3 className="text-4xl font-bold text-white">Club name</h3>
+        <h1 className="text-4xl font-bold text-white">
+          IT Department - Events
+        </h1>
         <p className="text-lg text-white max-w-md">
           Discover new possibilities and explore endless opportunities. Scroll
           down to learn more!
@@ -81,7 +82,7 @@ export default function CSEEvent() {
 
           {/* Right Side - Content */}
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
-            <h2 className="text-2xl font-bold text-gray-800">Poster Design</h2>
+            <h2 className="text-2xl font-bold text-gray-800">BEST MANAGER</h2>
             <p className="text-gray-600 mt-2">
               This is a brief description of the event, explaining its purpose
               and key details.
@@ -93,7 +94,7 @@ export default function CSEEvent() {
 
             {/* Buttons */}
             <div className="flex gap-4 mt-4">
-            <a href="#"><button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+              <a href="#"><button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                 <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                   Guidelines
                 </span>
@@ -121,7 +122,7 @@ export default function CSEEvent() {
 
           {/* Right Side - Content */}
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
-            <h2 className="text-2xl font-bold text-gray-800">Project Expo</h2>
+            <h2 className="text-2xl font-bold text-gray-800">WEBWEAVERS</h2>
             <p className="text-gray-600 mt-2">
               This is a brief description of the event, explaining its purpose
               and key details.
@@ -133,7 +134,7 @@ export default function CSEEvent() {
 
             {/* Buttons */}
             <div className="flex gap-4 mt-4">
-            <a href="#"><button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+              <a href="#"><button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                 <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                   Guidelines
                 </span>
@@ -161,7 +162,7 @@ export default function CSEEvent() {
 
           {/* Right Side - Content */}
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
-            <h2 className="text-2xl font-bold text-gray-800">Flameless cooking</h2>
+            <h2 className="text-2xl font-bold text-gray-800">E-SPORTS-FREE FIRE</h2>
             <p className="text-gray-600 mt-2">
               This is a brief description of the event, explaining its purpose
               and key details.
@@ -173,7 +174,7 @@ export default function CSEEvent() {
 
             {/* Buttons */}
             <div className="flex gap-4 mt-4">
-            <a href="#"><button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+              <a href="#"><button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                 <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                   Guidelines
                 </span>
@@ -201,7 +202,7 @@ export default function CSEEvent() {
 
           {/* Right Side - Content */}
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
-            <h2 className="text-2xl font-bold text-gray-800">Nature photography</h2>
+            <h2 className="text-2xl font-bold text-gray-800">GUESS IT RIGHT</h2>
             <p className="text-gray-600 mt-2">
               This is a brief description of the event, explaining its purpose
               and key details.
@@ -213,7 +214,7 @@ export default function CSEEvent() {
 
             {/* Buttons */}
             <div className="flex gap-4 mt-4">
-            <a href="#"><button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+              <a href="#"><button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                 <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                   Guidelines
                 </span>

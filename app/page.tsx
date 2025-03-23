@@ -8,7 +8,7 @@ import Home2 from "./section1";
 import "./page.css";
 
 const navigation = [
-  { name: "Departments", href: "/department" },
+  { name: "Events", href: "/department" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -95,18 +95,20 @@ export default function Home() {
           </ul>
         </nav>
         <div className="hidden -z-40 w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-        {typeof window !== 'undefined' && (
+        
+        {typeof window !== "undefined" && (
           <Particles
             className="absolute inset-0 -z-40 animate-fade-in"
             quantity={100}
           />
         )}
+        
         <h1 className=" 2xl:text-9xl z-30 text-5xl lg:text-7xl xl:text-8xl  text-gradient text-transparent duration-1000 bg-zinc-50 cursor-default text-edge-outline animate-title font-display  md:text-9xl whitespace-nowrap bg-clip-text ">
           Innoverse 2k25
         </h1>
         <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-
         <div>
+          {/* Timer */}
           <div className="countdown m-8 font-display lg:text-3xl mx-auto d-block animate-fade-in text-white">
             <div className="countdown-item lg:pr-5">
               <span className="countdown-number" id="days">
@@ -157,12 +159,12 @@ export default function Home() {
               </span>
             </div>
           </div>
-
-          <div className="m-8 font-display lg:text-3xl text-center text-white flex justify-center items-center">
+          {/* Changeable wordings */}
+          <div className="m-8 font-display lg:text-3xl text-center animate-fade-in text-white flex justify-center items-center">
             <span className="typing-effect">{displayedText}</span>
             <span className="blinking-cursor">|</span>
           </div>
-
+          {/* Button */}
           <div className="my-16 text-center z-40  rounded-xl">
             {navigation.map((item) => (
               <Link

@@ -1,6 +1,7 @@
-import Link from "next/link";
 import React, { useEffect } from "react";
 import Particles from "./components/particles";
+import AnimatedImage from "./image";
+import FAQ from "./faq";
 
 export default function Home2() {
   return (
@@ -12,7 +13,7 @@ export default function Home2() {
         />
       )}
       <div
-        style={{ maxWidth: "100%", minHeight: "100vh" }}
+        style={{ maxWidth: "100%", minHeight: "100%" }}
         className="flex flex-col z-20 items-center overflow-hidden bg-gradient-to-tr from-zinc-950/20 via-teal-950 to-zinc-950/100"
       >
         <nav className="my-16 s animate-fade-in">
@@ -50,6 +51,12 @@ export default function Home2() {
           registration, and participation guidelines, stay tuned to our website.
           Let’s innovate, inspire, and ignite the spark of excellence together!
         </p>
+        <br />
+        <div >
+          <AnimatedImage src="/Innuoverse2k25.jpg" />
+        </div>
+      <FAQ />
+
         <footer className="text-white py-6">
           <div className="container mx-auto text-center">
             <p className="text-sm">

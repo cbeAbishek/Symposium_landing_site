@@ -25,7 +25,7 @@
     "bootstrap": "^5.3.1",
     "clsx": "^2.1.1",
     "contentlayer": "^0.3.4",
-    "framer-motion": "^10.16.1",
+    "framer-motion": "^10.18.0",
     "generate": "^0.8.0",
     "lucide-react": "^0.220.0",
     "markdown-wasm": "^1.2.0",

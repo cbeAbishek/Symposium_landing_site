@@ -4,24 +4,12 @@ import LocalFont from "next/font/local";
 import { Analytics } from "./components/analytics";
 
 export const metadata = {
-  /**
-   * Page Title Configuration
-   * - `default`: The default title when no specific title is provided.
-   * - `template`: A template format where %s is replaced with the page-specific title.
-   */
   title: {
     default: "Innoverse 2k25",
     template: "%s | Innoverse",
   },
-
-  /**
-   * Meta Description (improves SEO and search engine ranking)
-   */
   description: "National level technical symposium",
 
-  /**
-   * Open Graph Meta Tags (for rich previews on social media platforms)
-   */
   openGraph: {
     title: "Innoverse 2k25",
     description: "National level technical symposium",
@@ -35,13 +23,9 @@ export const metadata = {
         alt: "Innoverse 2k25 Banner",
       },
     ],
-    locale: "en-US",
     type: "website",
   },
 
-  /**
-   * Robots Meta Tags (controls search engine crawling and indexing)
-   */
   robots: {
     index: true, // Allow search engines to index the page
     follow: true, // Allow search engines to follow links on the page
@@ -53,17 +37,10 @@ export const metadata = {
       "max-snippet": -1, // No limit on snippet length
     },
   },
-
-  /**
-   * Favicon & Shortcut Icon
-   */
   icons: {
     shortcut: "/licet.png", // Path to favicon or shortcut icon
   },
 
-  /**
-   * Twitter Card Meta Tags (enhances link previews on Twitter)
-   */
   twitter: {
     card: "summary_large_image",
     title: "Innoverse 2k25",
