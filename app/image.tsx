@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
 
+
 interface AnimatedImageProps {
   src: string | StaticImageData;
   alt?: string;

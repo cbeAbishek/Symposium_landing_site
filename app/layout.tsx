@@ -45,7 +45,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Innoverse 2k25",
     description: "National level technical symposium",
-    images:"https://raw.githubusercontent.com/cbeAbishek/Symposium_landing_site/refs/heads/main/public/innoverse.jpg",
+    images:"https://i.ibb.co/HfvBBB33/innoverse.jpg",
   },
 };
 

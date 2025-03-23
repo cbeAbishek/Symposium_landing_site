@@ -56,7 +56,7 @@ export const Navigation: React.FC = () => {
               Departments
             </Link> */}
             <Link
-              href="/cseevents"
+              href="/contact"
               className="duration-500  font-display  text-xl text-orange-400 hover:text-orange-600"
             >
               Contact

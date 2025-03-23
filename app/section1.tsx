@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Particles from "./components/particles";
 import AnimatedImage from "./image";
 import FAQ from "./faq";
+import VideoSection from "./VideoSection";
 
 export default function Home2() {
   return (
@@ -56,6 +57,8 @@ export default function Home2() {
           <AnimatedImage src="/Innuoverse2k25.jpg" />
         </div>
       <FAQ />
+      <br />
+      <VideoSection/>
 
         <footer className="text-white py-6">
           <div className="container mx-auto text-center">
