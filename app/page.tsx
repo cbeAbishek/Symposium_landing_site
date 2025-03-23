@@ -7,6 +7,7 @@ import Image from "next/image";
 import Home2 from "./section1";
 import "./page.css";
 
+
 const navigation = [
   { name: "Events", href: "/department" },
   { name: "Contact", href: "/contact" },
@@ -185,6 +186,7 @@ export default function Home() {
         </div>
       </div>
       <Home2 />
+      
     </>
   );
 }

@@ -3,6 +3,7 @@ import Particles from "./components/particles";
 import AnimatedImage from "./image";
 import FAQ from "./faq";
 import VideoSection from "./VideoSection";
+import TeamSection from "./TeamSection";
 
 export default function Home2() {
   return (
@@ -59,7 +60,7 @@ export default function Home2() {
       <FAQ />
       <br />
       <VideoSection/>
-
+      {/* <TeamSection /> */}
         <footer className="text-white py-6">
           <div className="container mx-auto text-center">
             <p className="text-sm">

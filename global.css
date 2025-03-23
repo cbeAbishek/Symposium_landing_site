@@ -20,7 +20,7 @@ svg:hover {
   align-items: center;
   gap: 10px;
   font-size: 24px;
-  background: -webkit-linear-gradient(#dfdcdc, #fa0b0b);
+  background: -webkit-linear-gradient(#dfdcdc, #028723);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -33,6 +33,7 @@ svg:hover {
 
 .countdown-number {
   font-weight: bold;
+  font-size: 40px;
   color: #ffffff;
 }
 
