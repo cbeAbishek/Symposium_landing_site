@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import Navbar from "./nav";
 import Image from "next/image";
 import cse from "./assets/cse.png";
+import agri from "./assets/agri2.png";
 import IconsPage from "./deptsec1";
 import dm from "./assets/dummy.png";
 import Particles from "../components/particles";
@@ -72,11 +73,11 @@ const socials = [
     label: "Agri",
     desc: "Club Name",
     event1: "Paper presentation",
-    event2: "Poster Design",
+    event2: "Quiz",
     event3: "Project Expo",
-    event4: "Flameless cooking",
-    event5: "Nature photography",
-    image: dm,
+    event4: "Segment identifier",
+    event5: "Sharp your pencil",
+    image: agri,
   },
   {
     href: "bme-events",

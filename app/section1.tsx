@@ -59,8 +59,8 @@ export default function Home2() {
         </div>
       <FAQ />
       <br />
-      <VideoSection/>
-      {/* <TeamSection /> */}
+      {/* <VideoSection/> */}
+      <TeamSection />
         <footer className="text-white py-6">
           <div className="container mx-auto text-center">
             <p className="text-sm">
