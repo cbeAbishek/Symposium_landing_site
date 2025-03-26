@@ -48,12 +48,17 @@ export default function CSEEvent() {
               Paper Presentation
             </h2>
             <p className="text-gray-600 mt-2">
-              This is a brief description of the event, explaining its purpose
-              and key details.
+              A total number of 4 members are only allowed in a team to present
+              their research/review.   The topics for the paper presentation can
+              be selected from the mentioned themes.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              <strong>Guidelines:</strong> Please follow the event rules for a
-              great experience.
+              <strong>Guidelines:</strong> Participants need to upload their
+              presentation at agrowingz.ppgit@gmail.com Participants need to
+              bring their presentations in a pen-drive.   A minimum number of 10
+              and maximum upto 15 slides are only acceptable.   The time limit
+              for presentation by each team is 5-7 minutes including panel
+              discussion
             </p>
 
             {/* Buttons */}
@@ -92,12 +97,14 @@ export default function CSEEvent() {
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
             <h2 className="text-2xl font-bold text-gray-800">Quiz</h2>
             <p className="text-gray-600 mt-2">
-              This is a brief description of the event, explaining its purpose
-              and key details.
+              The maximum number of students per team is restricted to 2.
+              Questions will be from general and agricultural engineering
+              aspects.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              <strong>Guidelines:</strong> Please follow the event rules for a
-              great experience.
+              <strong>Guidelines:</strong> Rounds: Two rounds will be there. The
+              first round will be a written test (MCQ) and it will be qualifying
+              in nature. The second round will be oral round.
             </p>
 
             {/* Buttons */}
@@ -136,12 +143,19 @@ export default function CSEEvent() {
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
             <h2 className="text-2xl font-bold text-gray-800">Project Expo</h2>
             <p className="text-gray-600 mt-2">
-              This is a brief description of the event, explaining its purpose
-              and key details.
+              Team Size: Max 2 to 4 members  Project Requirements: Must present
+              original work with a fully functional prototype or working model.
+              A practical demonstration is essential.  Time Limit: Presentation
+              time of 5 to 8 minutes, followed by a 2 to 3-minute Q&A session. 
+              Judging Criteria: Innovation & Problem-Solving, Technical
+              Viability, Real-World
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              <strong>Guidelines:</strong> Please follow the event rules for a
-              great experience.
+              <strong>Guidelines:</strong>Judging Criteria: Innovation &
+              Problem-Solving, Technical Viability, Real-World Application,
+              Scalability, and Presentation Clarity  Disqualification Grounds:
+              Submitting copied or unoriginal work, not adhering to the theme,
+              failure to follow rules or meet eligibility standard.
             </p>
 
             {/* Buttons */}
@@ -182,12 +196,14 @@ export default function CSEEvent() {
               Segment identifier
             </h2>
             <p className="text-gray-600 mt-2">
-              This is a brief description of the event, explaining its purpose
-              and key details.
+              Team Size: Maximum 2 Objective: Identify tractor segments (engine
+              type, transmission, application, etc.) based on clues provided.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              <strong>Guidelines:</strong> Please follow the event rules for a
-              great experience.
+              <strong>Guidelines:</strong> Time Limit: Each team has 2 minutes
+              to identify each segment.  Judging: Points awarded for accuracy,
+              speed, and team collaboration. Incorrect or late answers lead to
+              point deductions.
             </p>
 
             {/* Buttons */}
@@ -228,12 +244,20 @@ export default function CSEEvent() {
               Sharp your pencil
             </h2>
             <p className="text-gray-600 mt-2">
-              This is a brief description of the event, explaining its purpose
-              and key details.
+              Team Size: Maximum 2 Single Round: The competition will consist of
+              one round only.  Materials Provided: A chart will be provided to
+              each participant, but no additional kits or materials will be
+              given.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              <strong>Guidelines:</strong> Please follow the event rules for a
-              great experience.
+              <strong>Guidelines:</strong> Drawing & Presentation: Participants
+              will need to use the provided chart to showcase their ideas or
+              solutions related to agricultural technology.  Time Limit:
+              Participants will have a set time to complete their presentation
+              or drawing (e.g., 15-20 minutes). Judging Criteria: Entries will
+              be judged on creativity, relevance to technology in agriculture,
+              and clarity of presentation.  No External Help: Only the materials
+              provided can be used. No external references or aids are allowed.
             </p>
 
             {/* Buttons */}

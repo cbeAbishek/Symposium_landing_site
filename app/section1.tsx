@@ -21,7 +21,7 @@ export default function Home2() {
         <nav className="my-16 s animate-fade-in">
           <ul className="flex items-center text-6xl  justify-center ">
             <p className=" text-orange-600 pl-8 font-display">
-              About Innoverse{" "}
+              About Viyugam{" "}
             </p>
           </ul>
         </nav>
