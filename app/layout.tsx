@@ -5,22 +5,22 @@ import { Analytics } from "./components/analytics";
 
 export const metadata = {
   title: {
-    default: "Innoverse 2k25",
-    template: "%s | Innoverse",
+    default: "Viyugam 2k25",
+    template: "%s | Viyugam",
   },
   description: "National level technical symposium",
 
   openGraph: {
-    title: "Innoverse 2k25",
+    title: "Viyugam 2k25",
     description: "National level technical symposium",
     url: "https://symposium-landing-site.vercel.app/", // Update with actual website URL
-    siteName: "Innoverse",
+    siteName: "Viyugam",
     images: [
       {
-        url: "https://raw.githubusercontent.com/cbeAbishek/Symposium_landing_site/refs/heads/main/public/innoverse.jpg",
+        url: "https://raw.githubusercontent.com/cbeAbishek/Symposium_landing_site/refs/heads/main/public/Viyugam.jpg",
         width: 1200,
         height: 630,
-        alt: "Innoverse 2k25 Banner",
+        alt: "Viyugam 2k25 Banner",
       },
     ],
     type: "website",
@@ -43,7 +43,7 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Innoverse 2k25",
+    title: "Viyugam 2k25",
     description: "National level technical symposium",
     images:"https://i.ibb.co/HDHzZt7y/meta.jpg",
   },

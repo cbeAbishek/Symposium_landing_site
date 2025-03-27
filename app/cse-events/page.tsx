@@ -277,6 +277,7 @@ export default function CSEEvent() {
           </div>
         </div>
       </div>
+      
     </div>
   );
 }
