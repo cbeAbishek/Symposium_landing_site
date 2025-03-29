@@ -28,8 +28,8 @@ export default function Home2() {
         <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/3 via-zinc-300/50 to-zinc-300/0" />
 
         <p className="p-margin text-justify font-display text-lg text-zinc-50 t animate-fade-in">
-          Welcome to Innoverse , the flagship national-level symposium hosted by
-          the PPG Institute of Technology ! Celebrated annually, Innoverse is a
+          Welcome to Viyugam , the flagship national-level symposium hosted by
+          the PPG Institute of Technology ! Celebrated annually, Viyugam is a
           vibrant platform that brings together students, professionals, and
           innovators from across the country to showcase their talents in both
           technical and non-technical domains. Organized department-wise, this
@@ -40,13 +40,13 @@ export default function Home2() {
         </p>
 
         <p className="p-margin mt-10 text-lg text-justify font-display text-zinc-50 animate-fade-in">
-          Innoverse fosters an environment of innovation, collaboration, and
+          Viyugam fosters an environment of innovation, collaboration, and
           healthy competition. Participants get the opportunity to network with
           industry experts, gain hands-on experience, and enhance their skills
           while competing for exciting prizes and recognition. With its dynamic
-          blend of events, Innoverse caters to every interest and passion,
+          blend of events, Viyugam caters to every interest and passion,
           ensuring there’s something for everyone to explore and excel in. Join
-          us as we celebrate creativity, intellect, and teamwork at Innoverse –
+          us as we celebrate creativity, intellect, and teamwork at Viyugam –
           where ideas transform into reality! Whether you're a tech enthusiast
           or a creative mind, mark your calendars and be part of this
           extraordinary journey. For more details on event schedules,

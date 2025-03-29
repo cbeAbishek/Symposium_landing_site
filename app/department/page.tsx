@@ -1,14 +1,16 @@
 import Link from "next/link";
 import React from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import Navbar from "./nav";
 import Image from "next/image";
 import cse from "./assets/cse.png";
 import agri from "./assets/agri2.png";
+import aids from "./assets/aids.png";
+import bme from "./assets/bme.png";
+import it from "./assets/it.png";
+import ece from "./assets/ece.png";
+import mech from "./assets/mech.png";
 import IconsPage from "./deptsec1";
-import dm from "./assets/dummy.png";
 import Particles from "../components/particles";
-import { Github, Mail, Twitter, PhoneCallIcon } from "lucide-react";
 import { Navigation } from "../components/nav";
 import { Card } from "./card";
 
@@ -30,10 +32,10 @@ const socials = [
     desc: "Club Name",
     event1: "Paper Presentation",
     event2: "BEST MANAGER",
-    event3: "WEBWEAVERS",
+    event3: "WEB WEAVERS",
     event4: "E-SPORTS-FREE FIRE",
     event5: "GUESS IT RIGHT",
-    image: dm,
+    image: it,
   },
   {
     href: "/aids-events",
@@ -41,10 +43,10 @@ const socials = [
     desc: "Club Name",
     event1: "WEBGENIX",
     event2: "TECHTALK",
-    event3: "CECHTALK",
-    event4: "CONNECTION",
-    event5: "IONNECTION",
-    image: dm,
+    event3: "Code Detox",
+    event4: "Harmonic Flow",
+    event5: "Instaflicks",
+    image: aids,
   },
   {
     href: "ece-events",
@@ -55,7 +57,7 @@ const socials = [
     event3: "Clash Masters",
     event4: "Short film",
     event5: "Adventure Stash",
-    image: dm,
+    image: ece,
   },
   {
     href: "mech-events",
@@ -66,7 +68,7 @@ const socials = [
     event3: "Cad modeling",
     event4: "Mr mechanic",
     event5: "and more...",
-    image: dm,
+    image: mech,
   },
   {
     href: "agri-events",
@@ -88,7 +90,7 @@ const socials = [
     event3: "Ideathon",
     event4: "Junkyard Art",
     event5: "Doodle War",
-    image: dm,
+    image: bme,
   },
 ];
 

@@ -21,7 +21,7 @@ export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
 
   const sentences = [
-    "Welcome to Innoverse 2k25",
+    "Welcome to Viyugam 2k25",
     "Join us for an unforgettable experience",
     "Innovation meets creativity",
     "Countdown to the big event",

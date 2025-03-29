@@ -2,7 +2,7 @@ import React from "react";
 import { Navigation } from "../components/nav";
 import Particles from "../components/particles";
 import dummy from "./dummy.jpg";
-import club from "../department/assets/dep.png";
+import club from "../department/assets/aids.png";
 import Image from "next/image";
 
 export default function CSEEvent() {
@@ -55,14 +55,14 @@ export default function CSEEvent() {
 
             {/* Buttons */}
             <div className="flex gap-4 mt-4">
-              <a href="#">
+              <a href="https://drive.google.com/file/d/18G6MjoAuWlMXUD6mtKnxZlAJkqspd29e/view?usp=drivesdk">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Guidelines
                   </span>
                 </button>
               </a>
-              <a href="#">
+              <a href="https://forms.gle/mmc2ZdPjf474f8s17">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Register now
@@ -99,14 +99,14 @@ export default function CSEEvent() {
 
             {/* Buttons */}
             <div className="flex gap-4 mt-4">
-              <a href="#">
+              <a href="https://drive.google.com/file/d/188SWmZCkeDeuGdeQEiUBxWAFsfFrO8G4/view?usp=drivesdk">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Guidelines
                   </span>
                 </button>
               </a>
-              <a href="#">
+              <a href="https://forms.gle/mmc2ZdPjf474f8s17">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Register now
@@ -131,7 +131,7 @@ export default function CSEEvent() {
 
           {/* Right Side - Content */}
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
-            <h2 className="text-2xl font-bold text-gray-800">CECHTALK</h2>
+            <h2 className="text-2xl font-bold text-gray-800">Code Detox</h2>
             <p className="text-gray-600 mt-2">
               This is a brief description of the event, explaining its purpose
               and key details.
@@ -143,14 +143,14 @@ export default function CSEEvent() {
 
             {/* Buttons */}
             <div className="flex gap-4 mt-4">
-              <a href="#">
+              <a href="https://drive.google.com/file/d/18AFNZUT7ddLymkPjR3Fty025PKvzsQD1/view?usp=drivesdk">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Guidelines
                   </span>
                 </button>
               </a>
-              <a href="#">
+              <a href="https://forms.gle/mmc2ZdPjf474f8s17">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Register now
@@ -175,7 +175,7 @@ export default function CSEEvent() {
 
           {/* Right Side - Content */}
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
-            <h2 className="text-2xl font-bold text-gray-800">CONNECTION</h2>
+            <h2 className="text-2xl font-bold text-gray-800">Harmonic Flow</h2>
             <p className="text-gray-600 mt-2">
               This is a brief description of the event, explaining its purpose
               and key details.
@@ -187,14 +187,14 @@ export default function CSEEvent() {
 
             {/* Buttons */}
             <div className="flex gap-4 mt-4">
-              <a href="#">
+              <a href="https://drive.google.com/file/d/184QzYJZ4-BclRzKnZ3T3EJk4tADtPYVK/view?usp=drivesdk">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Guidelines
                   </span>
                 </button>
               </a>
-              <a href="#">
+              <a href="https://forms.gle/mmc2ZdPjf474f8s17">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Register now
@@ -219,7 +219,7 @@ export default function CSEEvent() {
 
           {/* Right Side - Content */}
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
-            <h2 className="text-2xl font-bold text-gray-800">IONNECTION</h2>
+            <h2 className="text-2xl font-bold text-gray-800">Instaflicks</h2>
             <p className="text-gray-600 mt-2">
               This is a brief description of the event, explaining its purpose
               and key details.
@@ -231,14 +231,14 @@ export default function CSEEvent() {
 
             {/* Buttons */}
             <div className="flex gap-4 mt-4">
-              <a href="#">
+              <a href="https://drive.google.com/file/d/184prp45R-gBLpboSnb0--qQOhX4phdx6/view?usp=drivesdk">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Guidelines
                   </span>
                 </button>
               </a>
-              <a href="#">
+              <a href="https://forms.gle/mmc2ZdPjf474f8s17">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Register now

@@ -2,7 +2,7 @@ import React from "react";
 import { Navigation } from "../components/nav";
 import Particles from "../components/particles";
 import dummy from "./dummy.jpg";
-import club from "../department/assets/dep.png";
+import club from "../department/assets/mech.png";
 import Image from "next/image";
 
 export default function CSEEvent() {

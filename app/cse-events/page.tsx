@@ -2,7 +2,11 @@ import React from "react";
 import { Navigation } from "../components/nav";
 import Particles from "../components/particles";
 import dummy from "./dummy.jpg";
-import ev1 from "./event3.jpg";
+import ev1 from "./event1.jpg";
+import ev2 from "./event2.jpg";
+import ev3 from "./event3.jpg";
+import ev4 from "./event4.jpg";
+import ev5 from "./event5.jpg";
 import club from "../department/assets/cse.png";
 import Image from "next/image";
 
@@ -39,7 +43,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={dummy.src}
+              src={ev1.src}
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -92,7 +96,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={dummy.src}
+              src={ev2.src}
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -140,7 +144,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={ev1.src}
+              src={ev3.src}
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -189,7 +193,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={dummy.src}
+              src={ev4.src}
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -236,7 +240,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={dummy.src}
+              src={ev5.src}
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />

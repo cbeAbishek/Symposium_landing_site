@@ -4,19 +4,19 @@ const teamMembers = [
   {
     name: "Dr. S. Nandhakumar",
     role: "Principal - PPG IT",
-    image: "/innoverse.jpg",
+    image: "/Hod/ppgit.jpg",
   },
-  { name: "Mr. S.Selvakumar", role: "HoD - Agri", image: "/Hod/agri.jpg" },
-  { name: "Ma Da Silva", role: "HoD - AI&DS", image: "/innoverse.jpg" },
-  { name: "Jackson Lane", role: "HoD - AI&DS", image: "/innoverse.jpg" },
-  { name: "Cassandra Moore", role: "HoD - BME", image: "/innoverse.jpg" },
+  { name: "Mr. S.Selvakumar", role: "HoD - AGRI", image: "/Hod/agri.jpg" },
+  { name: "Full Name", role: "HoD - AI&DS", image: "/innoverse.jpg" },
+  { name: "Dr. v. Bindhu", role: "HoD - ECE", image: "/Hod/ece.jpeg" },
+  { name: "Full Name", role: "HoD - BME", image: "/innoverse.jpg" },
   {
     name: "Prof J. Karthick Myilvahanan",
     role: "HoD - CSE",
     image: "/Hod/cse.jpg",
   },
-  { name: "Sarah Kindred", role: "HoD - MECH", image: "/innoverse.jpg" },
-  { name: "Erika Carroway", role: "HoD - IT", image: "/innoverse.jpg" },
+  { name: "Prof.T.B.Dharmaraj", role: "HoD - IT", image: "/Hod/it.jpg" },
+  { name: "Full Name", role: "HoD - MECH", image: "/innoverse.jpg" },
 ];
 
 const TeamSection: React.FC = () => {
@@ -36,13 +36,13 @@ const TeamSection: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Person 1 */}
             <div className="flex flex-col items-center">
-              <Image
+              {/* <Image
                 src="/innoverse.jpg"
                 width={150}
                 height={150}
                 alt="Convener"
                 className="rounded-full border-4 border-teal-500 shadow-lg shadow-teal-400/50"
-              />
+              /> */}
               <p className="mt-4 text-lg font-medium text-gray-100">
                 Capt. Dr. Amudhakumar
               </p>
@@ -51,13 +51,13 @@ const TeamSection: React.FC = () => {
             </div>
             {/* Person 2 */}
             <div className="flex flex-col items-center">
-              <Image
+              {/* <Image
                 src="/innoverse.jpg"
                 width={150}
                 height={150}
                 alt="Convener"
                 className="rounded-full border-4 border-teal-500 shadow-lg shadow-teal-400/50"
-              />
+              /> */}
               <p className="mt-4 text-lg font-medium text-gray-100">
                 Mr. Akshay Thangavel
               </p>
@@ -66,13 +66,13 @@ const TeamSection: React.FC = () => {
             </div>
             {/* Person 3 */}
             <div className="flex flex-col items-center">
-              <Image
+              {/* <Image
                 src="/innoverse.jpg"
                 width={150}
                 height={150}
                 alt="Convener"
                 className="rounded-full border-4 border-teal-500 shadow-lg shadow-teal-400/50"
-              />
+              /> */}
               <p className="mt-4 text-lg font-medium text-gray-100">
                 Mrs. Shanthi Thangavelu
               </p>
@@ -81,13 +81,13 @@ const TeamSection: React.FC = () => {
             </div>
             {/* Person 4 */}
             <div className="flex flex-col items-center">
-              <Image
+              {/* <Image
                 src="/innoverse.jpg"
                 width={150}
                 height={150}
                 alt="Convener"
                 className="rounded-full border-4 border-teal-500 shadow-lg shadow-teal-400/50"
-              />
+              /> */}
               <p className="mt-4 text-lg font-medium text-gray-100">
                 Dr. L. P. Thangavelu
               </p>
