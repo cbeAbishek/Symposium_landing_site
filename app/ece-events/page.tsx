@@ -16,7 +16,7 @@ export default function CSEEvent() {
       <div className="flex flex-col items-center justify-center h-screen md:h-auto text-center space-y-4">
         <Image src={club} alt="Logo" width={200} height={200} />
         <h1 className="text-4xl font-bold text-white">ECE - Events</h1>
-        <h3 className="text-4xl font-bold text-white">Club name</h3>
+        <h3 className="text-4xl font-bold text-white">Electro Sparks</h3>
         <p className="text-lg text-white max-w-md">
           Discover new possibilities and explore endless opportunities. Scroll
           down to learn more!
@@ -43,12 +43,16 @@ export default function CSEEvent() {
               Paper Presentation
             </h2>
             <p className="text-gray-600 mt-2">
-              This is a brief description of the event, explaining its purpose
-              and key details.
+              A paper presentation is a structured talk where researchers or
+              students present their findings, ideas, or innovations to an
+              audience using slides, visuals, and explanations, typically at
+              conferences, seminars, or academic events.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              <strong>Guidelines:</strong> Please follow the event rules for a
-              great experience.
+              <strong>Guidelines:</strong> In a paper presentation, a team can
+              have a maximum of 4 members or be presented solo. The presentation
+              time is a maximum of 8 minutes, followed by 2 minutes for
+              questions.
             </p>
 
             {/* Buttons */}
@@ -85,14 +89,18 @@ export default function CSEEvent() {
 
           {/* Right Side - Content */}
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
-            <h2 className="text-2xl font-bold text-gray-800">Circuit Debugging</h2>
+            <h2 className="text-2xl font-bold text-gray-800">
+              Circuit Debugging
+            </h2>
             <p className="text-gray-600 mt-2">
-              This is a brief description of the event, explaining its purpose
-              and key details.
+              A circuit debugging competition challenges participants to
+              identify and fix faults in electronic circuits within a given
+              time. It tests problem-solving skills, technical knowledge, and
+              efficiency in troubleshooting electrical and electronic systems.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              <strong>Guidelines:</strong> Please follow the event rules for a
-              great experience.
+              <strong>Guidelines:</strong> Circuit debugging can be done in a
+              team of up to 3 members. It consists of 3 rounds.
             </p>
 
             {/* Buttons */}
@@ -131,12 +139,16 @@ export default function CSEEvent() {
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
             <h2 className="text-2xl font-bold text-gray-800">Clash Masters</h2>
             <p className="text-gray-600 mt-2">
-              This is a brief description of the event, explaining its purpose
-              and key details.
+              Clash Masters is a competitive speaking event where participants
+              discuss given topics without repeating points, testing their quick
+              thinking, clarity, and time management skills within a set
+              duration.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              <strong>Guidelines:</strong> Please follow the event rules for a
-              great experience.
+              <strong>Guidelines:</strong> Clash Masters is a game where players
+              discuss given topics within a time limit without repeating points.
+              Each team can have a maximum of four members.Maximum 4 minutes to
+              talk.
             </p>
 
             {/* Buttons */}
@@ -175,12 +187,13 @@ export default function CSEEvent() {
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
             <h2 className="text-2xl font-bold text-gray-800">Short film</h2>
             <p className="text-gray-600 mt-2">
-              This is a brief description of the event, explaining its purpose
-              and key details.
+              A short film is a brief, creative cinematic piece that tells a
+              story or conveys a message within a limited time, often showcasing
+              innovative storytelling and filmmaking techniques.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              <strong>Guidelines:</strong> Please follow the event rules for a
-              great experience.
+              <strong>Guidelines:</strong> The short film should have a maximum
+              duration of 10 minutes and must be presented decently.
             </p>
 
             {/* Buttons */}
@@ -217,14 +230,18 @@ export default function CSEEvent() {
 
           {/* Right Side - Content */}
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
-            <h2 className="text-2xl font-bold text-gray-800">Adventure Stash</h2>
+            <h2 className="text-2xl font-bold text-gray-800">
+              Adventure Stash
+            </h2>
             <p className="text-gray-600 mt-2">
-              This is a brief description of the event, explaining its purpose
-              and key details.
+              Adventure Stash is a fun film quiz game where participants test
+              their movie knowledge through exciting challenges, trivia, and
+              puzzles, making it an engaging and entertaining experience.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              <strong>Guidelines:</strong> Please follow the event rules for a
-              great experience.
+              <strong>Guidelines:</strong> Adventure Stash is a fun quiz game
+              with a maximum of four members per team and up to three rounds. It
+              is based on general knowledge, cinematic questions, and songs.
             </p>
 
             {/* Buttons */}

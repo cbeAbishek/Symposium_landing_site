@@ -7,7 +7,7 @@ const teamMembers = [
     image: "/Hod/ppgit.jpg",
   },
   { name: "Mr. S.Selvakumar", role: "HoD - AGRI", image: "/Hod/agri.jpg" },
-  { name: "Full Name", role: "HoD - AI&DS", image: "/innoverse.jpg" },
+  { name: "Mrs. G.Gokila Deepa", role: "HoD - AI&DS", image: "/innoverse.jpg" },
   { name: "Dr. v. Bindhu", role: "HoD - ECE", image: "/Hod/ece.jpeg" },
   { name: "Full Name", role: "HoD - BME", image: "/innoverse.jpg" },
   {

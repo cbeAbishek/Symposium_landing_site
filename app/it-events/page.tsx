@@ -37,7 +37,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={ev1.src}
+              src={ev2.src}
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -85,7 +85,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={ev2.src}
+              src={ev1.src}
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />

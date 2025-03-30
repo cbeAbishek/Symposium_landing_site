@@ -2,6 +2,11 @@ import React from "react";
 import { Navigation } from "../components/nav";
 import Particles from "../components/particles";
 import dummy from "./dummy.jpg";
+import ev1 from "./ev1.jpg";
+import ev2 from "./ev2.jpg";
+import ev3 from "./ev3.jpg";
+import ev4 from "./ev4.jpg";
+import ev5 from "./ev5.jpg";
 import club from "../department/assets/aids.png";
 import Image from "next/image";
 
@@ -15,9 +20,9 @@ export default function CSEEvent() {
       />
 
       <div className="flex flex-col items-center justify-center h-screen md:h-auto text-center space-y-4">
-      <Image src={club} alt="Logo" width={200} height={200} />
+        <Image src={club} alt="Logo" width={200} height={200} />
         <h1 className="text-4xl font-bold text-white">
-          AI & DS Department - Events
+          AI & DS | AI & ML - Events
         </h1>
         <p className="text-lg text-white max-w-md">
           Discover new possibilities and explore endless opportunities. Scroll
@@ -33,7 +38,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={dummy.src}
+              src={ev1.src}
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -41,16 +46,18 @@ export default function CSEEvent() {
 
           {/* Right Side - Content */}
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
-            <h2 className="text-2xl font-bold text-gray-800">
-            WEBGENIX
-            </h2>
+            <h2 className="text-2xl font-bold text-gray-800">WEBGENIX</h2>
             <p className="text-gray-600 mt-2">
-              This is a brief description of the event, explaining its purpose
-              and key details.
+              Tech Talk is a communication challenge featuring a group
+              discussion and an impromptu speech on tech topics, testing
+              participants' critical thinking, articulation, and presentation
+              skills.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              <strong>Guidelines:</strong> Please follow the event rules for a
-              great experience.
+              <strong>Guidelines:</strong> Participants engage in a 15-20 minute
+              group discussion, followed by a 5-minute prepared speech.
+              Professional conduct is required, and disruptive behavior or
+              plagiarism results in disqualification.
             </p>
 
             {/* Buttons */}
@@ -79,7 +86,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={dummy.src}
+              src={ev2.src}
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -89,12 +96,16 @@ export default function CSEEvent() {
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
             <h2 className="text-2xl font-bold text-gray-800">TECHTALK</h2>
             <p className="text-gray-600 mt-2">
-              This is a brief description of the event, explaining its purpose
-              and key details.
+              WEBGENIX is a web development competition where participants
+              create a webpage within 30 minutes based on a given topic. The
+              event tests UI/UX design, responsiveness, and innovation.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              <strong>Guidelines:</strong> Please follow the event rules for a
-              great experience.
+              <strong>Guidelines:</strong> Participants must use specified
+              open-source platforms, follow user-centered design, ensure
+              intuitive navigation, and create a responsive, visually clear
+              webpage. Misconduct, delays, or rule violations lead to
+              disqualification.
             </p>
 
             {/* Buttons */}
@@ -123,7 +134,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={dummy.src}
+              src={ev3.src}
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -133,12 +144,16 @@ export default function CSEEvent() {
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
             <h2 className="text-2xl font-bold text-gray-800">Code Detox</h2>
             <p className="text-gray-600 mt-2">
-              This is a brief description of the event, explaining its purpose
-              and key details.
+              Code Detox is a debugging competition where participants fix
+              syntax and logical errors in C, C++, Java, or Python across three
+              challenging rounds, testing accuracy, optimization, and
+              readability.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              <strong>Guidelines:</strong> Please follow the event rules for a
-              great experience.
+              <strong>Guidelines:</strong> Participants can compete individually
+              or in pairs, using only permitted languages without external
+              resources. Timely submissions, code clarity, and efficiency are
+              key. Misconduct results in disqualification.
             </p>
 
             {/* Buttons */}
@@ -167,7 +182,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={dummy.src}
+              src={ev4.src}
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -177,12 +192,15 @@ export default function CSEEvent() {
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
             <h2 className="text-2xl font-bold text-gray-800">Harmonic Flow</h2>
             <p className="text-gray-600 mt-2">
-              This is a brief description of the event, explaining its purpose
-              and key details.
+              INSTAFLICKS is a creative competition where participants produce
+              Instagram Reels based on a given theme, showcasing talent,
+              creativity, and engagement within a set time.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              <strong>Guidelines:</strong> Please follow the event rules for a
-              great experience.
+              <strong>Guidelines:</strong> Participants must create, film, and
+              edit their Reel within 4 hours. Entries are judged on creativity,
+              engagement, and presentation. Offensive content and late
+              submissions will lead to disqualification.
             </p>
 
             {/* Buttons */}
@@ -211,7 +229,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={dummy.src}
+              src={ev5.src}
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -221,12 +239,15 @@ export default function CSEEvent() {
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
             <h2 className="text-2xl font-bold text-gray-800">Instaflicks</h2>
             <p className="text-gray-600 mt-2">
-              This is a brief description of the event, explaining its purpose
-              and key details.
+              Harmonic Flow is a musical challenge where teams identify songs
+              through images and physical actions, testing creativity, teamwork,
+              and quick thinking in two engaging rounds.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              <strong>Guidelines:</strong> Please follow the event rules for a
-              great experience.
+              <strong>Guidelines:</strong> Teams of two must interpret visual
+              and physical cues without verbal hints, focusing on accuracy,
+              speed, and collaboration. Fair play, time management, and
+              expressive performance are key to success.
             </p>
 
             {/* Buttons */}
