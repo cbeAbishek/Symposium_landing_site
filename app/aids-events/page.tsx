@@ -24,6 +24,7 @@ export default function CSEEvent() {
         <h1 className="text-4xl font-bold text-white">
           AI & DS | AI & ML - Events
         </h1>
+        <h1 className="text-4xl font-bold text-white">AI Spartanz</h1>
         <p className="text-lg text-white max-w-md">
           Discover new possibilities and explore endless opportunities. Scroll
           down to learn more!
@@ -48,16 +49,16 @@ export default function CSEEvent() {
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
             <h2 className="text-2xl font-bold text-gray-800">WEBGENIX</h2>
             <p className="text-gray-600 mt-2">
-              Tech Talk is a communication challenge featuring a group
-              discussion and an impromptu speech on tech topics, testing
-              participants' critical thinking, articulation, and presentation
-              skills.
+              WEBGENIX is a web development competition where participants
+              create a webpage within 30 minutes based on a given topic. The
+              event tests UI/UX design, responsiveness, and innovation.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              <strong>Guidelines:</strong> Participants engage in a 15-20 minute
-              group discussion, followed by a 5-minute prepared speech.
-              Professional conduct is required, and disruptive behavior or
-              plagiarism results in disqualification.
+              <strong>Guidelines:</strong> Participants must use specified
+              open-source platforms, follow user-centered design, ensure
+              intuitive navigation, and create a responsive, visually clear
+              webpage. Misconduct, delays, or rule violations lead to
+              disqualification.
             </p>
 
             {/* Buttons */}
@@ -96,16 +97,16 @@ export default function CSEEvent() {
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
             <h2 className="text-2xl font-bold text-gray-800">TECHTALK</h2>
             <p className="text-gray-600 mt-2">
-              WEBGENIX is a web development competition where participants
-              create a webpage within 30 minutes based on a given topic. The
-              event tests UI/UX design, responsiveness, and innovation.
+              Tech Talk is a communication challenge featuring a group
+              discussion and an impromptu speech on tech topics, testing
+              participants' critical thinking, articulation, and presentation
+              skills.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              <strong>Guidelines:</strong> Participants must use specified
-              open-source platforms, follow user-centered design, ensure
-              intuitive navigation, and create a responsive, visually clear
-              webpage. Misconduct, delays, or rule violations lead to
-              disqualification.
+              <strong>Guidelines:</strong> Participants engage in a 15-20 minute
+              group discussion, followed by a 5-minute prepared speech.
+              Professional conduct is required, and disruptive behavior or
+              plagiarism results in disqualification.
             </p>
 
             {/* Buttons */}
@@ -192,15 +193,15 @@ export default function CSEEvent() {
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
             <h2 className="text-2xl font-bold text-gray-800">Harmonic Flow</h2>
             <p className="text-gray-600 mt-2">
-              INSTAFLICKS is a creative competition where participants produce
-              Instagram Reels based on a given theme, showcasing talent,
-              creativity, and engagement within a set time.
+              Harmonic Flow is a musical challenge where teams identify songs
+              through images and physical actions, testing creativity, teamwork,
+              and quick thinking in two engaging rounds.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              <strong>Guidelines:</strong> Participants must create, film, and
-              edit their Reel within 4 hours. Entries are judged on creativity,
-              engagement, and presentation. Offensive content and late
-              submissions will lead to disqualification.
+              <strong>Guidelines:</strong> Teams of two must interpret visual
+              and physical cues without verbal hints, focusing on accuracy,
+              speed, and collaboration. Fair play, time management, and
+              expressive performance are key to success.
             </p>
 
             {/* Buttons */}
@@ -239,15 +240,15 @@ export default function CSEEvent() {
           <div className="md:w-1/2 p-6 flex flex-col justify-between">
             <h2 className="text-2xl font-bold text-gray-800">Instaflicks</h2>
             <p className="text-gray-600 mt-2">
-              Harmonic Flow is a musical challenge where teams identify songs
-              through images and physical actions, testing creativity, teamwork,
-              and quick thinking in two engaging rounds.
+              INSTAFLICKS is a creative competition where participants produce
+              Instagram Reels based on a given theme, showcasing talent,
+              creativity, and engagement within a set time.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              <strong>Guidelines:</strong> Teams of two must interpret visual
-              and physical cues without verbal hints, focusing on accuracy,
-              speed, and collaboration. Fair play, time management, and
-              expressive performance are key to success.
+              <strong>Guidelines:</strong> Participants must create, film, and
+              edit their Reel within 4 hours. Entries are judged on creativity,
+              engagement, and presentation. Offensive content and late
+              submissions will lead to disqualification.
             </p>
 
             {/* Buttons */}
