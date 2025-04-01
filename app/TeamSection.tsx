@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const teamMembers = [
   {
@@ -7,16 +8,16 @@ const teamMembers = [
     image: "/Hod/ppgit.jpg",
   },
   { name: "Mr. S.Selvakumar", role: "HoD - AGRI", image: "/Hod/agri.jpg" },
-  { name: "Mrs. G.Gokila Deepa", role: "HoD - AI&DS", image: "/innoverse.jpg" },
+  { name: "Mrs. G.Gokila Deepa", role: "HoD - AI&DS", image: "/Hod/aids.jpg" },
   { name: "Dr. v. Bindhu", role: "HoD - ECE", image: "/Hod/ece.jpeg" },
-  { name: "Full Name", role: "HoD - BME", image: "/innoverse.jpg" },
+  { name: "Dr.M.Sundar Raj", role: "HoD - BME", image: "/Hod/bme.jpg" },
   {
     name: "Prof J. Karthick Myilvahanan",
     role: "HoD - CSE",
     image: "/Hod/cse.jpg",
   },
   { name: "Prof.T.B.Dharmaraj", role: "HoD - IT", image: "/Hod/it.jpg" },
-  { name: "Full Name", role: "HoD - MECH", image: "/innoverse.jpg" },
+  { name: "Dr. S. Balakrishnan", role: "HoD - MECH", image: "/innoverse.jpg" },
 ];
 
 const TeamSection: React.FC = () => {
@@ -102,15 +103,23 @@ const TeamSection: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {teamMembers.map((member, index) => (
             <div key={index} className="flex flex-col items-center">
-              <Image
+              {/* <Image
                 src={member.image}
                 width={120}
                 height={120}
                 alt={member.name}
                 className="rounded-full border-2 border-teal-400 shadow-lg hover:shadow-teal-400/50 transition-transform transform hover:scale-105 duration-300"
-              />
+              /> 
               <p className="mt-3 font-medium text-gray-100">{member.name}</p>
-              <p className="text-sm text-gray-400">{member.role}</p>
+              <p className="text-sm text-gray-400">{member.role}</p>*/}
+              <div className="p-4 rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:scale-105 hover:rotate-2">
+                <p className="mt-3 font-medium text-gray-100 transition-colors duration-300 hover:text-yellow-400">
+                  {member.name}
+                </p>
+                <p className="text-sm text-gray-400 transition-colors duration-300 hover:text-green-400">
+                  {member.role}
+                </p>
+              </div>
             </div>
           ))}
         </div>

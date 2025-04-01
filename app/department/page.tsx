@@ -29,7 +29,7 @@ const socials = [
   {
     href: "/it-events",
     label: "IT",
-    desc: "Club Name",
+    desc: "Tech Titans",
     event1: "Paper Presentation",
     event2: "BEST MANAGER",
     event3: "WEB WEAVERS",
@@ -40,7 +40,7 @@ const socials = [
   {
     href: "/aids-events",
     label: "AI & DS / AI & ML",
-    desc: "Club Name",
+    desc: "Ai-Spartanz",
     event1: "WEBGENIX",
     event2: "TECHTALK",
     event3: "Code Detox",
@@ -51,7 +51,7 @@ const socials = [
   {
     href: "ece-events",
     label: "ECE",
-    desc: "Club Name",
+    desc: "Electrosparks",
     event1: "Paper Presentation",
     event2: "Circuit Debugging",
     event3: "Clash Masters",
@@ -62,7 +62,7 @@ const socials = [
   {
     href: "mech-events",
     label: "MECH",
-    desc: "Club Name",
+    desc: "Royal Mech",
     event1: "Paper presentation",
     event2: "Quiz",
     event3: "Cad modeling",
@@ -73,7 +73,7 @@ const socials = [
   {
     href: "agri-events",
     label: "Agri",
-    desc: "Club Name",
+    desc: "Agro wingz",
     event1: "Paper presentation",
     event2: "Quiz",
     event3: "Project Expo",

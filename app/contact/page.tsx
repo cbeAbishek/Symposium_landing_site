@@ -50,8 +50,8 @@ const socials = [
   },
   {
     icon: <PhoneCallIcon size={25} />,
-    href: "tel:+911234567890",
-    label: "Number",
+    href: "tel:+916374467626",
+    label: "+91 63744 67626",
     labelname: "K.kaaviyakanth",
     handle: "BME - Coordinator",
   },

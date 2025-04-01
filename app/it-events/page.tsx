@@ -23,6 +23,9 @@ export default function CSEEvent() {
         <h1 className="text-4xl font-bold text-white">
           IT Department - Events
         </h1>
+        <h1 className="text-4xl font-bold text-white">
+          Tech Titans
+        </h1>
         <p className="text-lg text-white max-w-md">
           Discover new possibilities and explore endless opportunities. Scroll
           down to learn more!
