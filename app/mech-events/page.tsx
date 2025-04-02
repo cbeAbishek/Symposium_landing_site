@@ -9,6 +9,10 @@ import ev1 from "./evtreahunt.jpg";
 import ev2 from "./expo.jpg";
 import ev3 from "./pp.jpg";
 import ev4 from "./quiz.jpg";
+import ev5 from "./cad.jpg";
+import ev6 from "./water.jpg";
+import ev7 from "./mrmech.jpg";
+import ev8 from "./photo.jpg";
 
 export default function CSEEvent() {
   return (
@@ -92,11 +96,13 @@ export default function CSEEvent() {
 
             {/* Interactive Buttons */}
             <div className="flex gap-4">
+              <a href="https://forms.gle/K5Kv3hGMJ2AT5Wx58">
               <button className="relative inline-flex items-center px-6 py-3 font-bold rounded-full bg-white/10 backdrop-blur-lg border border-white/30 overflow-hidden group">
                 <span className="relative z-10 text-white">Register Now</span>
                 <span className="absolute inset-0 w-0 h-full transition-all duration-300 bg-white/50 group-hover:w-full" />
               </button>
-              <button className="relative inline-flex items-center px-6 py-3 font-bold rounded-full bg-transparent border border-white/50 text-white">
+              </a>
+              {/* <button className="relative inline-flex items-center px-6 py-3 font-bold rounded-full bg-transparent border border-white/50 text-white">
                 Learn More
                 <svg
                   className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
@@ -107,7 +113,7 @@ export default function CSEEvent() {
                     d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
                   />
                 </svg>
-              </button>
+              </button> */}
             </div>
           </div>
 
@@ -155,7 +161,7 @@ export default function CSEEvent() {
                   </span>
                 </button>
               </a>
-              <a href="#">
+              <a href="https://forms.gle/K5Kv3hGMJ2AT5Wx58">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Register now
@@ -201,7 +207,7 @@ export default function CSEEvent() {
                   </span>
                 </button>
               </a>
-              <a href="#">
+              <a href="https://forms.gle/K5Kv3hGMJ2AT5Wx58">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Register now
@@ -218,7 +224,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={dummy.src}
+              src={ev5.src}
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -250,7 +256,7 @@ export default function CSEEvent() {
                   </span>
                 </button>
               </a>
-              <a href="#">
+              <a href="https://forms.gle/K5Kv3hGMJ2AT5Wx58">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Register now
@@ -267,7 +273,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={dummy.src}
+              src={ev7.src}
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -295,7 +301,7 @@ export default function CSEEvent() {
                   </span>
                 </button>
               </a>
-              <a href="#">
+              <a href="https://forms.gle/K5Kv3hGMJ2AT5Wx58">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Register now
@@ -312,7 +318,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={dummy.src}
+              src={ev6.src}
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -344,7 +350,7 @@ export default function CSEEvent() {
                   </span>
                 </button>
               </a>
-              <a href="#">
+              <a href="https://forms.gle/K5Kv3hGMJ2AT5Wx58">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Register now
@@ -384,7 +390,7 @@ export default function CSEEvent() {
                   </span>
                 </button>
               </a>
-              <a href="#">
+              <a href="https://forms.gle/K5Kv3hGMJ2AT5Wx58">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Register now
@@ -401,7 +407,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={dummy.src}
+              src={ev8.src}
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -430,7 +436,7 @@ export default function CSEEvent() {
                   </span>
                 </button>
               </a>
-              <a href="#">
+              <a href="https://forms.gle/K5Kv3hGMJ2AT5Wx58">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Register now

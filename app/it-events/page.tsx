@@ -64,7 +64,7 @@ export default function CSEEvent() {
 
             {/* Buttons */}
             <div className="flex gap-4 mt-4">
-              <a href="https://file.notion.so/f/f/b10e5498-687b-4e91-aab0-a262add27a16/47caccdf-3e0f-4a29-86e4-b9f8b244c852/IT_guidelines.pdf?table=block&id=1c5082a6-efc3-807f-a0a1-dd4bec95d02f&spaceId=b10e5498-687b-4e91-aab0-a262add27a16&expirationTimestamp=1743379200000&signature=1J-yJ4aMHbw52h0ZKSw12IiTpiDW21KZCwExIcb-eI4&downloadName=IT+guidelines.pdf">
+              <a href="https://drive.google.com/file/d/1ihKwZy878d3kTt1Ist88wu0Qn3tiB1uc/view?usp=drivesdk">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Guidelines
@@ -110,7 +110,7 @@ export default function CSEEvent() {
 
             {/* Buttons */}
             <div className="flex gap-4 mt-4">
-              <a href="https://file.notion.so/f/f/b10e5498-687b-4e91-aab0-a262add27a16/47caccdf-3e0f-4a29-86e4-b9f8b244c852/IT_guidelines.pdf?table=block&id=1c5082a6-efc3-807f-a0a1-dd4bec95d02f&spaceId=b10e5498-687b-4e91-aab0-a262add27a16&expirationTimestamp=1743379200000&signature=1J-yJ4aMHbw52h0ZKSw12IiTpiDW21KZCwExIcb-eI4&downloadName=IT+guidelines.pdf">
+              <a href="https://drive.google.com/file/d/1ihKwZy878d3kTt1Ist88wu0Qn3tiB1uc/view?usp=drivesdk">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Guidelines
@@ -157,7 +157,7 @@ export default function CSEEvent() {
 
             {/* Buttons */}
             <div className="flex gap-4 mt-4">
-              <a href="https://file.notion.so/f/f/b10e5498-687b-4e91-aab0-a262add27a16/47caccdf-3e0f-4a29-86e4-b9f8b244c852/IT_guidelines.pdf?table=block&id=1c5082a6-efc3-807f-a0a1-dd4bec95d02f&spaceId=b10e5498-687b-4e91-aab0-a262add27a16&expirationTimestamp=1743379200000&signature=1J-yJ4aMHbw52h0ZKSw12IiTpiDW21KZCwExIcb-eI4&downloadName=IT+guidelines.pdf">
+              <a href="https://drive.google.com/file/d/1ihKwZy878d3kTt1Ist88wu0Qn3tiB1uc/view?usp=drivesdk">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Guidelines
@@ -205,7 +205,7 @@ export default function CSEEvent() {
 
             {/* Buttons */}
             <div className="flex gap-4 mt-4">
-              <a href="https://file.notion.so/f/f/b10e5498-687b-4e91-aab0-a262add27a16/47caccdf-3e0f-4a29-86e4-b9f8b244c852/IT_guidelines.pdf?table=block&id=1c5082a6-efc3-807f-a0a1-dd4bec95d02f&spaceId=b10e5498-687b-4e91-aab0-a262add27a16&expirationTimestamp=1743379200000&signature=1J-yJ4aMHbw52h0ZKSw12IiTpiDW21KZCwExIcb-eI4&downloadName=IT+guidelines.pdf">
+              <a href="https://drive.google.com/file/d/1ihKwZy878d3kTt1Ist88wu0Qn3tiB1uc/view?usp=drivesdk">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Guidelines
@@ -252,7 +252,7 @@ export default function CSEEvent() {
 
             {/* Buttons */}
             <div className="flex gap-4 mt-4">
-              <a href="https://file.notion.so/f/f/b10e5498-687b-4e91-aab0-a262add27a16/47caccdf-3e0f-4a29-86e4-b9f8b244c852/IT_guidelines.pdf?table=block&id=1c5082a6-efc3-807f-a0a1-dd4bec95d02f&spaceId=b10e5498-687b-4e91-aab0-a262add27a16&expirationTimestamp=1743379200000&signature=1J-yJ4aMHbw52h0ZKSw12IiTpiDW21KZCwExIcb-eI4&downloadName=IT+guidelines.pdf">
+              <a href="https://drive.google.com/file/d/1ihKwZy878d3kTt1Ist88wu0Qn3tiB1uc/view?usp=drivesdk">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
                     Guidelines
