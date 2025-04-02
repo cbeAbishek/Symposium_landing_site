@@ -1,7 +1,7 @@
 import "../global.css";
 import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
-import { Analytics } from "./components/analytics";
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata = {
   title: {
