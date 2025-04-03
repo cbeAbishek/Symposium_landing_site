@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const IconsPage: React.FC = () => {
   return (
     <div
@@ -13,7 +12,7 @@ const IconsPage: React.FC = () => {
           height="16vh"
           viewBox="0 0 640 512"
           fill="aliceblue"
-          className="svg-icon" 
+          className="svg-icon"
         >
           <path d="M72 88a56 56 0 1 1 112 0A56 56 0 1 1 72 88zM64 245.7C54 256.9 48 271.8 48 288s6 31.1 16 42.3V245.7zm144.4-49.3C178.7 222.7 160 261.2 160 304c0 34.3 12 65.8 32 90.5V416c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V389.2C26.2 371.2 0 332.7 0 288c0-61.9 50.1-112 112-112h32c24 0 46.2 7.5 64.4 20.3zM448 416V394.5c20-24.7 32-56.2 32-90.5c0-42.8-18.7-81.3-48.4-107.7C449.8 183.5 472 176 496 176h32c61.9 0 112 50.1 112 112c0 44.7-26.2 83.2-64 101.2V416c0 17.7-14.3 32-32 32H480c-17.7 0-32-14.3-32-32zm8-328a56 56 0 1 1 112 0A56 56 0 1 1 456 88zM576 245.7v84.7c10-11.3 16-26.1 16-42.3s-6-31.1-16-42.3zM320 32a64 64 0 1 1 0 128 64 64 0 1 1 0-128zM240 304c0 16.2 6 31 16 42.3V261.7c-10 11.3-16 26.1-16 42.3zm144-42.3v84.7c10-11.3 16-26.1 16-42.3s-6-31.1-16-42.3zM448 304c0 44.7-26.2 83.2-64 101.2V448c0 17.7-14.3 32-32 32H288c-17.7 0-32-14.3-32-32V405.2c-37.8-18-64-56.5-64-101.2c0-61.9 50.1-112 112-112h32c61.9 0 112 50.1 112 112z" />
         </svg>
@@ -28,7 +27,7 @@ const IconsPage: React.FC = () => {
             height="16vh"
             viewBox="0 0 448 512"
             fill="aliceblue"
-            className="svg-icon" 
+            className="svg-icon"
           >
             <path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm64 80v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm128 0v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H336zM64 400v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H208zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H336c-8.8 0-16 7.2-16 16z" />
           </svg>
@@ -52,16 +51,18 @@ const IconsPage: React.FC = () => {
         <p style={{ fontSize: "4vh" }}>Colleges</p>
       </div> */}
       <p className="text-lg lg:p-20 lg:-mt-10 p-10 mobile-para text-justify mb-10">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quasi
-        quaerat, praesentium earum minus eius aperiam adipisci sequi nesciunt!
-        Distinctio aperiam,  temporibus vero adipisci ea eos possimus minima
-        explicabo maiores illum, tenetur rerum neque laborum. Ab laborum odit
-        sed id veritatis dolores, unde illo libero minima hic rerum culpa itaque
-        quisquam cum laboriosam, incidunt voluptate ut consectetur natus, eaque
-        mollitia laudantium! Error amet hic ullam ab quo sequi aliquid illum
-        expedita qui explicabo cum rem, deserunt velit quibusdam vitae ipsum
-        eius! Tempora voluptas odio impedit quas illum porro accusamus dolores
-        ex.
+        Viyugam fosters an environment of innovation, collaboration, and healthy
+        competition. Participants get the opportunity to network with industry
+        experts, gain hands-on experience, and enhance their skills while
+        competing for exciting prizes and recognition. With its dynamic blend of
+        events, Viyugam caters to every interest and passion, ensuring there’s
+        something for everyone to explore and excel in. Join us as we celebrate
+        creativity, intellect, and teamwork at Viyugam – where ideas transform
+        into reality! Whether you're a tech enthusiast or a creative mind, mark
+        your calendars and be part of this extraordinary journey. For more
+        details on event schedules, registration, and participation guidelines,
+        stay tuned to our website. Let’s innovate, inspire, and ignite the spark
+        of excellence together!
       </p>
     </div>
   );
