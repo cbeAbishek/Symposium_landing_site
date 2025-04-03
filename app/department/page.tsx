@@ -84,7 +84,7 @@ const socials = [
   {
     href: "bme-events",
     label: "BME",
-    desc: "Club Name",
+    desc: "BIOBUDS",
     event1: "Paper presentation",
     event2: "Quizz",
     event3: "Ideathon",
