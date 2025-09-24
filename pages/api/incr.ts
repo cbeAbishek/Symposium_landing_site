@@ -57,3 +57,10 @@ export async function GET(req: NextRequest) {
 
   return NextResponse.json({ ip });
 }
+
+export default async function handler(req: NextRequest) {
+  if (req.method === "GET") {
+    return GET(req);
+  }
+  return NextResponse.json({ error: "Method not allowed" }, { status: 405 });
+}
