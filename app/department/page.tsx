@@ -23,7 +23,7 @@ type Department = {
 // The data for your departments
 const departments: Department[] = [
   {
-    href: "/deprtment/cse-events",
+    href: "/department/cse-events",
     label: "CSE",
     desc: "CyberZen",
     image: cse,

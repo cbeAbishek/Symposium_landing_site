@@ -1,5 +1,8 @@
-import React, { useEffect } from "react";
-import Particles from "./components/particles";
+"use client";
+
+import React from "react";
+import dynamic from "next/dynamic";
+const Particles = dynamic(() => import("./components/particles"), { ssr: false });
 import AnimatedImage from "./image";
 import FAQ from "./faq";
 import VideoSection from "./VideoSection";
@@ -8,12 +11,7 @@ import TeamSection from "./TeamSection";
 export default function Home2() {
   return (
     <>
-      {typeof window !== "undefined" && (
-        <Particles
-          className="absolute inset-0 z-40 animate-fade-in"
-          quantity={100}
-        />
-      )}
+      <Particles className="absolute inset-0 z-40 animate-fade-in" quantity={100} />
       <div
         style={{ maxWidth: "100%", minHeight: "100%" }}
         className="flex flex-col z-20 items-center overflow-hidden bg-gradient-to-tr from-zinc-950/20 via-teal-950 to-zinc-950/100"

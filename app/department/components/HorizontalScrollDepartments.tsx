@@ -21,33 +21,50 @@ export default function HorizontalScrollDepartments({
   items,
 }: HorizontalScrollDepartmentsProps): JSX.Element {
   const controls = useAnimation();
-  const x = useMotionValue(0); // Tracks the current position
+  const x = useMotionValue(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
 
-  const duplicatedItems: Department[] = [...items, ...items];
-  const itemWidth: number = 320; // Corresponds to w-72 (288px) + space-x-8 (32px)
-  const totalWidth: number = items.length * itemWidth;
+  const duplicatedItems = [...items, ...items];
+  const itemWidth = 320;
+  const totalWidth = items.length * itemWidth;
 
-  // This useEffect handles the continuous animation loop
+  // Start the animation once on client mount so it begins immediately without user interaction
   useEffect(() => {
-    if (!isHovered) {
-      // Start the animation from the current position
-      controls.start({
-        x: x.get() - totalWidth,
-        transition: {
-          x: {
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: items.length * 5,
-            ease: "linear",
-          },
-        },
-      });
-    }
-    return () => controls.stop();
-  }, [items.length, isHovered, controls, totalWidth, x]);
+    setHasMounted(true);
 
-  // Handler to stop the loop and allow dragging when the user hovers
+    // Helper to start the infinite loop animation from the current position
+    const startAnimation = async () => {
+      try {
+        // Ensure the animation starts from a known position
+        await controls.set({ x: 0 });
+        // Small delay to let layout settle (requestAnimationFrame ensures paint)
+        requestAnimationFrame(() => {
+          controls.start({
+            x: -totalWidth,
+            transition: {
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: Math.max(1, items.length) * 5,
+                ease: "linear",
+              },
+            },
+          });
+        });
+      } catch (e) {
+        // ignore if stopped before starting
+      }
+    };
+
+    startAnimation();
+
+    return () => {
+      controls.stop();
+    };
+  }, []);
+
+  // Handler to stop the loop when the user hovers
   const handleHoverStart = () => {
     setIsHovered(true);
     controls.stop();
@@ -55,7 +72,6 @@ export default function HorizontalScrollDepartments({
 
   // Handler to resume the loop when the user's mouse leaves
   const handleHoverEnd = () => {
-    // Update the motion value to the current position before resuming the loop
     x.set(x.get() % totalWidth);
     setIsHovered(false);
   };
@@ -71,7 +87,7 @@ export default function HorizontalScrollDepartments({
         animate={controls}
         style={{ x }}
       >
-        {duplicatedItems.map((department: Department, index: number) => (
+        {duplicatedItems.map((department, index) => (
           <DepartmentCard key={index} department={department} />
         ))}
       </motion.div>
@@ -99,9 +115,7 @@ function DepartmentCard({ department }: { department: Department }): JSX.Element
           <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-indigo-500 to-purple-400">
             {label}
           </h3>
-          <p className="mt-2 text-zinc-400 text-lg">
-            {desc}
-          </p>
+          <p className="mt-2 text-zinc-400 text-lg">{desc}</p>
         </div>
         <div className="mt-auto pt-6 flex justify-center">
           <Link href={href}>
