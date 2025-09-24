@@ -1,20 +1,20 @@
 {
-  "name": "Innoverse 2k25",
+  "name": "viuygam-2k25",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "fmt": "pnpm rome check . --apply-suggested && pnpm rome format . --write"
+    "fmt": "rome check . --apply-suggested && rome format . --write"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@material-ui/core": "^4.12.4",
     "@mui/material": "^6.4.8",
+    "@mui/icons-material": "^6.4.8",
     "@next/font": "^13.4.19",
     "@next/mdx": "^13.4.19",
     "@tailwindcss/aspect-ratio": "^0.4.2",
@@ -24,19 +24,16 @@
     "@upstash/redis": "^1.22.0",
     "@vercel/analytics": "^1.5.0",
     "bootstrap": "^5.3.1",
-    "clsx": "^2.1.1",
-    "contentlayer": "^0.3.4",
-    "framer-motion": "^10.18.0",
-    "generate": "^0.8.0",
+  "clsx": "^2.1.1",
+  "framer-motion": "^10.18.0",
     "lucide-react": "^0.220.0",
     "markdown-wasm": "^1.2.0",
+    "react-markdown": "^9.0.0",
     "next": "^15.2.3",
-    "next-contentlayer": "^0.3.4",
     "react": "18.2.0",
     "react-bootstrap": "^2.8.0",
     "react-dom": "18.2.0",
     "react-wrap-balancer": "^0.5.0",
-    "redis-cli": "^2.1.2",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-pretty-code": "^0.14.1",
     "rehype-slug": "^5.1.0",
@@ -57,15 +54,13 @@
     "tailwindcss-animated": "^2.0.0",
     "tailwindcss-debug-screens": "^2.2.1"
   },
-  "pnpm": {
-    "overrides": {
-      "@opentelemetry/api": "1.4.1",
-      "@opentelemetry/core": "1.13.0",
-      "@opentelemetry/exporter-trace-otlp-grpc": "0.39.1",
-      "@opentelemetry/resources": "1.13.0",
-      "@opentelemetry/sdk-trace-base": "1.13.0",
-      "@opentelemetry/sdk-trace-node": "1.13.0",
-      "@opentelemetry/semantic-conventions": "1.13.0"
-    }
+  "overrides": {
+    "@opentelemetry/api": "1.4.1",
+    "@opentelemetry/core": "1.13.0",
+    "@opentelemetry/exporter-trace-otlp-grpc": "0.39.1",
+    "@opentelemetry/resources": "1.13.0",
+    "@opentelemetry/sdk-trace-base": "1.13.0",
+    "@opentelemetry/sdk-trace-node": "1.13.0",
+    "@opentelemetry/semantic-conventions": "1.13.0"
   }
 }
