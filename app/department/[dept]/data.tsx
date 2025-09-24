@@ -3,6 +3,9 @@ const departmentData = [
 		title: "CSE - Events",
 		logo: "/cse/logo.png",
 		routerName: "cse-events",
+		whatsapp: "911234567890",
+		registrationPdf: "https://example.com/docs/cse-events-registration.pdf",
+		guidelinesPdf: "https://example.com/docs/cse-events-guidelines.pdf",
 		description:
 			"Discover new possibilities and explore endless opportunities. Scroll down to learn more!",
 		events: [
@@ -93,6 +96,9 @@ const departmentData = [
 		title: "ECE - Events",
 		logo: "/ece/logo.png",
 		routerName: "ece-events",
+		whatsapp: "911234567890",
+		registrationPdf: "https://example.com/docs/ece-events-registration.pdf",
+		guidelinesPdf: "https://example.com/docs/ece-events-guidelines.pdf",
 		description:
 			"Discover new possibilities and explore endless opportunities. Scroll down to learn more!",
 		events: [
@@ -183,6 +189,9 @@ const departmentData = [
 		title: "Agri - Events",
 		logo: "/agri/logo.png",
 		routerName: "agri-events",
+		whatsapp: "911234567890",
+		registrationPdf: "https://example.com/docs/agri-events-registration.pdf",
+		guidelinesPdf: "https://example.com/docs/agri-events-guidelines.pdf",
 		description:
 			"The Agricultural Engineering Department warmly welcomes you to Innoverse 2K25, a platform for innovation and creativity!",
 		events: [
@@ -273,6 +282,9 @@ const departmentData = [
 		title: "AI & DS | AI & ML - Events",
 		logo: "/aids/logo.png",
 		routerName: "aids-events",
+		whatsapp: "911234567890",
+		registrationPdf: "https://example.com/docs/aids-events-registration.pdf",
+		guidelinesPdf: "https://example.com/docs/aids-events-guidelines.pdf",
 		description:
 			"Discover new possibilities and explore endless opportunities. Scroll down to learn more!",
 		events: [
@@ -363,6 +375,9 @@ const departmentData = [
 		title: "BME - Events",
 		logo: "/bme/logo.png",
 		routerName: "bme-events",
+		whatsapp: "911234567890",
+		registrationPdf: "https://example.com/docs/bme-events-registration.pdf",
+		guidelinesPdf: "https://example.com/docs/bme-events-guidelines.pdf",
 		description:
 			"Discover new possibilities and explore endless opportunities. Scroll down to learn more!",
 		events: [
@@ -453,6 +468,9 @@ const departmentData = [
 		title: "Mech - Events",
 		logo: "/mech/logo.png",
 		routerName: "mech-events",
+		whatsapp: "911234567890",
+		registrationPdf: "https://example.com/docs/mech-events-registration.pdf",
+		guidelinesPdf: "https://example.com/docs/mech-events-guidelines.pdf",
 		description:
 			"Discover new possibilities and explore endless opportunities. Scroll down to learn more!",
 		events: [
@@ -543,6 +561,9 @@ const departmentData = [
 		title: "IT Department - Events",
 		logo: "/it/logo.png",
 		routerName: "it-events",
+		whatsapp: "911234567890",
+		registrationPdf: "https://example.com/docs/it-events-registration.pdf",
+		guidelinesPdf: "https://example.com/docs/it-events-guidelines.pdf",
 		description:
 			"Discover new possibilities and explore endless opportunities. Scroll down to learn more!",
 		events: [
