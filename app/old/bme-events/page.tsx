@@ -1,13 +1,13 @@
 import React from "react";
-import { Navigation } from "../components/nav";
-import Particles from "../components/particles";
+import { Navigation } from "../../components/nav";
+import Particles from "../../components/particles";
 import dummy from "./dummy.jpg";
 import ev1 from "./ev1.jpg";
 import ev2 from "./ev2.jpg";
 import ev3 from "./ev3.jpg";
 import ev4 from "./ev4.jpg";
 import ev5 from "./ev5.jpg";
-import club from "../department/assets/bme.png";
+import club from "../../department/assets/bme.png";
 import Image from "next/image";
 
 export default function CSEEvent() {
