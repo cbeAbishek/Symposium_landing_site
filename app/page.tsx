@@ -43,7 +43,7 @@ export default function Home() {
 
   const calculateCountdown = () => {
     // Use an explicit UTC timestamp to avoid platform-dependent parsing
-    const targetDate = Date.UTC(2025, 9, 10, 0, 0, 0); // month is 0-indexed: 8 = September
+    const targetDate = Date.UTC(2025, 9, 15, 0, 0, 0); // month is 0-indexed: 8 = September
     const now = Date.now();
     const timeRemaining = targetDate - now;
 
