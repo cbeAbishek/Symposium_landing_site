@@ -1,8 +1,8 @@
 import React from "react";
-import { Navigation } from "../components/nav";
-import Particles from "../components/particles";
+import { Navigation } from "../../components/nav";
+import Particles from "../../components/particles";
 import dummy from "./dummy.jpg";
-import club from "../department/assets/mech.png";
+import club from "../../department/assets/mech.png";
 import Image from "next/image";
 import "./page.css";
 import ev1 from "./evtreahunt.jpg";
