@@ -41,9 +41,18 @@ export default function Home() {
   }, []);
 
   const calculateCountdown = () => {
-    const targetDate = new Date("2025-09-10 00:00:00").getTime();
-    const now = new Date().getTime();
+    // Use an explicit UTC timestamp to avoid platform-dependent parsing
+    const targetDate = Date.UTC(2025, 9, 10, 0, 0, 0); // month is 0-indexed: 8 = September
+    const now = Date.now();
     const timeRemaining = targetDate - now;
+
+    if (timeRemaining <= 0) {
+      setDays(0);
+      setHours(0);
+      setMinutes(0);
+      setSeconds(0);
+      return;
+    }
 
     const newDays = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
     const newHours = Math.floor(
@@ -61,6 +70,8 @@ export default function Home() {
   };
 
   useEffect(() => {
+    // Run immediately so the UI shows values on first paint
+    calculateCountdown();
     const countdownInterval = setInterval(calculateCountdown, 1000);
     return () => clearInterval(countdownInterval);
   }, []);
@@ -83,6 +94,12 @@ export default function Home() {
       return () => clearTimeout(timeout);
     }
   }, [charIndex, currentSentenceIndex]);
+
+  // Helper to render numbers: always show two digits and clamp negatives to 0
+  const formatNum = (n: number) => {
+    const num = Math.max(0, Math.floor(n));
+    return num < 10 ? `0${num}` : String(num);
+  };
 
   return (
     <>
@@ -113,7 +130,7 @@ export default function Home() {
           <div className="countdown m-8 font-display lg:text-3xl mx-auto d-block animate-fade-in text-white">
             <div className="countdown-item lg:pr-5">
               <span className="countdown-number" id="days">
-                {days < 10 ? `0${days}` : days}
+                {formatNum(days)}
               </span>
               <span
                 className={`countdown-label ${
@@ -125,7 +142,7 @@ export default function Home() {
             </div>
             <div className="countdown-item lg:pr-5">
               <span className="countdown-number" id="hours">
-                {hours < 10 ? `0${hours}` : hours}
+                {formatNum(hours)}
               </span>
               <span
                 className={`countdown-label ${
@@ -137,7 +154,7 @@ export default function Home() {
             </div>
             <div className="countdown-item lg:pr-5">
               <span className="countdown-number" id="minutes">
-                {minutes < 10 ? `0${minutes}` : minutes}
+                {formatNum(minutes)}
               </span>
               <span
                 className={`countdown-label ${
@@ -149,7 +166,7 @@ export default function Home() {
             </div>
             <div className="countdown-item lg:pr-5">
               <span className="countdown-number" id="seconds">
-                {seconds < 10 ? `0${seconds}` : seconds}
+                {formatNum(seconds)}
               </span>
               <span
                 className={`countdown-label ${
