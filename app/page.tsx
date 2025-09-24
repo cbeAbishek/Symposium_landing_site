@@ -41,7 +41,7 @@ export default function Home() {
   }, []);
 
   const calculateCountdown = () => {
-    const targetDate = new Date("2025-04-9 00:00:00").getTime();
+    const targetDate = new Date("2025-09-10 00:00:00").getTime();
     const now = new Date().getTime();
     const timeRemaining = targetDate - now;
 
@@ -160,6 +160,7 @@ export default function Home() {
               </span>
             </div>
           </div>
+         
           {/* Changeable wordings */}
           <div className="m-8 font-display lg:text-3xl text-center animate-fade-in text-white flex justify-center items-center">
             <span className="typing-effect">{displayedText}</span>
@@ -186,7 +187,6 @@ export default function Home() {
         </div>
       </div>
       <Home2 />
-      
     </>
   );
 }
