@@ -1,3 +1,27 @@
+export type EventData = {
+	title: string;
+	description: string;
+	guidelines: Record<string, string>;
+	image: string;
+	logo: string;
+	routerName: string;
+	id?: string;
+	guidelineUrl?: string;
+	registerUrl?: string;
+	contact?: string;
+};
+
+export type DepartmentData = {
+	title: string;
+	logo: string;
+	routerName: string;
+	description: string;
+	events: EventData[];
+	name?: string;
+	short?: string;
+	clubAsset?: string;
+};
+
 const departmentData = [
 	{
 		title: "CSE - Events",

@@ -16,10 +16,13 @@ export default function DepartmentUI({ department }: Props) {
     const q = query.trim().toLowerCase();
     if (!q) return department.events;
     return department.events.filter((e) => {
+      const guidelinesStr = typeof e.guidelines === 'object' 
+        ? Object.values(e.guidelines).join(' ') 
+        : String(e.guidelines || '');
       return (
         e.title.toLowerCase().includes(q) ||
         e.description.toLowerCase().includes(q) ||
-        (e.guidelines || "").toLowerCase().includes(q)
+        guidelinesStr.toLowerCase().includes(q)
       );
     });
   }, [department.events, query]);
@@ -41,25 +44,25 @@ export default function DepartmentUI({ department }: Props) {
   return (
     <div className="max-w-6xl mx-auto px-6 py-12">
       <div className="flex items-center gap-6 mb-8">
-        {department.clubAsset ? (
+        {department.logo ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={department.clubAsset}
-            alt={department.name}
+            src={department.logo}
+            alt={department.title}
             width={80}
             height={80}
             className="rounded-full object-cover w-20 h-20"
           />
         ) : (
           <div className="w-20 h-20 rounded-full bg-gray-800 flex items-center justify-center text-white text-lg">
-            {department.name.charAt(0)}
+            {department.title.charAt(0)}
           </div>
         )}
 
         <div>
-          <h1 className="text-3xl font-extrabold text-white">{department.name}</h1>
-          {department.short && (
-            <p className="text-sm text-gray-300 mt-1 max-w-xl">{department.short}</p>
+          <h1 className="text-3xl font-extrabold text-white">{department.title}</h1>
+          {department.description && (
+            <p className="text-sm text-gray-300 mt-1 max-w-xl">{department.description}</p>
           )}
         </div>
       </div>
@@ -86,9 +89,9 @@ export default function DepartmentUI({ department }: Props) {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {events.map((ev) => (
+        {events.map((ev, index) => (
           <article
-            key={ev.id}
+            key={ev.routerName || index}
             className="bg-white/6 p-5 rounded-xl border border-white/6 hover:shadow-lg transition-shadow"
           >
             <div className="flex justify-between items-start gap-4">
@@ -99,18 +102,28 @@ export default function DepartmentUI({ department }: Props) {
 
               <div className="flex flex-col items-end gap-2">
                 <button
-                  onClick={() => setExpanded((s) => (s === ev.id ? null : ev.id))}
+                  onClick={() => setExpanded((s) => (s === (ev.routerName || index.toString()) ? null : (ev.routerName || index.toString())))}
                   className="text-sm px-3 py-1 rounded-md bg-white/8 text-white"
                 >
-                  {expanded === ev.id ? "Hide" : "Details"}
+                  {expanded === (ev.routerName || index.toString()) ? "Hide" : "Details"}
                 </button>
               </div>
             </div>
 
-            {expanded === ev.id && (
+            {expanded === (ev.routerName || index.toString()) && (
               <div className="mt-4 border-t border-white/6 pt-4">
                 {ev.guidelines && (
-                  <p className="text-sm text-gray-200">{ev.guidelines}</p>
+                  <div className="space-y-1">
+                    {typeof ev.guidelines === 'object' ? (
+                      Object.entries(ev.guidelines).map(([key, value]) => (
+                        <p key={key} className="text-sm text-gray-200">
+                          <strong>{key}:</strong> {value}
+                        </p>
+                      ))
+                    ) : (
+                      <p className="text-sm text-gray-200">{ev.guidelines}</p>
+                    )}
+                  </div>
                 )}
 
                 <div className="flex flex-wrap gap-3 mt-4">

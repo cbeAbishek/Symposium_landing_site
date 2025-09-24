@@ -12,7 +12,7 @@ import mech from "./assets/mech.png";
 import IconsPage from "./deptsec1";
 import Particles from "../components/particles";
 import { Navigation } from "../components/nav";
-import { Card } from "./card";
+import { CardSlider } from "./card-slider";
 
 const socials = [
   {
@@ -102,54 +102,24 @@ export default function Example() {
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={100}
       />
-      <div className="container flex items-center justify-center min-h-screen px-4 mx-auto">
-        <div className="grid w-full grid-cols-1 gap-8 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-10">
-          {socials.map((s) => (
-            <Card key={s.label}>
-              <div className="p-4 relative flex flex-col items-center gap-4 duration-700 group md:gap-8 md:py-24 lg:pb-10 md:p-16">
-                <span
-                  className="absolute w-px  bg-gradient-to-b from-zinc-900 via-zinc-500/50 to-transparent"
-                  aria-hidden="true"
-                />
-                <div className="z-10 flex flex-col items-center">
-                  <Image src={s.image} alt="Logo" width={200} height={200} />
-                  <span className="text-xl mt-6 text-center duration-1000 text-zinc-400 group-hover:text-zinc-200">
-                    {s.label}
-                  </span>
-                  <span className="text-xl mt-3 text-center duration-1000 text-zinc-400 group-hover:text-zinc-200">
-                    {s.desc}
-                  </span>
-                  <span className="text-xl mt-1 font-medium duration-150 lg:text-1xl text-zinc-200 group-hover:text-white font-display">
-                    {s.event1}
-                  </span>
-                  <span className="text-xl mt-1 font-medium duration-150 lg:text-1xl text-zinc-200 group-hover:text-white font-display">
-                    {s.event2}
-                  </span>
-                  <span className="text-xl mt-1 font-medium duration-150 lg:text-1xl text-zinc-200 group-hover:text-white font-display">
-                    {s.event3}
-                  </span>
-                  <span className="text-xl mt-1 font-medium duration-150 lg:text-1xl text-zinc-200 group-hover:text-white font-display">
-                    {s.event4}
-                  </span>
-                  <span className="text-xl mt-1 font-medium duration-150 lg:text-1xl text-zinc-200 group-hover:text-white font-display">
-                    {s.event5}
-                  </span>
-                  <div className="flex justify-center  pt-10">
-                    <Link href={s.href}  className="button-link">
-                      <button className="card-button  inline-flex items-center group">
-                        More Details
-                        <span className="ml-2 transition-transform group-hover:translate-x-2 motion-reduce:transform-none">
-                          <ArrowRight />
-                        </span>
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </Card>
-          ))}
-        </div>
+      
+      {/* Header Section */}
+      <div className="container mx-auto px-4 pt-32 pb-16 text-center">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            Departments
+          </span>
+        </h1>
+        <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          Explore our cutting-edge departments and discover innovation in every field
+        </p>
       </div>
+
+      {/* Crypto Card Slider */}
+      <div className="container mx-auto px-4 pb-20">
+        <CardSlider socials={socials} />
+      </div>
+      
       <IconsPage />
     </div>
   );
