@@ -4,7 +4,7 @@ export const departments = [
 		logo: "/cse/logo.png",
 		routerName: "cse-events",
 		whatsapp: "911234567890",
-		registrationPdf: "https://example.com/docs/cse-events-registration.pdf",
+		registrationlink: "https://example.com/",
 		guidelinesPdf: "https://example.com/docs/cse-events-guidelines.pdf",
 		description:
 			"Discover new possibilities and explore endless opportunities. Scroll down to learn more!",

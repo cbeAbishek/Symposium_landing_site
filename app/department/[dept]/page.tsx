@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Download, FileText, MessageCircle, Star, Zap, Code, Gamepad2, Sparkles } from 'lucide-react';
+import { Download, FileText, MessageCircle, Star, Zap, Code, Gamepad2, Sparkles, RotateCcw, ExternalLink } from 'lucide-react';
 import { useParams } from 'next/navigation';
 import departments from './data';
 
@@ -102,12 +102,25 @@ const StatusIndicator: React.FC<{ status: string }> = ({ status }) => {
 
 export default function CyberpunkEventPage(): JSX.Element {
   const [loadedSections, setLoadedSections] = useState<Set<string>>(new Set());
+  const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());
 
   // Choose department data based on route param. If param not found, default to cse-events or first
   const params = useParams() as { dept?: string } | undefined;
   const routeName = params?.dept || 'cse-events';
   const dept = departments.find(d => d.routerName === routeName) || departments.find(d => d.routerName === 'cse-events') || departments[0];
   const departmentData = dept || { title: 'Department', logo: '/innoverse.jpg', whatsapp: '', events: [] };
+
+  const toggleCardFlip = (index: number) => {
+    setFlippedCards(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -230,9 +243,6 @@ export default function CyberpunkEventPage(): JSX.Element {
           height: 200px;
           margin: 0 auto 2rem;
           position: relative;
-          border-radius: 50%;
-          background: linear-gradient(135deg, #00ffff20, #ff00ff20);
-          border: 2px solid transparent;
           background-clip: padding-box;
           transition: all 0.4s ease;
         }
@@ -253,7 +263,7 @@ export default function CyberpunkEventPage(): JSX.Element {
         .logo-container img {
           width: 100%;
           height: 100%;
-          border-radius: 50%;
+        
           object-fit: cover;
         }
 
@@ -439,89 +449,591 @@ export default function CyberpunkEventPage(): JSX.Element {
           text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
-        .card-description {
-          color: #a0a9c0;
-          line-height: 1.6;
-          margin-bottom: 1.5rem;
+        /* Top title overlay on each card */
+        .card-top-title {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%) translateY(-8px);
+          top: 12px;
+          z-index: 30;
+          padding: 6px 14px;
+          border-radius: 9999px;
+          background: linear-gradient(90deg, rgba(0,255,255,0.08), rgba(255,0,255,0.06));
+          color: #00ffff;
+          font-weight: 700;
+          box-shadow: 0 6px 20px rgba(0,255,255,0.05);
+          backdrop-filter: blur(6px);
+          animation: topTitleIn 600ms cubic-bezier(.2,.9,.2,1) both;
         }
 
-        .card-actions {
+        @keyframes topTitleIn {
+          from { opacity: 0; transform: translateX(-50%) translateY(-18px) scale(.96); }
+          to { opacity: 1; transform: translateX(-50%) translateY(-8px) scale(1); }
+        }
+
+        /* Guidelines list */
+        .guidelines { margin-top: 0.75rem; }
+        .guidelines h4 { margin-bottom: 0.35rem; color: #7ee8fa; }
+        .guidelines ul { margin: 0; padding: 0; list-style: none; }
+        .guidelines li { font-size: 0.85rem; color: #bcd6e6; line-height: 1.3; }
+        .guidelines strong { color: #c8fff5; }
+
+        .hero-section {
+          position: relative;
+          z-index: 10;
+          padding: 6rem 2rem 4rem;
+          text-align: center;
+        }
+
+        .logo-container {
+          width: 200px;
+          height: 200px;
+          margin: 0 auto 2rem;
+          position: relative;
+          background-clip: padding-box;
+          transition: all 0.4s ease;
+        }
+
+        .logo-container:hover {
+          transform: scale(1.05);
+          box-shadow: 
+            0 0 50px rgba(0, 255, 255, 0.4),
+            0 0 100px rgba(255, 0, 255, 0.2);
+          animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+          0%, 100% { box-shadow: 0 0 50px rgba(0, 255, 255, 0.4); }
+          50% { box-shadow: 0 0 80px rgba(255, 0, 255, 0.6); }
+        }
+
+        .logo-container img {
+          width: 100%;
+          height: 100%;
+          border-radius: 10%;
+          object-fit: cover;
+        }
+
+        .hero-title {
+          font-size: clamp(3rem, 8vw, 6rem);
+          font-weight: 700;
+          background: linear-gradient(135deg, #00ffff, #ff00ff, #00ff00);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          margin-bottom: 1rem;
+          text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+          animation: title-glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes title-glow {
+          from { text-shadow: 0 0 30px rgba(0, 255, 255, 0.5); }
+          to { text-shadow: 0 0 50px rgba(255, 0, 255, 0.7); }
+        }
+
+        .hero-description {
+          font-size: 1.25rem;
+          color: #a0a9c0;
+          max-width: 600px;
+          margin: 0 auto 3rem;
+          line-height: 1.6;
+        }
+
+        .scroll-indicator {
+          animation: bounce 2s infinite;
+          font-size: 2rem;
+          color: #00ffff;
+          text-shadow: 0 0 20px #00ffff;
+        }
+
+        .floating-actions {
+          position: fixed;
+          right: 2rem;
+          bottom: 2rem;
+          z-index: 50;
           display: flex;
+          flex-direction: column;
           gap: 1rem;
         }
 
-        .btn-primary {
-          background: linear-gradient(135deg, #00ffff, #0080ff);
-          color: white;
-          padding: 0.75rem 1.5rem;
-          border-radius: 50px;
-          text-decoration: none;
-          font-weight: 600;
+        .action-button {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           transition: all 0.3s ease;
-          border: none;
+          border: 2px solid transparent;
+          background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+          backdrop-filter: blur(10px);
           cursor: pointer;
-          position: relative;
-          overflow: hidden;
         }
 
-        .btn-primary::before {
+        .action-button:hover {
+          transform: translateY(-5px) scale(1.1);
+          box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+        }
+
+        .action-button.whatsapp {
+          background: linear-gradient(135deg, #25d366, #128c7e);
+        }
+
+        .action-button.whatsapp:hover {
+          box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .events-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: 2rem;
+          padding: 4rem 2rem;
+          max-width: 1400px;
+          margin: 0 auto;
+          position: relative;
+          z-index: 10;
+        }
+
+        .event-card {
+          background: linear-gradient(135deg, rgba(10, 10, 35, 0.8), rgba(26, 11, 46, 0.6));
+          border-radius: 20px;
+          border: 1px solid rgba(0, 255, 255, 0.2);
+          backdrop-filter: blur(20px);
+          overflow: hidden;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          position: relative;
+          cursor: pointer;
+        }
+
+        .event-card:hover {
+          transform: translateY(-10px) scale(1.02);
+          border-color: rgba(255, 0, 255, 0.5);
+          box-shadow: 
+            0 20px 60px rgba(0, 255, 255, 0.2),
+            0 0 50px rgba(255, 0, 255, 0.1);
+        }
+
+        .event-card::before {
           content: '';
           position: absolute;
           top: 0;
-          left: -100%;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: linear-gradient(90deg, #00ffff, #ff00ff, #00ff00);
+          transform: scaleX(0);
+          transition: transform 0.4s ease;
+        }
+
+        .event-card:hover::before {
+          transform: scaleX(1);
+        }
+
+        .card-image {
+          height: 200px;
+          background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+          position: relative;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .card-image::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.2);
+          z-index: 1;
+        }
+
+        .card-image img {
           width: 100%;
           height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-          transition: left 0.5s;
+          object-fit: contain;
+          max-height: 100%;
+          max-width: 100%;
+          transition: transform 0.4s ease;
+          position: relative;
+          z-index: 0;
         }
 
-        .btn-primary:hover::before {
-          left: 100%;
+        .event-card:hover .card-image img {
+          transform: scale(1.05);
         }
 
-        .btn-primary:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
+        .card-content {
+          padding: 1.5rem;
+          position: relative;
         }
 
-        .btn-secondary {
-          background: rgba(255, 255, 255, 0.1);
-          color: #a0a9c0;
-          padding: 0.75rem 1.5rem;
-          border-radius: 50px;
-          text-decoration: none;
-          font-weight: 600;
-          transition: all 0.3s ease;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-secondary:hover {
-          background: rgba(255, 0, 255, 0.2);
+        .event-icon {
+          position: absolute;
+          top: -30px;
+          right: 1.5rem;
+          width: 60px;
+          height: 60px;
+          background: linear-gradient(135deg, #00ffff, #ff00ff);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           color: white;
-          border-color: #ff00ff;
+          box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+          animation: float 3s ease-in-out infinite;
         }
 
-        .fade-in {
-          opacity: 0;
-          transform: translateY(50px);
-          transition: all 0.8s ease;
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
         }
 
-        .fade-in.loaded {
-          opacity: 1;
-          transform: translateY(0);
+        .card-title {
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: #00ffff;
+          margin-bottom: 0.5rem;
+          text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
-        .stagger-1 { transition-delay: 0.1s; }
-        .stagger-2 { transition-delay: 0.2s; }
-        .stagger-3 { transition-delay: 0.3s; }
-        .stagger-4 { transition-delay: 0.4s; }
-        .stagger-5 { transition-delay: 0.5s; }
+        /* Top title overlay on each card */
+        .card-top-title {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%) translateY(-8px);
+          top: 12px;
+          z-index: 30;
+          padding: 6px 14px;
+          border-radius: 9999px;
+          background: linear-gradient(90deg, rgba(0,255,255,0.08), rgba(255,0,255,0.06));
+          color: #00ffff;
+          font-weight: 700;
+          box-shadow: 0 6px 20px rgba(0,255,255,0.05);
+          backdrop-filter: blur(6px);
+          animation: topTitleIn 600ms cubic-bezier(.2,.9,.2,1) both;
+        }
+
+        @keyframes topTitleIn {
+          from { opacity: 0; transform: translateX(-50%) translateY(-18px) scale(.96); }
+          to { opacity: 1; transform: translateX(-50%) translateY(-8px) scale(1); }
+        }
+
+        /* Guidelines list */
+        .guidelines { margin-top: 0.75rem; }
+        .guidelines h4 { margin-bottom: 0.35rem; color: #7ee8fa; }
+        .guidelines ul { margin: 0; padding: 0; list-style: none; }
+        .guidelines li { font-size: 0.85rem; color: #bcd6e6; line-height: 1.3; }
+        .guidelines strong { color: #c8fff5; }
+
+        /* Flip Card Styles */
+        .events-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 2rem;
+          padding: 4rem 1rem;
+          max-width: 1400px;
+          margin: 0 auto;
+          position: relative;
+          z-index: 10;
+        }
+
+        .flip-card {
+          background: transparent;
+          width: 100%;
+          /* make card taller for better content spacing and to accommodate a square image */
+          min-height: 660px;
+          height: auto;
+          perspective: 1000px;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .flip-card-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          transform-style: preserve-3d;
+        }
+
+        .flip-card-inner.flipped {
+          transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+          border-radius: 20px;
+          overflow: hidden;
+          background: linear-gradient(135deg, rgba(10, 10, 35, 0.9), rgba(26, 11, 46, 0.8));
+          border: 1px solid rgba(0, 255, 255, 0.2);
+          backdrop-filter: blur(20px);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .flip-card-back {
+          transform: rotateY(180deg);
+          background: linear-gradient(135deg, rgba(26, 11, 46, 0.9), rgba(83, 52, 131, 0.8));
+          border-color: rgba(255, 0, 255, 0.3);
+        }
+
+        .flip-card:hover .flip-card-front,
+        .flip-card:hover .flip-card-back {
+          box-shadow: 
+            0 20px 60px rgba(0, 255, 255, 0.2),
+            0 0 50px rgba(255, 0, 255, 0.1);
+        }
+
+        /* Front Card Styles */
+        .card-image-container {
+          position: relative;
+          /* force a 1:1 square image container regardless of card width */
+          aspect-ratio: 1 / 1;
+          width: 100%;
+          max-height: 420px; /* limit very tall images on large screens */
+          overflow: hidden;
+          background: linear-gradient(135deg, rgba(0, 255, 255, 0.06), rgba(255, 0, 255, 0.06));
+          display: block;
+        }
+
+        .card-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; /* cover keeps the 1:1 crop */
+          object-position: center center;
+          transition: transform 0.4s ease, filter 0.3s ease;
+          display: block;
+        }
+
+        .image-overlay {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(0, 0, 0, 0.1) 50%,
+            rgba(0, 0, 0, 0.3) 100%
+          );
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+          padding: 1rem;
+        }
+
+        .event-icon {
+          width: 50px;
+          height: 50px;
+          background: linear-gradient(135deg, #00ffff, #ff00ff);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          box-shadow: 0 8px 25px rgba(0, 255, 255, 0.4);
+          animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-8px); }
+        }
+
+        .flip-card:hover .card-image {
+          transform: scale(1.05);
+        }
+
+        .card-content {
+          padding: 1.25rem;
+          /* let the content flow naturally under the square image */
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 0.75rem;
+        }
+
+        .card-title {
+          font-size: 1.4rem;
+          font-weight: 600;
+          color: #00ffff;
+          margin-bottom: 0.5rem;
+          text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+          line-height: 1.2;
+        }
+
+        .card-description {
+          color: #a0a9c0;
+          font-size: 0.9rem;
+          line-height: 1.5;
+          margin-bottom: 1rem;
+          flex-grow: 1;
+        }
+
+        .btn-flip {
+          background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(255, 0, 255, 0.2));
+          border: 1px solid rgba(0, 255, 255, 0.4);
+          color: #00ffff;
+          padding: 0.75rem 1.5rem;
+          border-radius: 12px;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          backdrop-filter: blur(10px);
+          width: 100%;
+        }
+
+        .btn-flip:hover {
+          background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(255, 0, 255, 0.3));
+          border-color: rgba(255, 0, 255, 0.6);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(0, 255, 255, 0.3);
+        }
+
+        /* Back Card Styles */
+        .back-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1.5rem 1.5rem 1rem;
+          border-bottom: 1px solid rgba(255, 0, 255, 0.2);
+        }
+
+        .btn-back {
+          background: rgba(255, 0, 255, 0.2);
+          border: 1px solid rgba(255, 0, 255, 0.4);
+          color: #ff00ff;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+          background: rgba(255, 0, 255, 0.3);
+          transform: rotate(-180deg);
+        }
+
+        .back-title {
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: #ff00ff;
+          text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+        }
+
+        .guidelines-container {
+          flex-grow: 1;
+          overflow-y: auto;
+          padding: 0 1.5rem;
+          max-height: 280px;
+        }
+
+        .guidelines-grid {
+          display: grid;
+          gap: 0.75rem;
+          grid-template-columns: 1fr;
+        }
+
+        .guideline-item {
+          background: rgba(0, 0, 0, 0.2);
+          padding: 0.75rem;
+          border-radius: 10px;
+          border: 1px solid rgba(255, 0, 255, 0.1);
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+        }
+
+        .guideline-item.full-width {
+          grid-column: 1 / -1;
+        }
+
+        .guideline-label {
+          color: #ff00ff;
+          font-size: 0.8rem;
+          font-weight: 600;
+        }
+
+        .guideline-value {
+          color: #e0e6ed;
+          font-size: 0.85rem;
+          line-height: 1.4;
+        }
+
+        .back-actions {
+          padding: 1rem 1.5rem 1.5rem;
+          display: flex;
+          gap: 0.75rem;
+          flex-direction: column;
+        }
+
+        .btn-register {
+          background: linear-gradient(135deg, #00ffff, #0099cc);
+          color: white;
+          padding: 0.75rem 1.5rem;
+          border-radius: 12px;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .btn-register:hover {
+          background: linear-gradient(135deg, #00e6e6, #0088bb);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(0, 255, 255, 0.4);
+        }
+
+        .btn-guidelines {
+          background: linear-gradient(135deg, rgba(255, 0, 255, 0.2), rgba(138, 43, 226, 0.2));
+          border: 1px solid rgba(255, 0, 255, 0.4);
+          color: #ff00ff;
+          padding: 0.75rem 1.5rem;
+          border-radius: 12px;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          transition: all 0.3s ease;
+        }
+
+        .btn-guidelines:hover {
+          background: linear-gradient(135deg, rgba(255, 0, 255, 0.3), rgba(138, 43, 226, 0.3));
+          border-color: rgba(255, 0, 255, 0.6);
+          transform: translateY(-2px);
+        }
 
         @media (max-width: 768px) {
           .events-grid {
             grid-template-columns: 1fr;
             padding: 2rem 1rem;
+            gap: 1.5rem;
+          }
+          
+          .flip-card {
+            min-height: 500px;
+          }
+
+          .card-image-container {
+            /* slightly smaller square on tablet */
+            max-height: 360px;
           }
           
           .floating-actions {
@@ -539,6 +1051,52 @@ export default function CyberpunkEventPage(): JSX.Element {
           
           .custom-cursor {
             display: none;
+          }
+          
+          .guidelines-grid {
+            gap: 0.5rem;
+          }
+          
+          .back-actions {
+            flex-direction: column;
+            gap: 0.5rem;
+          }
+          
+          .guideline-item {
+            padding: 0.5rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .events-grid {
+            grid-template-columns: 1fr;
+            padding: 1rem 0.5rem;
+            gap: 1rem;
+          }
+          
+          .flip-card {
+            min-height: 700px;
+          }
+
+          .card-image-container {
+            max-height: 100%;
+          }
+          
+          .card-content {
+            padding: 1rem;
+          }
+          
+          .back-header {
+            padding: 1rem 1rem 0.5rem;
+          }
+          
+          .guidelines-container {
+            padding: 0 1rem;
+            max-height: 500px;
+          }
+          
+          .back-actions {
+            padding: 0.5rem 1rem 1rem;
           }
         }
       `}</style>
@@ -558,61 +1116,141 @@ export default function CyberpunkEventPage(): JSX.Element {
           {departmentData.description || 'Explore our events and activities'}
         </p>
         
-        <div className="scroll-indicator">⬇</div>
+        
       </section>
 
       <main className="events-grid" data-section="events">
         { (departmentData.events || []).map((event: any, index: number) => {
           const title = event.title || 'Event';
-          const shortDesc = (event.description || '').slice(0, 140);
+          const shortDesc = (event.description || '').slice(0, 100);
           const image = event.image || '/innoverse.jpg';
           const status = (event.status as string) || 'open';
           const registrationLink = event.routerName ? `/${departmentData.routerName}/${event.routerName}` : '#';
+          const isFlipped = flippedCards.has(index);
 
           return (
             <article 
               key={`${departmentData.routerName}-${index}`}
-              className={`event-card fade-in stagger-${index + 1} ${loadedSections.has('events') ? 'loaded' : ''}`}
-            >
-              <div className="card-image" style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                <img 
-                  src={image} 
-                  alt={title}
-                  onLoad={(e) => {
-                    const img = e.target as HTMLImageElement;
-                    const aspectRatio = img.naturalWidth / img.naturalHeight;
-                    
-                    if (aspectRatio > 1.3) {
-                      // Wide image - use cover
-                      img.style.objectFit = 'cover';
-                    } else if (aspectRatio < 0.7) {
-                      // Tall image - use contain
-                      img.style.objectFit = 'contain';
-                    } else {
-                      // Balanced ratio - use cover
-                      img.style.objectFit = 'cover';
-                    }
-                  }}
-                />
-              </div>
+              className={`flip-card ${loadedSections.has('events') ? 'loaded' : ''}`}>
               
-              <div className="card-content">
-                <div className="event-icon">
-                  {getEventIcon(title)}
+              <div className={`flip-card-inner ${isFlipped ? 'flipped' : ''}`}>
+                {/* Front of card */}
+                <div className="flip-card-front">
+                  <div className="card-image-container">
+                    <img 
+                      src={image} 
+                      alt={title}
+                      className="card-image"
+                    />
+                  </div>
+                  
+                  <div className="card-content">
+                    <StatusIndicator status={status} />
+                    <h3 className="card-title">{title}</h3>
+                    <p className="card-description">{shortDesc}...</p>
+                    
+                    <div className="card-actions">
+                      <button 
+                        onClick={() => toggleCardFlip(index)}
+                        className="btn-flip"
+                      >
+                        <RotateCcw className="w-4 h-4 mr-2" />
+                        View Guidelines
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                
-                <StatusIndicator status={status} />
-                
-                <h3 className="card-title">{title}</h3>
-                <p className="card-description">{shortDesc}</p>
-                
-                <div className="card-actions">
-                  <a href={registrationLink} className="btn-primary">
-                    Register Now
-                  </a>
-                  <a href={`/${departmentData.routerName}/${event.routerName || ''}`} className="btn-secondary">
-                    Learn More
-                  </a>
+
+                {/* Back of card */}
+                <div className="flip-card-back">
+                  <div className="back-header">
+                    <button 
+                      onClick={() => toggleCardFlip(index)}
+                      className="btn-back"
+                    >
+                      <RotateCcw className="w-4 h-4" />
+                    </button>
+                    <h3 className="back-title">{title}</h3>
+                  </div>
+                  
+                  <div className="guidelines-container">
+                    {event.guidelines && (
+                      <div className="guidelines">
+                        <div className="guidelines-grid">
+                          {event.guidelines.team && (
+                            <div className="guideline-item">
+                              <span className="guideline-label">Team</span>
+                              <span className="guideline-value">{event.guidelines.team}</span>
+                            </div>
+                          )}
+                          {event.guidelines.presentation && (
+                            <div className="guideline-item">
+                              <span className="guideline-label">Duration</span>
+                              <span className="guideline-value">{event.guidelines.presentation}</span>
+                            </div>
+                          )}
+                          {event.guidelines.platform && (
+                            <div className="guideline-item">
+                              <span className="guideline-label">Platform</span>
+                              <span className="guideline-value">{event.guidelines.platform}</span>
+                            </div>
+                          )}
+                          {event.guidelines.languages && (
+                            <div className="guideline-item">
+                              <span className="guideline-label">Languages</span>
+                              <span className="guideline-value">{event.guidelines.languages}</span>
+                            </div>
+                          )}
+                          {event.guidelines.tech && (
+                            <div className="guideline-item">
+                              <span className="guideline-label">Tech Stack</span>
+                              <span className="guideline-value">{event.guidelines.tech}</span>
+                            </div>
+                          )}
+                          {event.guidelines.game && (
+                            <div className="guideline-item">
+                              <span className="guideline-label">Game</span>
+                              <span className="guideline-value">{event.guidelines.game}</span>
+                            </div>
+                          )}
+                          {event.guidelines.judging && (
+                            <div className="guideline-item full-width">
+                              <span className="guideline-label">Judging Criteria</span>
+                              <span className="guideline-value">{event.guidelines.judging}</span>
+                            </div>
+                          )}
+                          {event.guidelines.eligibility && (
+                            <div className="guideline-item">
+                              <span className="guideline-label">Eligibility</span>
+                              <span className="guideline-value">{event.guidelines.eligibility}</span>
+                            </div>
+                          )}
+                          {event.guidelines.rewards && (
+                            <div className="guideline-item">
+                              <span className="guideline-label">Rewards</span>
+                              <span className="guideline-value">{event.guidelines.rewards}</span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  
+                  <div className="back-actions">
+                    <a href={departmentData.registrationlink} className="btn-register">
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Register Now
+                    </a>
+                    <a 
+                      href={event.guidelinesPdf || departmentData.guidelinesPdf || '#'} 
+                      className="btn-guidelines"
+                      target="_blank" 
+                      rel="noreferrer"
+                    >
+                      <FileText className="w-4 h-4 mr-2" />
+                      PDF Guidelines
+                    </a>
+                  </div>
                 </div>
               </div>
             </article>
@@ -621,9 +1259,7 @@ export default function CyberpunkEventPage(): JSX.Element {
       </main>
 
       <div className="floating-actions">
-        <a className="action-button" title="Registration PDF" href={departmentData.registrationPdf || '#'} target="_blank" rel="noreferrer">
-          <Download className="w-6 h-6 text-cyan-400" />
-        </a>
+       
         
         <a className="action-button" title="Guidelines" href={departmentData.guidelinesPdf || '#'} target="_blank" rel="noreferrer">
           <FileText className="w-6 h-6 text-purple-400" />
