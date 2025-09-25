@@ -1,0 +1,655 @@
+export const departments = [
+	{
+		title: "CSE - Events",
+		logo: "/cse/logo.png",
+		routerName: "cse-events",
+		whatsapp: "911234567890",
+		registrationlink: "https://example.com/",
+		guidelinesPdf: "https://example.com/docs/cse-events-guidelines.pdf",
+		description:
+			"Discover new possibilities and explore endless opportunities. Scroll down to learn more!",
+		events: [
+			{
+				title: "Paper Presentation",
+				description:
+					"Present groundbreaking ideas, research, and case studies. Engage in dynamic discussions and showcase innovation!",
+				guidelines: {
+					team: "Solo/Team (5)",
+					presentation: "8 min + 2 min Q&A",
+					slides: "10-12 max",
+					plagiarism: "No plagiarism",
+					judging: "innovation, research, presentation, relevance, Q&A",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/cse/event1.jpg",
+				logo: "club",
+				routerName: "paper-presentation",
+			},
+			{
+				title: "HackerRank",
+				description:
+					"Solve algorithmic challenges, compete globally, track progress, and enhance problem-solving skills in real-time!",
+				guidelines: {
+					team: "Solo/Team (2)",
+					platform: "HackerRank",
+					languages: "Python, Java, C++",
+					judging: "efficiency, correctness, creativity",
+					plagiarism: "No plagiarism",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/cse/event2.jpg",
+				logo: "club",
+				routerName: "hacker-rank",
+			},
+			{
+				title: "WebDesging",
+				description:
+					"Craft stunning, responsive websites. Showcase creativity, coding expertise, and innovative UI/UX designs!",
+				guidelines: {
+					team: "Solo/Team (2)",
+					theme: "Theme-based web design",
+					time: "2-3 hrs",
+					tech: "HTML, CSS, JS, Bootstrap, Tailwind",
+					judging: "creativity, UI/UX, responsiveness, functionality",
+					plagiarism: "No templates/plagiarism",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/cse/event3.jpg",
+				logo: "club",
+				routerName: "web-designing",
+			},
+			{
+				title: "E-Football",
+				description:
+					"Compete in intense virtual football battles, showcase skills, and claim victory on the digital pitch!",
+				guidelines: {
+					team: "Team (3)",
+					game: "eFootball",
+					rules: "Fair play, no external help",
+					judging: "performance, teamwork, sportsmanship",
+					rewards: "Prizes & certificates",
+				},
+				image: "/cse/event4.jpg",
+				logo: "club",
+				routerName: "e-football",
+			},
+			{
+				title: "Fire Crackers",
+				description:
+					"A thrilling, fun-packed game with exciting balloon challenges, laughter, and high-energy action!",
+				guidelines: {
+					team: "Solo/Team (2-4)",
+					game: "Balloon Stomp, Relay, Pop Quiz",
+					rules: "No external objects",
+					judging: "Highest score wins. Judges’ decision final",
+				},
+				image: "/cse/event5.jpg",
+				logo: "club",
+				routerName: "fire-crackers",
+			},
+		],
+	},
+	{
+		title: "ECE - Events",
+		logo: "/ece/logo.png",
+		routerName: "ece-events",
+		whatsapp: "911234567890",
+		registrationPdf: "https://example.com/docs/ece-events-registration.pdf",
+		guidelinesPdf: "https://example.com/docs/ece-events-guidelines.pdf",
+		description:
+			"Discover new possibilities and explore endless opportunities. Scroll down to learn more!",
+		events: [
+			{
+				title: "Paper Presentation",
+				description:
+					"Present groundbreaking ideas, research, and case studies. Engage in dynamic discussions and showcase innovation!",
+				guidelines: {
+					team: "Solo/Team (5)",
+					presentation: "8 min + 2 min Q&A",
+					slides: "10-12 max",
+					plagiarism: "No plagiarism",
+					judging: "innovation, research, presentation, relevance, Q&A",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/ece/event1.jpg",
+				logo: "club",
+				routerName: "paper-presentation",
+			},
+			{
+				title: "HackerRank",
+				description:
+					"Solve algorithmic challenges, compete globally, track progress, and enhance problem-solving skills in real-time!",
+				guidelines: {
+					team: "Solo/Team (2)",
+					platform: "HackerRank",
+					languages: "Python, Java, C++",
+					judging: "efficiency, correctness, creativity",
+					plagiarism: "No plagiarism",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/ece/event2.jpg",
+				logo: "club",
+				routerName: "hacker-rank",
+			},
+			{
+				title: "WebDesging",
+				description:
+					"Craft stunning, responsive websites. Showcase creativity, coding expertise, and innovative UI/UX designs!",
+				guidelines: {
+					team: "Solo/Team (2)",
+					theme: "Theme-based web design",
+					time: "2-3 hrs",
+					tech: "HTML, CSS, JS, Bootstrap, Tailwind",
+					judging: "creativity, UI/UX, responsiveness, functionality",
+					plagiarism: "No templates/plagiarism",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/ece/event3.jpg",
+				logo: "club",
+				routerName: "web-designing",
+			},
+			{
+				title: "E-Football",
+				description:
+					"Compete in intense virtual football battles, showcase skills, and claim victory on the digital pitch!",
+				guidelines: {
+					team: "Team (3)",
+					game: "eFootball",
+					rules: "Fair play, no external help",
+					judging: "performance, teamwork, sportsmanship",
+					rewards: "Prizes & certificates",
+				},
+				image: "/ece/event4.jpg",
+				logo: "club",
+				routerName: "e-football",
+			},
+			{
+				title: "Fire Crackers",
+				description:
+					"A thrilling, fun-packed game with exciting balloon challenges, laughter, and high-energy action!",
+				guidelines: {
+					team: "Solo/Team (2-4)",
+					game: "Balloon Stomp, Relay, Pop Quiz",
+					rules: "No external objects",
+					judging: "Highest score wins. Judges’ decision final",
+				},
+				image: "/ece/event5.jpg",
+				logo: "club",
+				routerName: "fire-crackers",
+			},
+		],
+	},
+	{
+		title: "Agri - Events",
+		logo: "/agri/logo.png",
+		routerName: "agri-events",
+		whatsapp: "911234567890",
+		registrationPdf: "https://example.com/docs/agri-events-registration.pdf",
+		guidelinesPdf: "https://example.com/docs/agri-events-guidelines.pdf",
+		description:
+			"The Agricultural Engineering Department warmly welcomes you to Innoverse 2K25, a platform for innovation and creativity!",
+		events: [
+			{
+				title: "Paper Presentation",
+				description:
+					"Present groundbreaking ideas, research, and case studies. Engage in dynamic discussions and showcase innovation!",
+				guidelines: {
+					team: "Solo/Team (5)",
+					presentation: "8 min + 2 min Q&A",
+					slides: "10-12 max",
+					plagiarism: "No plagiarism",
+					judging: "innovation, research, presentation, relevance, Q&A",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/agri/agri.jpg",
+				logo: "club",
+				routerName: "paper-presentation",
+			},
+			{
+				title: "HackerRank",
+				description:
+					"Solve algorithmic challenges, compete globally, track progress, and enhance problem-solving skills in real-time!",
+				guidelines: {
+					team: "Solo/Team (2)",
+					platform: "HackerRank",
+					languages: "Python, Java, C++",
+					judging: "efficiency, correctness, creativity",
+					plagiarism: "No plagiarism",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/agri/agri.jpg",
+				logo: "club",
+				routerName: "hacker-rank",
+			},
+			{
+				title: "WebDesging",
+				description:
+					"Craft stunning, responsive websites. Showcase creativity, coding expertise, and innovative UI/UX designs!",
+				guidelines: {
+					team: "Solo/Team (2)",
+					theme: "Theme-based web design",
+					time: "2-3 hrs",
+					tech: "HTML, CSS, JS, Bootstrap, Tailwind",
+					judging: "creativity, UI/UX, responsiveness, functionality",
+					plagiarism: "No templates/plagiarism",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/agri/agri.jpg",
+				logo: "club",
+				routerName: "web-designing",
+			},
+			{
+				title: "E-Football",
+				description:
+					"Compete in intense virtual football battles, showcase skills, and claim victory on the digital pitch!",
+				guidelines: {
+					team: "Team (3)",
+					game: "eFootball",
+					rules: "Fair play, no external help",
+					judging: "performance, teamwork, sportsmanship",
+					rewards: "Prizes & certificates",
+				},
+				image: "/agri/agri.jpg",
+				logo: "club",
+				routerName: "e-football",
+			},
+			{
+				title: "Fire Crackers",
+				description:
+					"A thrilling, fun-packed game with exciting balloon challenges, laughter, and high-energy action!",
+				guidelines: {
+					team: "Solo/Team (2-4)",
+					game: "Balloon Stomp, Relay, Pop Quiz",
+					rules: "No external objects",
+					judging: "Highest score wins. Judges’ decision final",
+				},
+				image: "/agri/agri.jpg",
+				logo: "club",
+				routerName: "fire-crackers",
+			},
+		],
+	},
+	{
+		title: "AI & DS | AI & ML - Events",
+		logo: "/aids/logo.png",
+		routerName: "aids-events",
+		whatsapp: "911234567890",
+		registrationPdf: "https://example.com/docs/aids-events-registration.pdf",
+		guidelinesPdf: "https://example.com/docs/aids-events-guidelines.pdf",
+		description:
+			"Discover new possibilities and explore endless opportunities. Scroll down to learn more!",
+		events: [
+			{
+				title: "Paper Presentation",
+				description:
+					"Present groundbreaking ideas, research, and case studies. Engage in dynamic discussions and showcase innovation!",
+				guidelines: {
+					team: "Solo/Team (5)",
+					presentation: "8 min + 2 min Q&A",
+					slides: "10-12 max",
+					plagiarism: "No plagiarism",
+					judging: "innovation, research, presentation, relevance, Q&A",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/aids/event1.jpg",
+				logo: "club",
+				routerName: "paper-presentation",
+			},
+			{
+				title: "HackerRank",
+				description:
+					"Solve algorithmic challenges, compete globally, track progress, and enhance problem-solving skills in real-time!",
+				guidelines: {
+					team: "Solo/Team (2)",
+					platform: "HackerRank",
+					languages: "Python, Java, C++",
+					judging: "efficiency, correctness, creativity",
+					plagiarism: "No plagiarism",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/aids/event2.jpg",
+				logo: "club",
+				routerName: "hacker-rank",
+			},
+			{
+				title: "WebDesging",
+				description:
+					"Craft stunning, responsive websites. Showcase creativity, coding expertise, and innovative UI/UX designs!",
+				guidelines: {
+					team: "Solo/Team (2)",
+					theme: "Theme-based web design",
+					time: "2-3 hrs",
+					tech: "HTML, CSS, JS, Bootstrap, Tailwind",
+					judging: "creativity, UI/UX, responsiveness, functionality",
+					plagiarism: "No templates/plagiarism",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/aids/event3.jpg",
+				logo: "club",
+				routerName: "web-designing",
+			},
+			{
+				title: "E-Football",
+				description:
+					"Compete in intense virtual football battles, showcase skills, and claim victory on the digital pitch!",
+				guidelines: {
+					team: "Team (3)",
+					game: "eFootball",
+					rules: "Fair play, no external help",
+					judging: "performance, teamwork, sportsmanship",
+					rewards: "Prizes & certificates",
+				},
+				image: "/aids/event4.jpg",
+				logo: "club",
+				routerName: "e-football",
+			},
+			{
+				title: "Fire Crackers",
+				description:
+					"A thrilling, fun-packed game with exciting balloon challenges, laughter, and high-energy action!",
+				guidelines: {
+					team: "Solo/Team (2-4)",
+					game: "Balloon Stomp, Relay, Pop Quiz",
+					rules: "No external objects",
+					judging: "Highest score wins. Judges’ decision final",
+				},
+				image: "/aids/event5.jpg",
+				logo: "club",
+				routerName: "fire-crackers",
+			},
+		],
+	},
+	{
+		title: "BME - Events",
+		logo: "/bme/logo.png",
+		routerName: "bme-events",
+		whatsapp: "911234567890",
+		registrationPdf: "https://example.com/docs/bme-events-registration.pdf",
+		guidelinesPdf: "https://example.com/docs/bme-events-guidelines.pdf",
+		description:
+			"Discover new possibilities and explore endless opportunities. Scroll down to learn more!",
+		events: [
+			{
+				title: "Paper Presentation",
+				description:
+					"Present groundbreaking ideas, research, and case studies. Engage in dynamic discussions and showcase innovation!",
+				guidelines: {
+					team: "Solo/Team (5)",
+					presentation: "8 min + 2 min Q&A",
+					slides: "10-12 max",
+					plagiarism: "No plagiarism",
+					judging: "innovation, research, presentation, relevance, Q&A",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/bme/event1.jpg",
+				logo: "club",
+				routerName: "paper-presentation",
+			},
+			{
+				title: "HackerRank",
+				description:
+					"Solve algorithmic challenges, compete globally, track progress, and enhance problem-solving skills in real-time!",
+				guidelines: {
+					team: "Solo/Team (2)",
+					platform: "HackerRank",
+					languages: "Python, Java, C++",
+					judging: "efficiency, correctness, creativity",
+					plagiarism: "No plagiarism",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/bme/event2.jpg",
+				logo: "club",
+				routerName: "hacker-rank",
+			},
+			{
+				title: "WebDesging",
+				description:
+					"Craft stunning, responsive websites. Showcase creativity, coding expertise, and innovative UI/UX designs!",
+				guidelines: {
+					team: "Solo/Team (2)",
+					theme: "Theme-based web design",
+					time: "2-3 hrs",
+					tech: "HTML, CSS, JS, Bootstrap, Tailwind",
+					judging: "creativity, UI/UX, responsiveness, functionality",
+					plagiarism: "No templates/plagiarism",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/bme/event3.jpg",
+				logo: "club",
+				routerName: "web-designing",
+			},
+			{
+				title: "E-Football",
+				description:
+					"Compete in intense virtual football battles, showcase skills, and claim victory on the digital pitch!",
+				guidelines: {
+					team: "Team (3)",
+					game: "eFootball",
+					rules: "Fair play, no external help",
+					judging: "performance, teamwork, sportsmanship",
+					rewards: "Prizes & certificates",
+				},
+				image: "/bme/event4.jpg",
+				logo: "club",
+				routerName: "e-football",
+			},
+			{
+				title: "Fire Crackers",
+				description:
+					"A thrilling, fun-packed game with exciting balloon challenges, laughter, and high-energy action!",
+				guidelines: {
+					team: "Solo/Team (2-4)",
+					game: "Balloon Stomp, Relay, Pop Quiz",
+					rules: "No external objects",
+					judging: "Highest score wins. Judges’ decision final",
+				},
+				image: "/bme/event5.jpg",
+				logo: "club",
+				routerName: "fire-crackers",
+			},
+		],
+	},
+	{
+		title: "Mech - Events",
+		logo: "/mech/logo.png",
+		routerName: "mech-events",
+		whatsapp: "911234567890",
+		registrationPdf: "https://example.com/docs/mech-events-registration.pdf",
+		guidelinesPdf: "https://example.com/docs/mech-events-guidelines.pdf",
+		description:
+			"Discover new possibilities and explore endless opportunities. Scroll down to learn more!",
+		events: [
+			{
+				title: "Paper Presentation",
+				description:
+					"Present groundbreaking ideas, research, and case studies. Engage in dynamic discussions and showcase innovation!",
+				guidelines: {
+					team: "Solo/Team (5)",
+					presentation: "8 min + 2 min Q&A",
+					slides: "10-12 max",
+					plagiarism: "No plagiarism",
+					judging: "innovation, research, presentation, relevance, Q&A",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/mech/event1.jpg",
+				logo: "club",
+				routerName: "paper-presentation",
+			},
+			{
+				title: "HackerRank",
+				description:
+					"Solve algorithmic challenges, compete globally, track progress, and enhance problem-solving skills in real-time!",
+				guidelines: {
+					team: "Solo/Team (2)",
+					platform: "HackerRank",
+					languages: "Python, Java, C++",
+					judging: "efficiency, correctness, creativity",
+					plagiarism: "No plagiarism",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/mech/event2.jpg",
+				logo: "club",
+				routerName: "hacker-rank",
+			},
+			{
+				title: "WebDesging",
+				description:
+					"Craft stunning, responsive websites. Showcase creativity, coding expertise, and innovative UI/UX designs!",
+				guidelines: {
+					team: "Solo/Team (2)",
+					theme: "Theme-based web design",
+					time: "2-3 hrs",
+					tech: "HTML, CSS, JS, Bootstrap, Tailwind",
+					judging: "creativity, UI/UX, responsiveness, functionality",
+					plagiarism: "No templates/plagiarism",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/mech/event3.jpg",
+				logo: "club",
+				routerName: "web-designing",
+			},
+			{
+				title: "E-Football",
+				description:
+					"Compete in intense virtual football battles, showcase skills, and claim victory on the digital pitch!",
+				guidelines: {
+					team: "Team (3)",
+					game: "eFootball",
+					rules: "Fair play, no external help",
+					judging: "performance, teamwork, sportsmanship",
+					rewards: "Prizes & certificates",
+				},
+				image: "/mech/event4.jpg",
+				logo: "club",
+				routerName: "e-football",
+			},
+			{
+				title: "Fire Crackers",
+				description:
+					"A thrilling, fun-packed game with exciting balloon challenges, laughter, and high-energy action!",
+				guidelines: {
+					team: "Solo/Team (2-4)",
+					game: "Balloon Stomp, Relay, Pop Quiz",
+					rules: "No external objects",
+					judging: "Highest score wins. Judges’ decision final",
+				},
+				image: "/mech/event1.jpg",
+				logo: "club",
+				routerName: "fire-crackers",
+			},
+		],
+	},
+	{
+		title: "IT Department - Events",
+		logo: "/it/logo.png",
+		routerName: "it-events",
+		whatsapp: "911234567890",
+		registrationPdf: "https://example.com/docs/it-events-registration.pdf",
+		guidelinesPdf: "https://example.com/docs/it-events-guidelines.pdf",
+		description:
+			"Discover new possibilities and explore endless opportunities. Scroll down to learn more!",
+		events: [
+			{
+				title: "Paper Presentation",
+				description:
+					"Present groundbreaking ideas, research, and case studies. Engage in dynamic discussions and showcase innovation!",
+				guidelines: {
+					team: "Solo/Team (5)",
+					presentation: "8 min + 2 min Q&A",
+					slides: "10-12 max",
+					plagiarism: "No plagiarism",
+					judging: "innovation, research, presentation, relevance, Q&A",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/it/event1.jpg",
+				logo: "club",
+				routerName: "paper-presentation",
+			},
+			{
+				title: "HackerRank",
+				description:
+					"Solve algorithmic challenges, compete globally, track progress, and enhance problem-solving skills in real-time!",
+				guidelines: {
+					team: "Solo/Team (2)",
+					platform: "HackerRank",
+					languages: "Python, Java, C++",
+					judging: "efficiency, correctness, creativity",
+					plagiarism: "No plagiarism",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/it/event2.jpg",
+				logo: "club",
+				routerName: "hacker-rank",
+			},
+			{
+				title: "WebDesging",
+				description:
+					"Craft stunning, responsive websites. Showcase creativity, coding expertise, and innovative UI/UX designs!",
+				guidelines: {
+					team: "Solo/Team (2)",
+					theme: "Theme-based web design",
+					time: "2-3 hrs",
+					tech: "HTML, CSS, JS, Bootstrap, Tailwind",
+					judging: "creativity, UI/UX, responsiveness, functionality",
+					plagiarism: "No templates/plagiarism",
+					eligibility: "Open to UG/PG",
+					rewards: "Prizes & certificates",
+				},
+				image: "/it/event3.jpg",
+				logo: "club",
+				routerName: "web-designing",
+			},
+			{
+				title: "E-Football",
+				description:
+					"Compete in intense virtual football battles, showcase skills, and claim victory on the digital pitch!",
+				guidelines: {
+					team: "Team (3)",
+					game: "eFootball",
+					rules: "Fair play, no external help",
+					judging: "performance, teamwork, sportsmanship",
+					rewards: "Prizes & certificates",
+				},
+				image: "/it/event4.jpg",
+				logo: "club",
+				routerName: "e-football",
+			},
+			{
+				title: "Fire Crackers",
+				description:
+					"A thrilling, fun-packed game with exciting balloon challenges, laughter, and high-energy action!",
+				guidelines: {
+					team: "Solo/Team (2-4)",
+					game: "Balloon Stomp, Relay, Pop Quiz",
+					rules: "No external objects",
+					judging: "Highest score wins. Judges’ decision final",
+				},
+				image: "/it/event5.jpg",
+				logo: "club",
+				routerName: "fire-crackers",
+			},
+		],
+	},
+];
+
+export default departments;

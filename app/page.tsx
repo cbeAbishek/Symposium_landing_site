@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import Particles from "./components/particles";
+import dynamic from "next/dynamic";
+const Particles = dynamic(() => import("./components/particles"), { ssr: false });
 import logo from ".//Logo.png";
 import Image from "next/image";
 import Home2 from "./section1";
@@ -41,9 +42,18 @@ export default function Home() {
   }, []);
 
   const calculateCountdown = () => {
-    const targetDate = new Date("2025-04-9 00:00:00").getTime();
-    const now = new Date().getTime();
+    // Use an explicit UTC timestamp to avoid platform-dependent parsing
+    const targetDate = Date.UTC(2025, 9, 15, 0, 0, 0); // month is 0-indexed: 8 = September
+    const now = Date.now();
     const timeRemaining = targetDate - now;
+
+    if (timeRemaining <= 0) {
+      setDays(0);
+      setHours(0);
+      setMinutes(0);
+      setSeconds(0);
+      return;
+    }
 
     const newDays = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
     const newHours = Math.floor(
@@ -61,6 +71,8 @@ export default function Home() {
   };
 
   useEffect(() => {
+    // Run immediately so the UI shows values on first paint
+    calculateCountdown();
     const countdownInterval = setInterval(calculateCountdown, 1000);
     return () => clearInterval(countdownInterval);
   }, []);
@@ -84,6 +96,12 @@ export default function Home() {
     }
   }, [charIndex, currentSentenceIndex]);
 
+  // Helper to render numbers: always show two digits and clamp negatives to 0
+  const formatNum = (n: number) => {
+    const num = Math.max(0, Math.floor(n));
+    return num < 10 ? `0${num}` : String(num);
+  };
+
   return (
     <>
       <div
@@ -97,12 +115,7 @@ export default function Home() {
         </nav>
         <div className="hidden -z-40 w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
         
-        {typeof window !== "undefined" && (
-          <Particles
-            className="absolute inset-0 -z-40 animate-fade-in"
-            quantity={100}
-          />
-        )}
+        <Particles className="absolute inset-0 -z-40 animate-fade-in" quantity={100} />
         
         <h1 className=" 2xl:text-9xl z-30 text-5xl lg:text-7xl xl:text-8xl  text-gradient text-transparent duration-1000 bg-zinc-50 cursor-default text-edge-outline animate-title font-display  md:text-9xl whitespace-nowrap bg-clip-text ">
         Viyugam 2k25
@@ -113,7 +126,7 @@ export default function Home() {
           <div className="countdown m-8 font-display lg:text-3xl mx-auto d-block animate-fade-in text-white">
             <div className="countdown-item lg:pr-5">
               <span className="countdown-number" id="days">
-                {days < 10 ? `0${days}` : days}
+                {formatNum(days)}
               </span>
               <span
                 className={`countdown-label ${
@@ -125,7 +138,7 @@ export default function Home() {
             </div>
             <div className="countdown-item lg:pr-5">
               <span className="countdown-number" id="hours">
-                {hours < 10 ? `0${hours}` : hours}
+                {formatNum(hours)}
               </span>
               <span
                 className={`countdown-label ${
@@ -137,7 +150,7 @@ export default function Home() {
             </div>
             <div className="countdown-item lg:pr-5">
               <span className="countdown-number" id="minutes">
-                {minutes < 10 ? `0${minutes}` : minutes}
+                {formatNum(minutes)}
               </span>
               <span
                 className={`countdown-label ${
@@ -149,7 +162,7 @@ export default function Home() {
             </div>
             <div className="countdown-item lg:pr-5">
               <span className="countdown-number" id="seconds">
-                {seconds < 10 ? `0${seconds}` : seconds}
+                {formatNum(seconds)}
               </span>
               <span
                 className={`countdown-label ${
@@ -160,6 +173,7 @@ export default function Home() {
               </span>
             </div>
           </div>
+         
           {/* Changeable wordings */}
           <div className="m-8 font-display lg:text-3xl text-center animate-fade-in text-white flex justify-center items-center">
             <span className="typing-effect">{displayedText}</span>
@@ -186,7 +200,6 @@ export default function Home() {
         </div>
       </div>
       <Home2 />
-      
     </>
   );
 }

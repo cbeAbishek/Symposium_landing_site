@@ -1,0 +1,379 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "@contentlayer/cli": {
+      "name": "@contentlayer/cli",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@contentlayer/core"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@contentlayer/cli"
+      ],
+      "fixAvailable": true
+    },
+    "@contentlayer/client": {
+      "name": "@contentlayer/client",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@contentlayer/core"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@contentlayer/client"
+      ],
+      "fixAvailable": true
+    },
+    "@contentlayer/core": {
+      "name": "@contentlayer/core",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "esbuild",
+        "mdx-bundler"
+      ],
+      "effects": [
+        "@contentlayer/cli",
+        "@contentlayer/client",
+        "@contentlayer/source-files",
+        "@contentlayer/source-remote-files",
+        "contentlayer"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@contentlayer/core"
+      ],
+      "fixAvailable": false
+    },
+    "@contentlayer/source-files": {
+      "name": "@contentlayer/source-files",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@contentlayer/core"
+      ],
+      "effects": [
+        "contentlayer"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@contentlayer/source-files"
+      ],
+      "fixAvailable": false
+    },
+    "@contentlayer/source-remote-files": {
+      "name": "@contentlayer/source-remote-files",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@contentlayer/core",
+        "@contentlayer/source-files"
+      ],
+      "effects": [
+        "contentlayer"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@contentlayer/source-remote-files"
+      ],
+      "fixAvailable": false
+    },
+    "contentlayer": {
+      "name": "contentlayer",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "@contentlayer/cli",
+        "@contentlayer/client",
+        "@contentlayer/core",
+        "@contentlayer/source-files",
+        "@contentlayer/source-remote-files"
+      ],
+      "effects": [
+        "next-contentlayer"
+      ],
+      "range": ">=0.0.2-1",
+      "nodes": [
+        "node_modules/contentlayer"
+      ],
+      "fixAvailable": false
+    },
+    "esbuild": {
+      "name": "esbuild",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1102341,
+          "name": "esbuild",
+          "dependency": "esbuild",
+          "title": "esbuild enables any website to send any requests to the development server and read the response",
+          "url": "https://github.com/advisories/GHSA-67mh-4wv8-2f99",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-346"
+          ],
+          "cvss": {
+            "score": 5.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
+          },
+          "range": "<=0.24.2"
+        }
+      ],
+      "effects": [
+        "@contentlayer/core"
+      ],
+      "range": "<=0.24.2",
+      "nodes": [
+        "node_modules/esbuild"
+      ],
+      "fixAvailable": false
+    },
+    "estree-util-value-to-estree": {
+      "name": "estree-util-value-to-estree",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1103822,
+          "name": "estree-util-value-to-estree",
+          "dependency": "estree-util-value-to-estree",
+          "title": "estree-util-value-to-estree allows prototype pollution in generated ESTree",
+          "url": "https://github.com/advisories/GHSA-f7f6-9jq7-3rqj",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<3.3.3"
+        }
+      ],
+      "effects": [
+        "remark-mdx-frontmatter"
+      ],
+      "range": "<3.3.3",
+      "nodes": [
+        "node_modules/estree-util-value-to-estree"
+      ],
+      "fixAvailable": false
+    },
+    "mdx-bundler": {
+      "name": "mdx-bundler",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "remark-mdx-frontmatter"
+      ],
+      "effects": [
+        "@contentlayer/core"
+      ],
+      "range": "3.0.0 - 9.2.1",
+      "nodes": [
+        "node_modules/mdx-bundler"
+      ],
+      "fixAvailable": false
+    },
+    "next": {
+      "name": "next",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        {
+          "source": 1097295,
+          "name": "next",
+          "dependency": "next",
+          "title": "Next.js Server-Side Request Forgery in Server Actions",
+          "url": "https://github.com/advisories/GHSA-fr5h-rqp8-mj6g",
+          "severity": "high",
+          "cwe": [
+            "CWE-918"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+          },
+          "range": ">=13.4.0 <14.1.1"
+        },
+        {
+          "source": 1100421,
+          "name": "next",
+          "dependency": "next",
+          "title": "Denial of Service condition in Next.js image optimization",
+          "url": "https://github.com/advisories/GHSA-g77x-44xx-532m",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-674"
+          ],
+          "cvss": {
+            "score": 5.9,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": ">=10.0.0 <14.2.7"
+        },
+        {
+          "source": 1104490,
+          "name": "next",
+          "dependency": "next",
+          "title": "Next.js Race Condition to Cache Poisoning",
+          "url": "https://github.com/advisories/GHSA-qpjv-v59x-3qc4",
+          "severity": "low",
+          "cwe": [
+            "CWE-362"
+          ],
+          "cvss": {
+            "score": 3.7,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+          },
+          "range": "<14.2.24"
+        },
+        {
+          "source": 1105461,
+          "name": "next",
+          "dependency": "next",
+          "title": "Information exposure in Next.js dev server due to lack of origin verification",
+          "url": "https://github.com/advisories/GHSA-3h52-269p-cp9r",
+          "severity": "low",
+          "cwe": [
+            "CWE-1385"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": ">=13.0 <14.2.30"
+        },
+        {
+          "source": 1107226,
+          "name": "next",
+          "dependency": "next",
+          "title": "Next.js Affected by Cache Key Confusion for Image Optimization API Routes",
+          "url": "https://github.com/advisories/GHSA-g5qg-72qw-gw5v",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-524"
+          ],
+          "cvss": {
+            "score": 6.2,
+            "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+          },
+          "range": ">=0.9.9 <14.2.31"
+        },
+        {
+          "source": 1107420,
+          "name": "next",
+          "dependency": "next",
+          "title": "Next.js authorization bypass vulnerability",
+          "url": "https://github.com/advisories/GHSA-7gfc-8cq8-jh5f",
+          "severity": "high",
+          "cwe": [
+            "CWE-285",
+            "CWE-863"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+          },
+          "range": ">=9.5.5 <14.2.15"
+        },
+        {
+          "source": 1107512,
+          "name": "next",
+          "dependency": "next",
+          "title": "Next.js Improper Middleware Redirect Handling Leads to SSRF",
+          "url": "https://github.com/advisories/GHSA-4342-x723-ch2f",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-918"
+          ],
+          "cvss": {
+            "score": 6.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:N"
+          },
+          "range": ">=0.9.9 <14.2.32"
+        },
+        {
+          "source": 1107513,
+          "name": "next",
+          "dependency": "next",
+          "title": "Next.js Content Injection Vulnerability for Image Optimization",
+          "url": "https://github.com/advisories/GHSA-xv57-4mr9-wg8v",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-20"
+          ],
+          "cvss": {
+            "score": 4.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N"
+          },
+          "range": ">=0.9.9 <14.2.31"
+        }
+      ],
+      "effects": [
+        "next-contentlayer"
+      ],
+      "range": "<=14.2.31",
+      "nodes": [
+        "node_modules/next"
+      ],
+      "fixAvailable": false
+    },
+    "next-contentlayer": {
+      "name": "next-contentlayer",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "@contentlayer/core",
+        "contentlayer",
+        "next"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/next-contentlayer"
+      ],
+      "fixAvailable": false
+    },
+    "remark-mdx-frontmatter": {
+      "name": "remark-mdx-frontmatter",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "estree-util-value-to-estree"
+      ],
+      "effects": [
+        "mdx-bundler"
+      ],
+      "range": "<=2.1.1",
+      "nodes": [
+        "node_modules/remark-mdx-frontmatter"
+      ],
+      "fixAvailable": false
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 11,
+      "high": 1,
+      "critical": 0,
+      "total": 12
+    },
+    "dependencies": {
+      "prod": 605,
+      "dev": 24,
+      "optional": 41,
+      "peer": 1,
+      "peerOptional": 0,
+      "total": 664
+    }
+  }
+}
