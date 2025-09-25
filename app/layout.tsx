@@ -13,11 +13,11 @@ export const metadata = {
   openGraph: {
     title: "Viyugam 2k25",
     description: "National level technical symposium",
-    url: "https://symposium-landing-site.vercel.app/", // Update with actual website URL
+    url: "https://viyugam.vercel.app/", // Update with actual website URL
     siteName: "Viyugam",
     images: [
       {
-        url: "https://raw.githubusercontent.com/cbeAbishek/Symposium_landing_site/refs/heads/main/public/Viyugam.jpg",
+        url: "https://i.ibb.co/20Y5BYDk/innoverse-meta-tag.jpg",
         width: 1200,
         height: 630,
         alt: "Viyugam 2k25 Banner",
@@ -38,14 +38,14 @@ export const metadata = {
     },
   },
   icons: {
-    shortcut: "/licet.png", // Path to favicon or shortcut icon
+    shortcut: "/og.png", // Path to favicon or shortcut icon
   },
 
   twitter: {
     card: "summary_large_image",
     title: "Viyugam 2k25",
     description: "National level technical symposium",
-    images:"https://i.ibb.co/HDHzZt7y/meta.jpg",
+    images:"https://i.ibb.co/20Y5BYDk/innoverse-meta-tag.jpg",
   },
 };
 
