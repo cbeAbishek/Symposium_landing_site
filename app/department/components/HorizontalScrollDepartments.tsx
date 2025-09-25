@@ -24,45 +24,97 @@ export default function HorizontalScrollDepartments({
   const x = useMotionValue(0);
   const [isHovered, setIsHovered] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   const duplicatedItems = [...items, ...items];
-  const itemWidth = 320;
-  const totalWidth = items.length * itemWidth;
+  const [measuredItemWidth, setMeasuredItemWidth] = useState<number | null>(null);
+  const [totalWidth, setTotalWidth] = useState<number>(0);
 
-  // Start the animation once on client mount so it begins immediately without user interaction
+  // compute duplicatedItems length remains same
+
+  // Preload images and measure card width
+  const preloadAndMeasure = async () => {
+    // preload images
+    const srcs = items.map((it) => (typeof it.image === "string" ? it.image : (it.image as any).src));
+    await Promise.all(
+      srcs.map(
+        (s) =>
+          new Promise<void>((resolve) => {
+            const img = new window.Image();
+            img.src = s;
+            img.onload = () => resolve();
+            img.onerror = () => resolve();
+          })
+      )
+    );
+
+    // measure card width and gap
+    if (containerRef.current) {
+      const firstCard = containerRef.current.querySelector(".flex-none") as HTMLElement | null;
+      if (firstCard) {
+        const rect = firstCard.getBoundingClientRect();
+        // measure gap using next sibling margin-left (space-x utility)
+        const second = firstCard.nextElementSibling as HTMLElement | null;
+        let gap = 0;
+        if (second) {
+          const style = window.getComputedStyle(second);
+          gap = parseFloat(style.marginLeft || "0") || 0;
+        }
+        const itemW = rect.width + gap;
+        setMeasuredItemWidth(itemW);
+        setTotalWidth(items.length * itemW);
+        return itemW;
+      }
+    }
+    // fallback
+    const fallback = 320;
+    setMeasuredItemWidth(fallback);
+    setTotalWidth(items.length * fallback);
+    return fallback;
+  };
+
+  // Helper that starts the loop animation from the current x position
+  const startLoopAnimation = (startX = 0) => {
+    // set the motion value to the desired start position first
+    x.set(startX);
+
+    // Start looping animation to -totalWidth (half-width) then repeat
+    // Use requestAnimationFrame so the animation starts after layout/paint
+    requestAnimationFrame(() => {
+      controls.start({
+        x: -totalWidth,
+        transition: {
+          x: {
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: Math.max(4, items.length * 2.5),
+            ease: "linear",
+          },
+        },
+      });
+    });
+  };
+
   useEffect(() => {
+    let rafId: number | null = null;
+    let mounted = true;
     setHasMounted(true);
 
-    // Helper to start the infinite loop animation from the current position
-    const startAnimation = async () => {
-      try {
-        // Ensure the animation starts from a known position
-        await controls.set({ x: 0 });
-        // Small delay to let layout settle (requestAnimationFrame ensures paint)
-        requestAnimationFrame(() => {
-          controls.start({
-            x: -totalWidth,
-            transition: {
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: Math.max(1, items.length) * 5,
-                ease: "linear",
-              },
-            },
-          });
-        });
-      } catch (e) {
-        // ignore if stopped before starting
-      }
-    };
-
-    startAnimation();
+    // preload images and measure, then start animation using measured widths
+    (async () => {
+      const itemW = await preloadAndMeasure();
+      if (!mounted) return;
+      // start after paint
+      rafId = requestAnimationFrame(() => startLoopAnimation(0));
+    })();
 
     return () => {
+      mounted = false;
+      if (rafId) cancelAnimationFrame(rafId);
       controls.stop();
     };
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [items.length]);
 
   // Handler to stop the loop when the user hovers
   const handleHoverStart = () => {
@@ -72,18 +124,36 @@ export default function HorizontalScrollDepartments({
 
   // Handler to resume the loop when the user's mouse leaves
   const handleHoverEnd = () => {
-    x.set(x.get() % totalWidth);
     setIsHovered(false);
+    // normalize current position to the [0, totalWidth) range to avoid large numbers
+    const current = x.get();
+    const normalized = ((current % totalWidth) + totalWidth) % totalWidth;
+    // start from the normalized negative position so the loop looks seamless
+    startLoopAnimation(-normalized);
+  };
+
+  // When dragging ends, normalize the position and resume animation
+  const handleDragEnd = () => {
+    // stop any current animation
+    controls.stop();
+    const current = x.get();
+    const normalized = ((current % totalWidth) + totalWidth) % totalWidth;
+    // set motion value to -normalized so layout aligns with duplicated items
+    x.set(-normalized);
+    // resume loop
+    startLoopAnimation(-normalized);
   };
 
   return (
-    <div className="w-full overflow-hidden py-10">
+    <div className="w-full overflow-hidden py-10" ref={containerRef}>
       <motion.div
         className="flex space-x-8 pb-4 cursor-grab active:cursor-grabbing"
         drag="x"
-        dragConstraints={{ left: -totalWidth, right: 0 }}
+        // only enable dragConstraints once totalWidth is measured
+        dragConstraints={{ left: -(totalWidth || 0), right: 0 }}
         onHoverStart={handleHoverStart}
         onHoverEnd={handleHoverEnd}
+        onDragEnd={handleDragEnd}
         animate={controls}
         style={{ x }}
       >
