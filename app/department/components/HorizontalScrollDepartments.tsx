@@ -1,9 +1,11 @@
+// app/department/components/HorizontalScrollDepartments.tsx
+
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useAnimation, useMotionValue } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 import type { StaticImageData } from "next/image";
 
 type Department = {
@@ -20,184 +22,298 @@ interface HorizontalScrollDepartmentsProps {
 export default function HorizontalScrollDepartments({
   items,
 }: HorizontalScrollDepartmentsProps): JSX.Element {
-  const controls = useAnimation();
   const x = useMotionValue(0);
-  const [isHovered, setIsHovered] = useState(false);
+  const rafRef = useRef<number | null>(null);
+  const lastTimeRef = useRef<number | null>(null);
   const [hasMounted, setHasMounted] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const duplicatedItems = [...items, ...items];
-  const [measuredItemWidth, setMeasuredItemWidth] = useState<number | null>(null);
-  const [totalWidth, setTotalWidth] = useState<number>(0);
+  const [measuredItemWidth, setMeasuredItemWidth] = useState<number>(320);
+  const [totalWidth, setTotalWidth] = useState<number>(items.length * 320);
+  
+  // Controls pause state for Autoplay and Dragging
+  const isDraggingRef = useRef(false);
+  const lastDirectionRef = useRef<number>(-1); 
+  
+  // CTA Hover Logic Refs
+  const ctaHoverRef = useRef<boolean>(false);
+  const ctaResumeTimeoutRef = useRef<number | null>(null);
 
-  // compute duplicatedItems length remains same
+  // --- Utility Functions ---
 
-  // Preload images and measure card width
-  const preloadAndMeasure = async () => {
-    // preload images
-    const srcs = items.map((it) => (typeof it.image === "string" ? it.image : (it.image as any).src));
-    await Promise.all(
-      srcs.map(
-        (s) =>
-          new Promise<void>((resolve) => {
-            const img = new window.Image();
-            img.src = s;
-            img.onload = () => resolve();
-            img.onerror = () => resolve();
-          })
-      )
-    );
-
-    // measure card width and gap
+  const measureWidths = useCallback(() => {
     if (containerRef.current) {
-      const firstCard = containerRef.current.querySelector(".flex-none") as HTMLElement | null;
+      const firstCard = containerRef.current.querySelector(".card-item") as HTMLElement | null;
       if (firstCard) {
         const rect = firstCard.getBoundingClientRect();
-        // measure gap using next sibling margin-left (space-x utility)
-        const second = firstCard.nextElementSibling as HTMLElement | null;
-        let gap = 0;
-        if (second) {
-          const style = window.getComputedStyle(second);
-          gap = parseFloat(style.marginLeft || "0") || 0;
-        }
-        const itemW = rect.width + gap;
-        setMeasuredItemWidth(itemW);
-        setTotalWidth(items.length * itemW);
-        return itemW;
+        // Item width is the card width (w-72) plus the total horizontal padding (px-2 = 8px left + 8px right)
+        // Note: The main container now uses gap-4 (16px), and each item uses px-2 (4px left + 4px right).
+        // Actual item width calculation can be tricky with gap. We rely on measured width + container's gap.
+        const itemW = rect.width + 16; // w-72 (288px) + gap-4 (16px) = 304px, or w-72 + px-2 (4+4) + gap-4
+        
+        // Simpler approach: w-72 (288px) + px-2 (8px total) = 296px. Add gap-4 (16px) to total width calculation
+        const itemBaseWidth = rect.width; 
+        const itemSpacing = 16; // Based on gap-4 between items
+        const finalW = itemBaseWidth + itemSpacing;
+
+        const newTotal = items.length * finalW;
+
+        setMeasuredItemWidth(finalW);
+        setTotalWidth(newTotal);
+        return newTotal;
       }
     }
-    // fallback
-    const fallback = 320;
-    setMeasuredItemWidth(fallback);
-    setTotalWidth(items.length * fallback);
-    return fallback;
-  };
+    const fallbackW = 320; // w-72 (288) + padding/gap (32)
+    const fallbackTotal = items.length * fallbackW;
+    setMeasuredItemWidth(fallbackW);
+    setTotalWidth(fallbackTotal);
+    return fallbackTotal;
+  }, [items.length]);
 
-  // Helper that starts the loop animation from the current x position
-  const startLoopAnimation = (startX = 0) => {
-    // set the motion value to the desired start position first
-    x.set(startX);
 
-    // Start looping animation to -totalWidth (half-width) then repeat
-    // Use requestAnimationFrame so the animation starts after layout/paint
-    requestAnimationFrame(() => {
-      controls.start({
-        x: -totalWidth,
-        transition: {
-          x: {
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: Math.max(4, items.length * 2.5),
-            ease: "linear",
-          },
-        },
-      });
+  // RAF-based autoplay loop. directionSign: -1 = left, +1 = right
+  const startLoopAnimation = useCallback((startX = 0, width = totalWidth, directionSign = -1) => {
+    // 🛑 Immediate check to stop if any pause condition is met
+    if (!width || width <= 0 || isDraggingRef.current || ctaHoverRef.current) {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+      return;
+    }
+
+    // Stop any existing RAF
+    if (rafRef.current) {
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = null;
+    }
+    lastTimeRef.current = null;
+
+    // Calculate the nearest card-aligned position for a smooth restart.
+    const itemW = measuredItemWidth;
+    let currentNormalizedX = startX % width;
+    if (currentNormalizedX > 0) currentNormalizedX -= width;
+
+    const nearestIndex = Math.round(Math.abs(currentNormalizedX) / itemW);
+    const startPos = -(nearestIndex % items.length) * itemW;
+    x.set(startPos); 
+
+    const duration = Math.max(4, items.length * 2.5);
+    const speed = Math.abs(width / duration);
+
+    const loop = (time: number) => {
+      if (lastTimeRef.current == null) lastTimeRef.current = time;
+      const dt = (time - lastTimeRef.current) / 1000;
+      lastTimeRef.current = time;
+
+      // 🛑 Critical check for pause inside loop
+      if (!isDraggingRef.current && !ctaHoverRef.current) {
+        let current = x.get();
+        let next = current + -directionSign * speed * dt;
+        
+        // wrap-around
+        if (next <= -width) next += width;
+        if (next > 0) next -= width;
+        
+        x.set(next);
+      } 
+
+      rafRef.current = requestAnimationFrame(loop);
+    };
+
+    rafRef.current = requestAnimationFrame((t) => {
+      lastTimeRef.current = t;
+      loop(t);
     });
+  }, [x, totalWidth, items.length, measuredItemWidth]);
+
+
+  // --- CTA Hover Handlers (Pause Scroll on Hover) ---
+
+  const handleCTAEnter = useCallback(() => {
+    ctaHoverRef.current = true;
+    if (ctaResumeTimeoutRef.current) {
+      clearTimeout(ctaResumeTimeoutRef.current);
+      ctaResumeTimeoutRef.current = null;
+    }
+    // Pause autoplay immediately
+    if (rafRef.current) {
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = null;
+    }
+    lastTimeRef.current = null;
+  }, []);
+
+  const handleCTALeave = useCallback(() => {
+    ctaHoverRef.current = false;
+    
+    if (ctaResumeTimeoutRef.current) {
+      clearTimeout(ctaResumeTimeoutRef.current);
+    }
+    const resumeDelay = 300; // ms
+    ctaResumeTimeoutRef.current = window.setTimeout(() => {
+      ctaResumeTimeoutRef.current = null;
+      if (!isDraggingRef.current && !ctaHoverRef.current) {
+        startLoopAnimation(x.get(), totalWidth, lastDirectionRef.current || -1);
+      }
+    }, resumeDelay);
+  }, [x, totalWidth, startLoopAnimation]);
+
+
+  // --- Framer Motion Drag Handlers (Smooth Push/Pull) ---
+
+  const handleDragStart = () => {
+    isDraggingRef.current = true;
+    // Pause RAF-based loop when dragging starts
+    if (rafRef.current) {
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = null;
+    }
+    lastTimeRef.current = null;
   };
+
+  const handleDrag = () => {
+    // Implement infinite scroll during drag
+    const currentX = x.get();
+    const width = totalWidth;
+
+    // Wrap around logic
+    if (currentX > 0) {
+      x.set(currentX - width);
+    } else if (currentX < -width) {
+      x.set(currentX + width);
+    }
+    
+    // Track current drag direction using velocity
+    const velocity = x.getVelocity();
+    if (Math.abs(velocity) > 10) { 
+        // velocity > 0 (moving right) -> autoplay direction is -1 (left)
+        // velocity < 0 (moving left) -> autoplay direction is +1 (right)
+        lastDirectionRef.current = velocity > 0 ? -1 : 1; 
+    }
+  }
+
+  const handleDragEnd = () => {
+    isDraggingRef.current = false;
+    if (!ctaHoverRef.current) {
+        // Resume using the direction set during the drag
+        startLoopAnimation(x.get(), totalWidth, lastDirectionRef.current || -1);
+    }
+  };
+
+  // --- Effects ---
 
   useEffect(() => {
-    let rafId: number | null = null;
-    let mounted = true;
     setHasMounted(true);
+    const computedTotal = measureWidths();
+    startLoopAnimation(0, computedTotal);
 
-    // preload images and measure, then start animation using measured widths
-    (async () => {
-      const itemW = await preloadAndMeasure();
-      if (!mounted) return;
-      // start after paint
-      rafId = requestAnimationFrame(() => startLoopAnimation(0));
-    })();
+    const handleResize = () => {
+        const newTotal = measureWidths();
+        startLoopAnimation(x.get(), newTotal);
+    };
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      mounted = false;
-      if (rafId) cancelAnimationFrame(rafId);
-      controls.stop();
+      window.removeEventListener("resize", handleResize);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      if (ctaResumeTimeoutRef.current) clearTimeout(ctaResumeTimeoutRef.current);
+      lastTimeRef.current = null;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [items.length]);
 
-  // Handler to stop the loop when the user hovers
-  const handleHoverStart = () => {
-    setIsHovered(true);
-    controls.stop();
-  };
+  useEffect(() => {
+    if (!hasMounted) return;
+    startLoopAnimation(x.get(), totalWidth, lastDirectionRef.current || -1);
+  }, [totalWidth, hasMounted, startLoopAnimation]);
+  
+  useEffect(() => {
+    return () => {
+      if (ctaResumeTimeoutRef.current) {
+        clearTimeout(ctaResumeTimeoutRef.current);
+      }
+    };
+  }, []);
 
-  // Handler to resume the loop when the user's mouse leaves
-  const handleHoverEnd = () => {
-    setIsHovered(false);
-    // normalize current position to the [0, totalWidth) range to avoid large numbers
-    const current = x.get();
-    const normalized = ((current % totalWidth) + totalWidth) % totalWidth;
-    // start from the normalized negative position so the loop looks seamless
-    startLoopAnimation(-normalized);
-  };
-
-  // When dragging ends, normalize the position and resume animation
-  const handleDragEnd = () => {
-    // stop any current animation
-    controls.stop();
-    const current = x.get();
-    const normalized = ((current % totalWidth) + totalWidth) % totalWidth;
-    // set motion value to -normalized so layout aligns with duplicated items
-    x.set(-normalized);
-    // resume loop
-    startLoopAnimation(-normalized);
-  };
 
   return (
-    <div className="w-full overflow-hidden py-10" ref={containerRef}>
+    <div className="relative w-full overflow-hidden">
       <motion.div
-        className="flex space-x-8 pb-4 cursor-grab active:cursor-grabbing"
+        ref={containerRef}
+        className="flex touch-manipulation select-none gap-4" // gap-4 (16px) spacing between cards
+        style={{ x, touchAction: "pan-y" }}
         drag="x"
-        // only enable dragConstraints once totalWidth is measured
-        dragConstraints={{ left: -(totalWidth || 0), right: 0 }}
-        onHoverStart={handleHoverStart}
-        onHoverEnd={handleHoverEnd}
+        dragConstraints={{ left: -totalWidth, right: totalWidth }}
+        dragElastic={0.01}
+        onDragStart={handleDragStart}
+        onDrag={handleDrag}
         onDragEnd={handleDragEnd}
-        animate={controls}
-        style={{ x }}
       >
-        {duplicatedItems.map((department, index) => (
-          <DepartmentCard key={index} department={department} />
+        {duplicatedItems.map((item, idx) => (
+          // Card item wrapper, using px-2 (8px total) for a small internal buffer
+          <div key={idx} className="flex-none px-2 card-item"> 
+            <div className="flex flex-col items-center">
+              <Link 
+                href={item.href} 
+                className="block"
+                draggable={false} 
+              >
+                <div
+                  // 🎯 CARD CONTAINER: Themed background matching the page gradient
+                  className="group relative h-[380px] w-72 overflow-hidden rounded-3xl shadow-2xl transition-all duration-500
+                             bg-gradient-to-br from-zinc-900/60 via-indigo-950/30 to-transparent border border-white/10
+                             hover:border-indigo-400/40 hover:shadow-indigo-500/30"
+                  draggable={false}
+                >
+                  {/* Themed overlay blends with page colors for consistent look */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-indigo-900/20 to-transparent" />
+
+                  {/* content (inside card) - large centered logo that visually fills the card */}
+                  <div className="relative z-30 flex h-full flex-col items-center p-6 text-white">
+                    {/* large logo area: centered, responsive, with subtle background */}
+                    <div className="flex-1 w-full flex items-center justify-center">
+                      <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-2xl bg-white/6 flex items-center justify-center overflow-hidden border border-white/6 shadow-inner">
+                        {/* Large image inside circular/rounded container to appear 'filled' */}
+                        <Image
+                          src={item.image as any}
+                          alt={item.label}
+                          width={192}
+                          height={192}
+                          className="object-contain"
+                          priority
+                          draggable={false}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Footer for the CTA (kept at bottom) */}
+                    <div className="mt-4 w-full flex items-center justify-between text-sm text-zinc-300 pt-4 border-t border-zinc-700/50">
+                      <span className="text-zinc-400">View Events</span>
+                      {/* CTA Button: Sleek, white-outlined ghost button */}
+                      <span
+                        onPointerEnter={handleCTAEnter}
+                        onPointerLeave={handleCTALeave}
+                        className="inline-flex items-center rounded-full border border-white/40 bg-transparent px-4 py-1 text-white hover:bg-white/10 transition-colors cursor-pointer"
+                      >
+                        More Details <span className="ml-2">→</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+
+              {/* LABEL: Prominent title placed beneath the card */}
+              <div className="mt-3 text-center w-72">
+                <h3 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-indigo-400 to-purple-300">
+                  {item.label}
+                </h3>
+              </div>
+            </div>
+          </div>
         ))}
       </motion.div>
-    </div>
-  );
-}
-
-// Reusable Department Card Component (kept in the same file for simplicity)
-function DepartmentCard({ department }: { department: Department }): JSX.Element {
-  const { href, label, desc, image } = department;
-
-  return (
-    <div className="flex-none w-72 h-[400px]">
-      <div className="group relative overflow-hidden rounded-3xl border border-zinc-800/50 bg-zinc-900/50 p-8 shadow-2xl transition-all duration-500 hover:scale-105 h-full flex flex-col justify-between">
-        <div className="relative flex flex-col items-center p-4 text-center">
-          <div className="h-28 w-28 relative mb-6">
-            <Image
-              src={image}
-              alt={`${label} logo`}
-              layout="fill"
-              objectFit="contain"
-              className="transition-all duration-500 group-hover:scale-110"
-            />
-          </div>
-          <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-indigo-500 to-purple-400">
-            {label}
-          </h3>
-          <p className="mt-2 text-zinc-400 text-lg">{desc}</p>
-        </div>
-        <div className="mt-auto pt-6 flex justify-center">
-          <Link href={href}>
-            <button className="inline-flex items-center rounded-full bg-indigo-600 px-8 py-3 font-medium text-white transition-all duration-300 hover:bg-indigo-700 hover:shadow-lg">
-              More Details
-              <span className="ml-2 transition-transform duration-300 group-hover:translate-x-2">
-                &rarr;
-              </span>
-            </button>
-          </Link>
-        </div>
-      </div>
     </div>
   );
 }
