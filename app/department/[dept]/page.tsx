@@ -106,7 +106,7 @@ export default function CyberpunkEventPage(): JSX.Element {
 
   const router = useRouter();
 
-  // Choose department data based on route param. If param not found, default to cse-events or first
+  // Choose department data  route param. If param not found, default to cse-events or first
   const params = useParams() as { dept?: string } | undefined;
   const routeName = params?.dept || 'cse-events';
   const dept = departments.find(d => d.routerName === routeName) || departments.find(d => d.routerName === 'cse-events') || departments[0];
