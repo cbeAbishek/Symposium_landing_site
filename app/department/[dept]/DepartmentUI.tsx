@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import type { DepartmentData, EventData } from "./data";
 
 type Props = {
-  department: DepartmentData;
+  // data.tsx currently exports a plain array; use a permissive any here
+  department: any;
 };
 
 export default function DepartmentUI({ department }: Props) {
@@ -15,7 +15,7 @@ export default function DepartmentUI({ department }: Props) {
   const events = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return department.events;
-    return department.events.filter((e) => {
+    return department.events.filter((e: any) => {
       return (
         e.title.toLowerCase().includes(q) ||
         e.description.toLowerCase().includes(q) ||
@@ -69,7 +69,7 @@ export default function DepartmentUI({ department }: Props) {
           <input
             aria-label="Search events"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setQuery(e.target.value)}
             placeholder="Search events, rules or keywords..."
             className="w-full p-3 rounded-lg bg-white/5 border border-white/10 placeholder:text-gray-400 text-white"
           />
@@ -86,7 +86,7 @@ export default function DepartmentUI({ department }: Props) {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {events.map((ev) => (
+        {events.map((ev: any) => (
           <article
             key={ev.id}
             className="bg-white/6 p-5 rounded-xl border border-white/6 hover:shadow-lg transition-shadow"

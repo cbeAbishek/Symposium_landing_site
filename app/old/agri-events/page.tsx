@@ -1,7 +1,6 @@
 import React from "react";
 import { Navigation } from "../../components/nav";
 import Particles from "../../components/particles";
-import dummy from "./dummy.jpg";
 import club from "../../department/assets/agri2.png";
 import Image from "next/image";
 
@@ -36,7 +35,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={dummy.src}
+              src="/Innuoverse2k25.jpg"
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -87,7 +86,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={dummy.src}
+              src="/Innuoverse2k25.jpg"
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -133,7 +132,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={dummy.src}
+              src="/Innuoverse2k25.jpg"
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -184,7 +183,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={dummy.src}
+              src="/Innuoverse2k25.jpg"
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -232,7 +231,7 @@ export default function CSEEvent() {
           {/* Left Side - Image */}
           <div className="md:w-1/2">
             <img
-              src={dummy.src}
+              src="/Innuoverse2k25.jpg"
               alt="Event"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
