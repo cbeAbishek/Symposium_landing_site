@@ -274,7 +274,7 @@ export default function HorizontalScrollDepartments({
                   <div className="relative z-30 flex h-full flex-col items-center p-6 text-white">
                     {/* large logo area: centered, responsive, with subtle background */}
                     <div className="flex-1 w-full flex items-center justify-center">
-                      <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-2xl bg-white/6 flex items-center justify-center overflow-hidden border border-white/6 shadow-inner">
+                      <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-2xl bg-white/6 flex items-center justify-center overflow-hidden  shadow-inner">
                         {/* Large image inside circular/rounded container to appear 'filled' */}
                         <Image
                           src={item.image as any}
