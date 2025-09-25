@@ -3,7 +3,7 @@
 import React from "react";
 import Particles from "../components/particles";
 import { Navigation } from "../components/nav";
-import HorizontalScrollDepartments from "./components/HorizontalScrollDepartments"; // Updated import name
+import HorizontalScrollDepartments from "./components/HorizontalScrollDepartments";
 import cse from "./assets/cse.png";
 import agri from "./assets/agri2.png";
 import aids from "./assets/aids.png";
@@ -78,7 +78,7 @@ export default function DepartmentsPage() {
         <h1 className="z-10 text-4xl sm:text-5xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-indigo-500 to-purple-400 pb-10">
           Our Departments
         </h1>
-        {/* Render the new HorizontalScrollDepartments component */}
+        {/* Render the HorizontalScrollDepartments component */}
         <HorizontalScrollDepartments items={departments} />
       </div>
     </div>
