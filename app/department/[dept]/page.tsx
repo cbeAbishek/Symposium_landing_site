@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Download, FileText, MessageCircle, Star, Zap, Code, Gamepad2, Sparkles, RotateCcw, ExternalLink } from 'lucide-react';
-import { useParams } from 'next/navigation';
+import { Download, FileText, MessageCircle, Star, Zap, Code, Gamepad2, Sparkles, RotateCcw, ExternalLink, ArrowLeft } from 'lucide-react';
+import { useParams, useRouter } from 'next/navigation';
 import departments from './data';
 
 // Custom cursor component
@@ -103,6 +103,8 @@ const StatusIndicator: React.FC<{ status: string }> = ({ status }) => {
 export default function CyberpunkEventPage(): JSX.Element {
   const [loadedSections, setLoadedSections] = useState<Set<string>>(new Set());
   const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());
+
+  const router = useRouter();
 
   // Choose department data based on route param. If param not found, default to cse-events or first
   const params = useParams() as { dept?: string } | undefined;
@@ -229,6 +231,65 @@ export default function CyberpunkEventPage(): JSX.Element {
             linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
           background-size: 100px 100px;
           z-index: 1;
+        }
+
+        /* Top navigation bar */
+        .top-nav {
+          position: fixed;
+          top: 12px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: calc(100% - 48px);
+          max-width: 1100px;
+          z-index: 60;
+          pointer-events: auto;
+        }
+
+        .nav-inner {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background: linear-gradient(90deg, rgba(0,0,0,0.35), rgba(255,255,255,0.02));
+          border: 1px solid rgba(255,255,255,0.04);
+          padding: 8px 12px;
+          border-radius: 12px;
+          backdrop-filter: blur(8px) saturate(120%);
+          box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+        }
+
+        .nav-title {
+          color: #e6f7ff;
+          font-weight: 700;
+          text-align: center;
+          font-size: 1rem;
+          letter-spacing: 0.4px;
+        }
+
+        .nav-btn {
+          display: inline-flex;
+          gap: 8px;
+          align-items: center;
+          background: rgba(0,0,0,0.25);
+          border: 1px solid rgba(255,255,255,0.04);
+          color: #e8fbff;
+          padding: 8px 12px;
+          border-radius: 10px;
+          cursor: pointer;
+          text-decoration: none;
+          font-weight: 600;
+        }
+
+        .nav-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 22px rgba(0,255,255,0.06);
+        }
+
+        .nav-btn.back {
+          background: linear-gradient(90deg, rgba(0,0,0,0.35), rgba(0,255,255,0.02));
+        }
+
+        .nav-btn.contact {
+          background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,0,255,0.02));
         }
 
         .hero-section {
@@ -1102,6 +1163,22 @@ export default function CyberpunkEventPage(): JSX.Element {
       `}</style>
 
       <div className="cyber-grid" />
+
+      <nav className="top-nav">
+        <div className="nav-inner">
+          <button className="nav-btn back" onClick={() => router.back()} aria-label="Go Back">
+            <ArrowLeft className="w-5 h-5" />
+            <span>Back</span>
+          </button>
+
+          <div className="nav-title">{departmentData.title || 'Events'}</div>
+
+          <a className="nav-btn contact" href="/contact" aria-label="Contact page">
+            <MessageCircle className="w-5 h-5" />
+            <span>Contact</span>
+          </a>
+        </div>
+      </nav>
 
       <section className="hero-section">
         <div className="logo-container">
