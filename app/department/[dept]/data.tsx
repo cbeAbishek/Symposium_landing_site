@@ -1,4 +1,4 @@
-const departmentData = [
+export const departments = [
 	{
 		title: "CSE - Events",
 		logo: "/cse/logo.png",
@@ -405,4 +405,4 @@ const departmentData = [
 	},
 ];
 
-export default departmentData;
+export default departments;
