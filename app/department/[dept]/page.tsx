@@ -1314,7 +1314,7 @@ export default function CyberpunkEventPage(): JSX.Element {
                   </div>
                   
                   <div className="back-actions">
-                    <a href={departmentData.registrationlink} className="btn-register">
+                    <a href={departmentData.registrationPdf || '#'} className="btn-register">
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Register Now
                     </a>
