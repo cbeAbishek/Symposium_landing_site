@@ -43,9 +43,9 @@ export default function DepartmentPage(props: any) {
               <h2 className="text-2xl font-bold text-gray-800">{event.title}</h2>
               <p className="text-gray-600 mt-2">{event.description}</p>
               <ul className="text-gray-500 text-sm mt-2">
-                {Object.entries(event.guidelines).map(([key, value]) => (
-                  <li key={key}>
-                    <strong>{key}:</strong> {String(value)}
+                {event.guidelines.map((guideline, index) => (
+                  <li key={index}>
+                    {guideline}
                   </li>
                 ))}
               </ul>
